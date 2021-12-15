@@ -38,7 +38,7 @@ class Sites
     /**
      * @ORM\Column(type="date")
      */
-    private ?\DateTimeInterface $date;
+    private \DateTimeInterface $date;
 
     /**
      * @ORM\Column(type="string", length=255)
