@@ -13,8 +13,6 @@ class SitesController extends AbstractController
      */
     public function index(): Response
     {
-        return $this->render('sites/index.html.twig', [
-            'controller_name' => 'SitesController',
-        ]);
+        return $this->render('sites/index.html.twig');
     }
 }

@@ -40,12 +40,12 @@ class Sites
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private string $before_image;
+    private string $beforeImage;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private string $after_image;
+    private string $afterImage;
 
     public function getId(): ?int
     {
@@ -102,24 +102,24 @@ class Sites
 
     public function getBeforeImage(): ?string
     {
-        return $this->before_image;
+        return $this->beforeImage;
     }
 
-    public function setBeforeImage(string $before_image): self
+    public function setBeforeImage(string $beforeImage): self
     {
-        $this->before_image = $before_image;
+        $this->beforeImage = $beforeImage;
 
         return $this;
     }
 
     public function getAfterImage(): ?string
     {
-        return $this->after_image;
+        return $this->afterImage;
     }
 
-    public function setAfterImage(string $after_image): self
+    public function setAfterImage(string $afterImage): self
     {
-        $this->after_image = $after_image;
+        $this->afterImage = $afterImage;
 
         return $this;
     }
