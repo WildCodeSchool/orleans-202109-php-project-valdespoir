@@ -1,13 +1,97 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello JobOfferController!{% endblock %}
+{% block title %}Offre d'emplois
+{% endblock %}
 
 {% block body %}
 
-<div class="example-wrapper">
-    <h1>Nos offres d'emplois</h1>
+	<div class="example-wrapper">
+		<h1>Nos offres d'emplois</h1>
+	</div>
+
+	<main class="container w-50">
+		<div class="card m-3">
+			<div class="row g-0">
+				<div class="col-md-4 col-sm-6 col-lg-4">
+					<img src="{{ asset('build/images/placeholder.png') }}" class="img-fluid rounded-start" alt="...">
+				</div>
+				<div class="col-md-8">
+					<div class="card-body">
+						<h3 class="card-title">Offre d'emploi 1</h3>
+						<button class="btn btn-success" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample1" aria-expanded="false" aria-controls="collapseWidthExample1">
+							Voir le détail de l'offre
+						</button>
+					</p>
+					<div>
+						<div class="collapse collapse" id="collapseWidthExample1">
+							<div class="card card-body">
+								Emplacement géographique : Sandillon<br>
+								Tâches à effectuer : tailler des arbres et tondre la pelouse.<br>
+								Horaires : 7h-16h<br>
+								Offre disponible : dès aujourd'hui.<br>
+								Contact : 00 00 00 00 00 ou test@valespoir.fr<br>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="card m-3">
+		<div class="row g-0">
+			<div class="col-md-4 col-sm-6 col-lg-4">
+				<img src="{{ asset('build/images/placeholder.png') }}" class="img-fluid rounded-start" alt="...">
+			</div>
+			<div class="col-md-8">
+				<div class="card-body">
+					<h3 class="card-title">Offre d'emploi 2</h3>
+					<button class="btn btn-success" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample2" aria-expanded="false" aria-controls="collapseWidthExample2">
+						Voir le détail de l'offre
+					</button>
+				</p>
+				<div>
+					<div class="collapse collapse" id="collapseWidthExample2">
+						<div class="card card-body">
+							Emplacement géographique : Sandillon<br>
+							Tâches à effectuer : tailler des arbres et tondre la pelouse.<br>
+							Horaires : 7h-16h<br>
+							Offre disponible : dès aujourd'hui.<br>
+							Contact : 00 00 00 00 00 ou test@valespoir.fr<br>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 
-<div>
-</div>
-{% endblock %}
+<div class="card m-3">
+	<div class="row g-0">
+		<div class="col-md-4 col-sm-6 col-lg-4">
+			<img src="{{ asset('build/images/placeholder.png') }}" class="img-fluid rounded-start" alt="...">
+		</div>
+		<div class="col-md-8">
+			<div class="card-body">
+				<h3 class="card-title">Offre d'emploi 3</h3>
+				<button class="btn btn-success" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample3" aria-expanded="false" aria-controls="collapseWidthExample3">
+					Voir le détail de l'offre
+				</button>
+			</p>
+			<div>
+				<div class="collapse collapse" id="collapseWidthExample3">
+					<div class="card card-body">
+						Emplacement géographique : Sandillon<br>
+						Tâches à effectuer : tailler des arbres et tondre la pelouse.<br>
+						Horaires : 7h-16h<br>
+						Offre disponible : dès aujourd'hui.<br>
+						Contact : 00 00 00 00 00 ou test@valespoir.fr<br>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div></div></main>{% endblock %}
