@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+
+
+
+
+{% block body %}
+{% include 'include/_banner.html.twig' %}
+
+<main class="container">
+    <h1 class="text-center text-success">Nos réalisations</h1>
+    <div class="row">
+        <div class="col-sm-6 col-xxl-3">
+            <div class="card bg-light mb-3 mb-5">
+                <div class="card-header bg-dark text-light text-center">
+                    Titre
+                </div>
+                <img src="{{ asset('build/images/placeholder-site.jpg') }}" class="card-img" alt="placeholder-chantier">
+                <div class="card-img-overlay d-flex align-items-center flex-column justify-content-end">
+                    <a href="#" class="btn btn-dark opacity-75 px-5 rounded-pill">
+                        Détail</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+{% endblock %}
