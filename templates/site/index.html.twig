@@ -7,18 +7,20 @@
 <main class="container">
     <h1 class="text-center text-success">Nos réalisations</h1>
     <div class="row">
+        {% for site in sites %}
         <div class="col-sm-6 col-xxl-3">
-            <div class="card bg-light mb-3 mb-5">
-                <div class="card-header bg-dark text-light text-center">
-                    Titre
-                </div>
-                <img src="{{ asset('build/images/placeholder-site.jpg') }}" class="card-img" alt="placeholder-chantier">
-                <div class="card-img-overlay d-flex align-items-center flex-column justify-content-end">
-                    <a href="#" class="btn btn-dark opacity-75 px-5 rounded-pill">
-                        Détail</a>
-                </div>
-            </div>
+            <a class="card-site" href="#">
+                <div class="card bg-light mb-4">
+                    <img class="card-img" src={% if site.afterImage is defined %}{% else %} "{{ asset('build/images/placeholder-site.jpg') }}" {% endif %} alt="site-image">
+                    <div class="card-img-overlay m-0 p-0 d-flex flex-column justify-content-end">
+                        <div class="card-footer bg-dark text-center text-light opacity-75">
+                            <p class="m-0"> {{ site.title }} </p>
+                        </div>
+                    </div>
+            </a>
         </div>
+    </div>
+    {% endfor %}
     </div>
 </main>
 
