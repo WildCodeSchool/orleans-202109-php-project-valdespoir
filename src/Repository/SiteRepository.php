@@ -7,10 +7,10 @@ use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @method Sites|null find($id, $lockMode = null, $lockVersion = null)
- * @method Sites|null findOneBy(array $criteria, array $orderBy = null)
- * @method Sites[]    findAll()
- * @method Sites[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Site|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Site|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Site[]    findAll()
+ * @method Site[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
 class SiteRepository extends ServiceEntityRepository
 {
@@ -20,7 +20,7 @@ class SiteRepository extends ServiceEntityRepository
     }
 
     // /**
-    //  * @return Sites[] Returns an array of Sites objects
+    //  * @return Site[] Returns an array of Sites objects
     //  */
     /*
     public function findByExampleField($value)
@@ -37,7 +37,7 @@ class SiteRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?Sites
+    public function findOneBySomeField($value): ?Site
     {
         return $this->createQueryBuilder('s')
             ->andWhere('s.exampleField = :val')

@@ -3,18 +3,13 @@
 		<div class="col-md-5">
 			<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
 				<div class="carousel-inner">
-					<div class="card-header bg-dark text-light text-center">
-						Titre
+				{% for site in sites %}
+					<div class="carousel-item {{ loop.first?'active':'' }}">
+						<img class="img-fluid d-block w-100 " src={% if site.afterImage is defined %}   
+						{% else %} "{{ asset('build/images/placeholder-site.jpg') }}" {% endif %} alt="site-image">
 					</div>
-					<div class="carousel-item active">
-						<img src="{{ asset('build/images/placeholder-site.jpg') }}" class="d-block w-100" alt="image of the site">
-					</div>
-					<div class="carousel-item">
-						<img src="{{ asset('build/images/placeholder-site.jpg') }}" class="d-block w-100" alt="image of the site">
-					</div>
-					<div class="carousel-item">
-						<img src="{{ asset('build/images/placeholder-site.jpg') }}" class="d-block w-100" alt="image of the site">
-					</div>
+					<div class="card-header bg-dark text-light text-center">{{ site.title }}</div>
+				{% endfor %}
 				</div>
 				<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
 					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
