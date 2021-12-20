@@ -9,7 +9,7 @@ use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 
 class JobOfferFixtures extends Fixture implements DependentFixtureInterface
 {
-   public const JOBOFFER = [
+    public const JOBOFFER = [
         [
             'title' => 'Offre 1',
             'description' => 'Emplacement géographique : Sandillon<br>
