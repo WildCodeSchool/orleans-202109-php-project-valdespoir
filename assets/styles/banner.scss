@@ -8,9 +8,15 @@
 }
 
 .title {
+    background-color: $primary;
+    text-align: center;
+    color: $light;
+    opacity: 0.8;
+
     background-color: transparentize($primary, 0.2);
     text-align: center;
     color: $light;
+
     width: $width-banner-title;
     max-width: 1300px;
     margin: auto;
@@ -20,7 +26,7 @@
 }
 
 .title h1 {
-    margin: 28px;                                                                            
+    margin: 28px;
 }
 
 .title p {
