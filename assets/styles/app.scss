@@ -1,23 +1,6 @@
-$primary: #149e1d;
-$secondary: #e3e3e3;
-$success: #73a53e;
-$dark: #545454;
-$light: #fafafa;
-$title-font: "Exo", sans-serif;
-$text-font: "Rubik", sans-serif;
-$main-title-size: 64px;
-$second-title-size: 41px;
-$title-size: 31px;
-$text-size: 24px;
-$width-banner: 100%;
-$height-banner: 400px;
-$width-banner-title: 80%;
-$spacing1: 24px;
-$spacing2: 34px;
-$border-radius: 8px;
-
 @import "~bootstrap/scss/bootstrap";
 @import url("https://fonts.googleapis.com/css2?family=Exo:wght@300;400;500;600;700&family=Outfit:wght@200;600&family=Rubik:wght@300;400&display=swap");
+@import "variables.scss";
 @import "navbar.scss";
 @import "banner.scss";
 @import "site.scss";
