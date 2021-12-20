@@ -1,5 +1,6 @@
 .card-site {
     transition: transform 0.2s;
+
     &:hover {
         filter: brightness(120%);
         box-shadow: 0px 0px 30px -15px $dark;
