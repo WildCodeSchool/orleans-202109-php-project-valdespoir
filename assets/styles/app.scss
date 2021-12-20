@@ -1,27 +1,39 @@
+@import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Exo:wght@300;400;500;600;700&family=Outfit:wght@200;600&family=Rubik:wght@300;400&display=swap');
 @import 'variables.scss';
 @import '_footer.scss';
+@import 'navbar.scss';
+@import 'banner.scss';
+@import 'site.scss';
 
-body {
-    background-color: $light;
-}
+:root {
+    body {
+        background-color: $light;
+    }
 
-h1, h2, h3, h4 {
-    font-family: $title-font;
-}
+    h1,
+    h2,
+    h3,
+    h4 {
+        font-family: $title-font;
+    }
 
-h1 {
-    font-size: $main-title-size;
-}
+    h1 {
+        font-size: $main-title-size;
+    }
 
-h2 {
-    font-size: $second-title-size;
-}
+    h2 {
+        font-size: $second-title-size;
+    }
 
-h3 {
-    font-size: $title-size ;
-}
+    h3 {
+        font-size: $title-size;
+    }
 
-p, a, li {
-    font-family: $text-font;
-    font-size: $text-size;
+    p,
+    a,
+    li {
+        font-family: $text-font;
+        font-size: $text-size;
+    }
 }
