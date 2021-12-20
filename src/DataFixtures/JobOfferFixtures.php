@@ -7,10 +7,9 @@ use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 
-
 class JobOfferFixtures extends Fixture implements DependentFixtureInterface
 {
-    const JOBOFFER = [
+    public const JOBOFFER = [
         [
             'title' => 'Offre 1',
             'description' => 'Emplacement géographique : Sandillon<br>
@@ -47,7 +46,6 @@ class JobOfferFixtures extends Fixture implements DependentFixtureInterface
             $jobOffer->setDescription($jobOfferTitle['description']);
             $manager->persist($jobOfferTitle);
             $this->addReference('job_' . $key, $jobOfferTitle);
-
         }
         $manager->flush();
     }
