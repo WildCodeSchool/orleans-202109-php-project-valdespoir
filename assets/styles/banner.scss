@@ -8,23 +8,26 @@
 }
 
 .title {
-    background-color: $primary-color;
+    background-color: transparentize($primary, 0.2);
     text-align: center;
-    color: $light-color;
-    opacity: 0.8;
+    color: $light;
     width: $width-banner-title;
-    max-width: 1200px;
+    max-width: 1300px;
     margin: auto;
-    margin-top: calc(-2 * $main-title-size + $spacing2);
+    margin-top: -2.1 * $main-title-size + $spacing2;
     border-radius: $border-radius;
-    margin-bottom: 70px;  
+    margin-bottom: 70px;
 }
 
 .title h1 {
-    margin: 28px;
+    margin: 28px;                                                                            
 }
 
 .title p {
     margin: $spacing1;
     padding-bottom: $spacing2;
+}
+
+.logo {
+    filter: grayscale(100%) brightness(300%);
 }
