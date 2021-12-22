@@ -5,8 +5,8 @@
 				<div class="carousel-inner">
 					{% for site in sites %}
 						<div class="carousel-item {{ loop.first ? 'active' : '' }}">
-							<div class="card-header bg-dark text-light text-center">{{ site.title }}</div>
 							<img class="img-fluid d-block w-100 " src={% if site.afterImage is defined %} {% else %} "{{ asset('build/images/placeholder-site.jpg') }}" {% endif %} alt="site-image">
+							<div class="card-header text-light text-center">{{ site.title }}</div>
 						</div>
 					{% endfor %}
 				</div>
@@ -23,7 +23,7 @@
 		<div class="offset-1 col-md-6">
 			<div class="card-body">
 				<h2 class="card-title text-dark text-center mb-3">Nos dernières réalisations</h2>
-				<p class="card-text text-dark">Nous proposons différents services d'entretien et d'aménagement des espaces verts:</p>
+				<p class="card-text text-dark">Nous proposons différents services d'entretien et d'aménagement des espaces verts:
 			</br>
 			Tonte des pelouses, taille des haies, désherbage manuel, installation de mobilier extérieur, création de marches en bois et garde-corps, bûcheronnage et débroussaillage, arrachage de plantes invasives dans les rivières, fabrication et pose de clôtures.</p>
 		<button type="button" class="btn btn-dark mt-2">+ de réalisations</button>

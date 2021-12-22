@@ -9,9 +9,20 @@
     height: 460px;
     border-radius: $border-radius;
 
+    .carousel-item {
+        position: relative;
+
+    .card-header {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        background-color: transparentize($dark,0.2);
+        }
+
     img {
         object-fit: cover;
         height: 460px;
         width: 100%;
+        }
     }
 }
