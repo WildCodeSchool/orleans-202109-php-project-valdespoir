@@ -9,7 +9,7 @@ use Faker\Factory;
 
 class SiteFixtures extends Fixture
 {
-    public const SITE_NUMBER = 12;
+    public const SITE_NUMBER = 16;
 
     public function load(ObjectManager $manager): void
     {
@@ -17,6 +17,10 @@ class SiteFixtures extends Fixture
         for ($i = 0; $i < self::SITE_NUMBER; $i++) {
             $site = new Site();
             $site->setTitle($faker->city);
+            $site->setCity($faker->city);
+            $site->setDescription($faker->text(500));
+            $site->setAfterPicture($faker->imageUrl(640, 480, 'animals', true));
+            $site->setBeforePicture($faker->imageUrl(640, 480, 'animals', true));
             $manager->persist($site);
         }
         $manager->flush();

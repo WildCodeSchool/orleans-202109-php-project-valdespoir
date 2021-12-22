@@ -9,7 +9,7 @@
     <div class="row">
         {% for site in sites %}
         <div class="col-sm-6 col-xxl-3">
-            <a class="card-site" href="#">
+            <a class="card-site" href="{{ path('site_show', {id: site.id}) }}">
                 <div class="card bg-light mb-4">
                     <img class="card-img" src={% if site.afterImage is defined %}{% else %} "{{ asset('build/images/placeholder-site.jpg') }}" {% endif %} alt="site-image">
                     <div class="card-img-overlay m-0 p-0 d-flex flex-column justify-content-end">
