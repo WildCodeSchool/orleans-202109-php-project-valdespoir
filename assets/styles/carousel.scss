@@ -1,7 +1,7 @@
 .card-body {
     height: 460px;
     border-radius: $border-radius;
-    background-color: transparentize($secondary,0.7);
+    background-color: transparentize($secondary, 0.7);
     padding: 40px;
 }
 
@@ -12,17 +12,17 @@
     .carousel-item {
         position: relative;
 
-    .card-header {
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        background-color: transparentize($dark,0.2);
+        .card-header {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background-color: transparentize($dark, 0.2);
         }
 
-    img {
-        object-fit: cover;
-        height: 460px;
-        width: 100%;
+        img {
+            object-fit: cover;
+            height: 460px;
+            width: 100%;
         }
     }
 }
