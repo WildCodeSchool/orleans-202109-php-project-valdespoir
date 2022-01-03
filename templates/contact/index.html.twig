@@ -5,9 +5,14 @@
 
 {% block body %}
 
-{% include 'include/_banner.html.twig' %}
+	{% include 'include/_banner.html.twig' %}
 
 	<main class="container">
+		{% for message in app.flashes('success') %}
+			<div class="alert alert-success">
+				{{ message }}
+			</div>
+		{% endfor %}
 		<div>
 			{{ form_start(form) }}
 			{{ form_widget(form) }}

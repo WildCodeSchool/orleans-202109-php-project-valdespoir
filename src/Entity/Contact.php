@@ -7,22 +7,30 @@ namespace App\Entity;
 class Contact
 {
     /**
+     * @Assert\NotBlank
+     * @Assert\Length(max="255")
      */
     private string $lastname;
 
     /**
+     * @Assert\NotBlank
+     * @Assert\Length(max="255")
      */
     private string $firstname;
 
     /**
+     * @Assert\NotBlank
+     * @Assert\Email()
      */
     private string $email;
 
     /**
+     * @Assert\NotBlank
      */
     private string $subject;
 
     /**
+     * @Assert\NotBlank
      */
     private string $message;
 
