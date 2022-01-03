@@ -16,10 +16,24 @@ class ContactType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-        ->add('lastName', TextType::class, ['label' => 'Nom'])
-        ->add('firstName', TextType::class, ['label' => 'Prénom'])
+        ->add('lastName', TextType::class, [
+            'label' => 'Nom',
+            'attr' => [
+                'class' => 'form-control'
+            ],
+            ])
+        ->add('firstName', TextType::class, [
+            'label' => 'Prénom',
+            'attr' => [
+                'class' => 'form-control'
+            ],
+            ])
         ->add('subject', ChoiceType::class, [
+            'label' => 'Sujet',
             'placeholder' => 'Choisir une option',
+            'attr' => [
+                'class' => 'form-control'
+            ],
             'choices' => [
                 'Répondre à une offre d\'emploi' => 'Répondre à une offre d\'emploi',
                 'Candidature spontannée' => 'Candidature spontanée',
@@ -27,12 +41,22 @@ class ContactType extends AbstractType
                 'Demande de travaux' => 'Demande de travaux',
                 'Autres' => 'Autres'
             ],
-            'expanded' => false, 
+            'expanded' => false,
             'multiple' => false,
             'by_reference' => false,
         ])
-        ->add('email', EmailType::class, ['label' => 'E-mail'])
-        ->add('message', TextareaType::class, ['label' => 'Message']);
+        ->add('email', EmailType::class, [
+            'label' => 'E-mail',
+            'attr' => [
+                'class' => 'form-control'
+            ],
+            ])
+        ->add('message', TextareaType::class, [
+            'label' => 'Message',
+            'attr' => [
+                'class' => 'form-control'
+            ],
+        ]);
         ;
     }
 
