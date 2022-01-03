@@ -20,7 +20,7 @@ class SiteRepository extends ServiceEntityRepository
     }
 
     // /**
-    //  * @return Site[] Returns an array of Sites objects
+    //  * @return Site[] Returns an array of Site objects
     //  */
     /*
     public function findByExampleField($value)
