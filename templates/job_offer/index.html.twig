@@ -3,6 +3,7 @@
 {% block title %}Offre d'emplois{% endblock %}
 
 {% block body %}
+
 <h1 class="text-center">Nos offres d'emplois</h1>
 
 {% for jobOffer in jobOffers %}
@@ -22,11 +23,8 @@
 					<div>
 						<div class="collapse collapse" id="collapseWidthExample{{ jobOffer.id }}">
 							<div class="card card-body">
-								Emplacement géographique : Sandillon<br>
-								Tâches à effectuer : tailler des arbres et tondre la pelouse.<br>
-								Horaires : 7h-16h<br>
-								Offre disponible : dès aujourd'hui.<br>
-								Contact : 00 00 00 00 00 ou test@valespoir.fr<br>
+							Offre datant du : {{ jobOffer.date|date('d/m/Y') }}
+								{{ jobOffer.description }}
 							</div>
 						</div>
 					</div>
