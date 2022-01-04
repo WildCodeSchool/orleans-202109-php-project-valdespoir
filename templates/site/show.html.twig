@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Réalisation #{{ site.id }}{% endblock %}
+
+{% block body %}
+
+{% include 'include/_banner.html.twig' %}
+
+<main class="container">
+    <h1 class="text-center text-success"> {{ site.title }} </h1>
+    <div class="row">
+        <div class="col-sm-12 col-lg-6 col-xxl-6">
+            <div class="card bg-light mb-4">
+                <img class="card-img" src={% if site.afterImage is defined %}{% else %} "{{ asset('build/images/placeholder-site.jpg') }}" {% endif %} alt="site-image">
+            </div>
+        </div>
+        <div class="col-sm-12 col-lg-6 col-xxl-6">
+            <div class="card bg-light mb-4">
+                <img class="card-img" src={% if site.beforeImage is defined %}{% else %} "{{ asset('build/images/placeholder-site.jpg') }}" {% endif %} alt="site-image">
+            </div>
+        </div>
+        <div class="text-center">
+            <p class="bg-secondary text-dark rounded-3 p-4 mb-4">{{ site.description }}</p>
+        </div>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4">
+            <a class="btn btn-primary text-light px-3 opacity-75 rounded" href="{{ path('site_index') }}"
+                type="button">Retour</a>
+        </div>
+</main>
+{% endblock %}
