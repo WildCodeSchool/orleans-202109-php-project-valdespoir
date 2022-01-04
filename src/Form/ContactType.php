@@ -18,22 +18,13 @@ class ContactType extends AbstractType
         $builder
         ->add('lastName', TextType::class, [
             'label' => 'Nom',
-            'attr' => [
-                'class' => 'form-control'
-            ],
             ])
         ->add('firstName', TextType::class, [
             'label' => 'Prénom',
-            'attr' => [
-                'class' => 'form-control'
-            ],
             ])
         ->add('subject', ChoiceType::class, [
             'label' => 'Sujet',
             'placeholder' => 'Choisir une option',
-            'attr' => [
-                'class' => 'form-control'
-            ],
             'choices' => [
                 'Répondre à une offre d\'emploi' => 'Répondre à une offre d\'emploi',
                 'Candidature spontannée' => 'Candidature spontanée',
@@ -47,15 +38,9 @@ class ContactType extends AbstractType
         ])
         ->add('email', EmailType::class, [
             'label' => 'E-mail',
-            'attr' => [
-                'class' => 'form-control'
-            ],
             ])
         ->add('message', TextareaType::class, [
             'label' => 'Message',
-            'attr' => [
-                'class' => 'form-control'
-            ],
         ]);
         ;
     }

@@ -9,22 +9,27 @@
 
 {% block body %}
 
-{% include 'include/_banner.html.twig' %}
-<h2 class="d-flex justify-content-center text-dark">Formulaire</h2>
+	{% include 'include/_banner.html.twig' %}
+	<h2 class="d-flex justify-content-center text-dark">Formulaire</h2>
+	{% for category, messages in app.flashes %}
+		{% for message in messages %}
+			<div class="row">
+				<div class="alert offset-2 col-8 d-flex justify-content-center alert-{{ category }}">
+					{{ message }}
+				</div>
+			</div>
+		{% endfor %}
+	{% endfor %}
 	<main class="container container-form ps-0 pe-0">
-		<div class="row me-0 ms-0">
-			{{ form_start(form) }}
-			<div class="offset-2 col-8 fs-5">
-			<div class="form-group">{{ form_row(form.lastName) }}</div>
-			<div class="form-group mt-4">{{ form_row(form.firstName) }}</div>
-			<div class="form-group mt-4">{{ form_row(form.subject) }}</div>
-			<div class="form-group mt-4">{{ form_row(form.email) }}</div>
-			<div class="form-group mt-4">{{ form_row(form.message) }}</div>
+		{{ form_start(form) }}
+		<div class="row">
+			<div class="offset-2 col-8 fs-5 mt-5">
+				{{ form_widget(form) }}
 			</div>
-			<div class="button mt-5 d-flex justify-content-center">
-			<button class="btn btn-primary text-light px-3 opacity-75 rounded"type="submit">Envoyer</button>
-			</div>
-			{{ form_end(form) }}
 		</div>
+		<div class="button mt-5 d-flex justify-content-center">
+			<button class="btn btn-primary text-light px-3 opacity-75 rounded" type="submit">Envoyer</button>
+		</div>
+		{{ form_end(form) }}
 	</main>
 {% endblock %}
