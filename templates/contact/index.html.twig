@@ -10,7 +10,7 @@
 {% block body %}
 
 {% include 'include/_banner.html.twig' %}
-
+<h2 class="d-flex justify-content-center text-dark">Formulaire</h2>
 	<main class="container container-form ps-0 pe-0">
 		<div class="row me-0 ms-0">
 			{{ form_start(form) }}
@@ -22,7 +22,7 @@
 			<div class="form-group mt-4">{{ form_row(form.message) }}</div>
 			</div>
 			<div class="button mt-5 d-flex justify-content-center">
-			<button type="submit">Envoyer</button>
+			<button class="btn btn-primary text-light px-3 opacity-75 rounded"type="submit">Envoyer</button>
 			</div>
 			{{ form_end(form) }}
 		</div>
