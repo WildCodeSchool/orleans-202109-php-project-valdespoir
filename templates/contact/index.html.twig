@@ -11,15 +11,6 @@
 
 	{% include 'include/_banner.html.twig' %}
 	<h2 class="d-flex justify-content-center text-dark">Formulaire</h2>
-	{% for category, messages in app.flashes %}
-		{% for message in messages %}
-			<div class="row">
-				<div class="alert offset-2 col-8 d-flex justify-content-center alert-{{ category }}">
-					{{ message }}
-				</div>
-			</div>
-		{% endfor %}
-	{% endfor %}
 	<main class="container container-form ps-0 pe-0">
 		{{ form_start(form) }}
 		<div class="row">
