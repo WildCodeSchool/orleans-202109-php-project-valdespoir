@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Site{% endblock %}
+
+{% block body %}
+    <h1>Site</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ site.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ site.title }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ site.description }}</td>
+            </tr>
+            <tr>
+                <th>City</th>
+                <td>{{ site.city }}</td>
+            </tr>
+            <tr>
+                <th>BeforePicture</th>
+                <td>{{ site.beforePicture }}</td>
+            </tr>
+            <tr>
+                <th>AfterPicture</th>
+                <td>{{ site.afterPicture }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('adminSite_index') }}">back to list</a>
+
+    <a href="{{ path('adminSite_edit', {'id': site.id}) }}">edit</a>
+
+    {{ include('adminSite/_delete_form.html.twig') }}
+{% endblock %}
