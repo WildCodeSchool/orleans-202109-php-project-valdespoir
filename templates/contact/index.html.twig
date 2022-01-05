@@ -6,10 +6,10 @@
 {% block stylesheets %}
 	{{ encore_entry_link_tags('contact') }}
 {% endblock %}
-
-{% block body %}
-
+{% block banner %}
 	{% include 'include/_banner.html.twig' %}
+{% endblock %}
+{% block body %}
 	<h2 class="d-flex justify-content-center text-dark">Formulaire</h2>
 	<main class="container container-form ps-0 pe-0">
 		{{ form_start(form) }}
