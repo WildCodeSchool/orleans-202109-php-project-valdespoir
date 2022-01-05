@@ -8,7 +8,6 @@ use Doctrine\Persistence\ObjectManager;
 
 class AssociationFixtures extends Fixture
 {
-
     public const ASSOCIATION = [
         [
             'role' => 'Role de la personne',
@@ -19,12 +18,12 @@ class AssociationFixtures extends Fixture
 
     public function load(ObjectManager $manager)
     {
-        foreach (self::ASSOCIATION as $key => $associationManagerName) {
+        foreach (self::ASSOCIATION as $key => $associationTitle) {
             $association = new Association();
-            $association->setRole($associationManagerName['role']);
-            $association->setName($associationManagerName['name']);
-            $manager->persist($associationManagerName);
-            $this->addReference('job_' . $key, $associationManagerName);
+            $association->setRole($associationTitle['role']);
+            $association->setName($associationTitle['name']);
+            $manager->persist($associationTitle);
+            $this->addReference('job_' . $key, $associationTitle);
         }
         $manager->flush();
     }
