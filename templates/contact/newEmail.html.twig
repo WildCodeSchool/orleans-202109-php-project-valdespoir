@@ -1,0 +1,30 @@
+{% block title %}Bonjour,{% endblock %}
+
+{% block body %}
+	<main class="container">
+		<p>
+			Une nouvelle personne souhaiterait obtenir plus d'informations à propos de vos services, veuillez trouver ci-dessous ses coordonnées.
+		</p>
+		<table>
+			<tr>
+				<td>Nom :</td>
+				<td>{{ contact.lastName }}</td>
+			</tr>
+			<tr>
+				<td>Prénom :</td>
+				<td>{{ contact.firstName }}</td>
+			</tr>
+			<tr>
+				<td>Sujet :</td>
+				<td>{{ contact.subject }}</td>
+			</tr>
+			<tr>
+				<td>E-mail :</td>
+				<td>{{ contact.email }}</td>
+			</tr>
+			<tr>
+				<td>Message :</td>
+				<td>{{ contact.message }}</td>
+			</tr>
+		</main>
+{% endblock %}
