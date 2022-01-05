@@ -17,7 +17,7 @@
                     <h3 class="card-title">{{ actuality.title }}</h3>
                     <p class="card-text">{{ actuality.shortDescription }}</p>
                     <p class="card-date"><small class="text-muted">Date de la publication : {{ actuality.date|date('d/m/Y') }} </small></p>
-                    <a class="btn btn-primary text-light px-3 opacity-75 rounded" href="#"
+                    <a class="btn btn-primary text-light px-3 opacity-75 rounded" href="{{ path('actuality_show', {id: actuality.id}) }}"
                     type="button">Détails</a>
                 </div>
             </div>
