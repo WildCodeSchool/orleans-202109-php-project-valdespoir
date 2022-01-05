@@ -84,7 +84,7 @@ class AdminSiteController extends AbstractController
      */
     public function delete(Request $request, Site $site, EntityManagerInterface $entityManager): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$site->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $site->getId(), (string) $request->request->get('_token'))) {
             $entityManager->remove($site);
             $entityManager->flush();
         }
