@@ -27,7 +27,7 @@ class Actuality
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private string $shortdescription;
+    private string $shortDescription;
 
     /**
      * @ORM\Column(type="text")
@@ -61,14 +61,14 @@ class Actuality
         return $this;
     }
 
-    public function getShortdescription(): ?string
+    public function getShortDescription(): ?string
     {
-        return $this->shortdescription;
+        return $this->shortDescription;
     }
 
-    public function setShortdescription(string $shortdescription): self
+    public function setShortDescription(string $shortDescription): self
     {
-        $this->shortdescription = $shortdescription;
+        $this->shortDescription = $shortDescription;
 
         return $this;
     }

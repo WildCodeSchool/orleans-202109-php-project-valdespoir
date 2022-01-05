@@ -22,13 +22,4 @@ class ActualityController extends AbstractController
             ->findAll();
         return $this->render('actuality/index.html.twig', ['actualitys' => $actualitys]);
     }
-
-    /**
-     * @Route("/show/{id<^[0-9]+$>}", name="show")
-     * @return Response
-     */
-    public function show(Actuality $actuality): Response
-    {
-        return $this->render('actuality/show.html.twig', ['actuality' => $actuality]);
-    }
 }

@@ -17,7 +17,7 @@ class ActualityFixtures extends Fixture
         for ($i = 0; $i < self::ACTUALITY_NUMBER; $i++) {
             $actuality = new Actuality();
             $actuality->setTitle($faker->city);
-            $actuality->setShortdescription($faker->text(150));
+            $actuality->setShortDescription($faker->text(150));
             $actuality->setDescription($faker->text(500));
             $actuality->setDate($faker->dateTime());
             $actuality->setPicture($faker->imageUrl(640, 480, 'animals', true));
