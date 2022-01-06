@@ -1,5 +1,16 @@
 {% extends 'base.html.twig' %}
 
+{% block title %}Accueil
+{% endblock %}
+
+{% block stylesheets %}
+	{{ encore_entry_link_tags('home') }}
+{% endblock %}
+
+{% block banner %}
+	{% include 'include/_banner.html.twig' %}
+{% endblock %}
+
 {% block body %}
-{% include 'include/_banner.html.twig' %}
+	{% include 'home/_sitesCarousel.html.twig' %}
 {% endblock %}
