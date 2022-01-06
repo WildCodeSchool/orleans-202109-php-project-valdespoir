@@ -6,37 +6,36 @@
 {% block body %}
 	<h1 class="d-flex justify-content-center mt-5 mb-5">Tous les chantiers</h1>
 	<main class="container-fluid">
-		<div class="d-flex justify-content-end me-5">
-			<a class="text-decoration-none btn btn-outline-dark rounded fs-5 mb-3" href="{{ path('adminSite_new') }}">Ajouter</a>
+		<div class="d-flex justify-content-end me-5 btn">
+			<a class="text-decoration-none btn btn-outline-dark rounded mb-3 fs-5" href="{{ path('adminSite_new') }}">Ajouter</a>
 		</div>
 		<div class="ms-5 me-5">
 			<table class="table">
-				<thead>
-					<tr>
-						<th>Titre</th>
-						<th>Description</th>
-						<th>Ville</th>
-						<th>Image 1</th>
-						<th>Image 2</th>
-						<th>actions</th>
+					<tr class="fs-5">
+						<th scope="col">Titre</th>
+						<th scope="col">Description</th>
+						<th scope="col">Ville</th>
+						<th scope="col">Image 1</th>
+						<th scope="col">Image 2</th>
+						<th scope="col">actions</th>
 					</tr>
 				</thead>
 				<tbody>
 					{% for site in sites %}
-						<tr>
+						<tr class="fs-5">
 							<td>{{ site.title }}</td>
 							<td>{{ site.description }}</td>
 							<td>{{ site.city }}</td>
 							<td>{{ site.beforePicture }}</td>
 							<td>{{ site.afterPicture }}</td>
 							<td>
-								<a class="text-decoration-none ms-5 btn btn-outline-dark rounded fs-5 mb-3" href="{{ path('adminSite_show', {'id': site.id}) }}">show</a>
+								<a class="text-decoration-none ms-5 btn btn-outline-dark rounded mb-3 mt-3 fs-5" href="{{ path('adminSite_show', {'id': site.id}) }}">Afficher</a>
 								<a class="text-decoration-none ms-5 btn btn-outline-dark rounded fs-5" href="{{ path('adminSite_edit', {'id': site.id}) }}">Éditer</a>
 							</td>
 						</tr>
 					{% else %}
 						<tr>
-							<td colspan="7">no records found</td>
+							<td colspan="6">no records found</td>
 						</tr>
 					{% endfor %}
 				</tbody>
