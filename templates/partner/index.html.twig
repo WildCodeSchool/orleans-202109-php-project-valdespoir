@@ -31,6 +31,23 @@
 			<h2>Les partenaires financiers</h2>
 		</div>
 		<div class="partnerLogo">
+			<div class="container">
+				{% for partenaire in partenaires %}
+
+
+					<img class="col-1 mx-3" src="" alt="">
+
+					<img class="col-1 mx-3" src="{{ asset('build/images/') }}{{ partenaire.picture }}') }}" alt="">
+
+					<img class="col-1 mx-3" src="{{ asset('build/images/LogoDireccte.jpg') }}" alt="">
+
+					<img class="col-1 mx-3" src="{{ asset('build/images/LogoEurope1.jpg') }}" alt="">
+
+					<img class="col-1 mx-3" src="{{ asset('build/images/LogoEurope2.jpg') }}" alt="">
+
+					<img class="col-1 mx-3" src="{{ asset('build/images/LogoRC.jpg') }}" alt="">
+				{% endfor %}
+			</div>
 		</div>
 	</main>
 {% endblock %}
