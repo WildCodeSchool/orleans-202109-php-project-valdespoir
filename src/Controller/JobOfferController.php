@@ -8,10 +8,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+/**
+* @Route("/job_offer", name="job_offer_")
+*/
 class JobOfferController extends AbstractController
 {
     /**
-     * @Route("/job-offer", name="job_offer")
+     * @Route("/", name="index")
      */
     public function index(JobOfferRepository $jobOfferRepository): Response
     {
