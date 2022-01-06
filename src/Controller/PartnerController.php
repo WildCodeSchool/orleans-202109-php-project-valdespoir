@@ -12,7 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class PartnerController extends AbstractController
 {
     /**
-     * @Route("/", name="index")
+     * @Route("/", name="_index")
      */
     public function index(): Response
     {
