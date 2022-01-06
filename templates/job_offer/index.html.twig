@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block banner %}
+	{% include 'job_offer/_banner.html.twig' %}
+{% endblock %}
+
+{% block body %}
+
+	<h1 class="text-center">Nos offres d'emplois</h1>
+
+	{% for job_offer in jobOffers %}
+
+		<main class="container w-50">
+			<div class="card m-3">
+				<div class="row g-0">
+					<div class="col-md-4 col-sm-6 col-lg-4">
+						<img src="{{ asset('build/images/placeholder.png') }}" class="img-fluid rounded-start" alt="...">
+					</div>
+					<div class="col-md-8">
+						<div class="card-body">
+							<h3 class="card-title">{{ job_offer.title }}</h3>
+							<button class="btn btn-success" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample{{ job_offer.id }}" aria-expanded="false" aria-controls="collapseWidthExample{{ job_offer.id }}">
+								Voir le détail de l'offre
+							</button>
+							<div>
+								<div class="collapse collapse" id="collapseWidthExample{{ job_offer.id }}">
+									<div class="card card-body">
+										{{ job_offer.description }}
+									</div>
+									<span class="badge rounded-pill bg-success">Offre datant du :
+										{{ job_offer.date|date('d/m/Y') }}</span>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+	{% endfor %}
+{% endblock %}
