@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/adminSite", name="adminSite_")
+ * @Route("/admin-chantier", name="admin-chantier_")
  */
 class AdminSiteController extends AbstractController
 {
@@ -27,7 +27,7 @@ class AdminSiteController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="new")
+     * @Route("/ajouter", name="ajouter")
      */
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
@@ -41,7 +41,7 @@ class AdminSiteController extends AbstractController
 
             $this->addFlash('success', 'Le chantier a bien été ajouté');
 
-            return $this->redirectToRoute('adminSite_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('admin-chantier_index', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('/adminSite/new.html.twig', [
@@ -51,7 +51,7 @@ class AdminSiteController extends AbstractController
     }
 
     /**
-     * @Route("/show/{id<^[0-9]+$>}", name="show")
+     * @Route("/afficher/{id<^[0-9]+$>}", name="afficher")
      * @return Response
      */
     public function show(Site $site): Response
@@ -62,7 +62,7 @@ class AdminSiteController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="edit", methods={"GET", "POST"})
+     * @Route("/{id}/modifier", name="modifier", methods={"GET", "POST"})
      */
     public function edit(Request $request, Site $site, EntityManagerInterface $entityManager): Response
     {
@@ -74,7 +74,7 @@ class AdminSiteController extends AbstractController
 
             $this->addFlash('success', 'Le chantier a bien été modifié');
 
-            return $this->redirectToRoute('adminSite_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('admin-chantier_index', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('adminSite/edit.html.twig', [
@@ -84,7 +84,7 @@ class AdminSiteController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/delete", name="delete", methods={"GET", "POST"})
+     * @Route("/{id}/supprimer", name="supprimer", methods={"GET", "POST"})
      */
     public function delete(Request $request, Site $site, EntityManagerInterface $entityManager): Response
     {
@@ -94,6 +94,6 @@ class AdminSiteController extends AbstractController
         }
         $this->addFlash('danger', 'Le chantier a bien été supprimé');
 
-        return $this->redirectToRoute('adminSite_index', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('admin-chantier_index', [], Response::HTTP_SEE_OTHER);
     }
 }

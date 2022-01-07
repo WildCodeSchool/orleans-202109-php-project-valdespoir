@@ -7,7 +7,7 @@
 	<h1 class="d-flex justify-content-center mt-5 mb-5">Tous les chantiers</h1>
 	<main class="container-fluid">
 		<div class="d-flex justify-content-end me-5 btn">
-			<a class="text-decoration-none btn btn-outline-dark rounded mb-3 fs-5" href="{{ path('adminSite_new') }}">Ajouter</a>
+			<a class="text-decoration-none btn btn-outline-dark rounded mb-3 fs-5" href="{{ path('admin-chantier_ajouter') }}">Ajouter</a>
 		</div>
 		<div class="ms-5 me-5">
 			<table class="table">
@@ -29,8 +29,8 @@
 							<td>{{ site.beforePicture }}</td>
 							<td>{{ site.afterPicture }}</td>
 							<td>
-								<a class="text-decoration-none ms-5 btn btn-outline-dark rounded mb-3 mt-3 fs-5" href="{{ path('adminSite_show', {'id': site.id}) }}">Afficher</a>
-								<a class="text-decoration-none ms-5 btn btn-outline-dark rounded fs-5" href="{{ path('adminSite_edit', {'id': site.id}) }}">Éditer</a>
+								<a class="text-decoration-none ms-5 btn btn-outline-dark rounded mb-3 mt-3 fs-5" href="{{ path('admin-chantier_afficher', {'id': site.id}) }}">Afficher</a>
+								<a class="text-decoration-none ms-5 btn btn-outline-dark rounded fs-5" href="{{ path('admin-chantier_modifier', {'id': site.id}) }}">Éditer</a>
 							</td>
 						</tr>
 					{% else %}
