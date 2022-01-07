@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/admin-chantier", name="admin-chantier_")
+ * @Route("/admin/chantier", name="admin_chantier_")
  */
 class AdminSiteController extends AbstractController
 {
@@ -41,7 +41,7 @@ class AdminSiteController extends AbstractController
 
             $this->addFlash('success', 'Le chantier a bien été ajouté');
 
-            return $this->redirectToRoute('admin-chantier_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('admin_chantier_index', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('/adminSite/new.html.twig', [
@@ -74,7 +74,7 @@ class AdminSiteController extends AbstractController
 
             $this->addFlash('success', 'Le chantier a bien été modifié');
 
-            return $this->redirectToRoute('admin-chantier_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('admin_chantier_index', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('adminSite/edit.html.twig', [
@@ -94,6 +94,6 @@ class AdminSiteController extends AbstractController
         }
         $this->addFlash('danger', 'Le chantier a bien été supprimé');
 
-        return $this->redirectToRoute('admin-chantier_index', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('admin_chantier_index', [], Response::HTTP_SEE_OTHER);
     }
 }
