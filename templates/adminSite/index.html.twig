@@ -22,7 +22,6 @@
 					<tbody>
 						{% for site in sites %}
 							<tr class="table-light text-dark">
-								<td>{{ site.id }}</td>
 								<td>{{ site.title }}</td>
 								<td>{{ site.description }}</td>
 								<td>{{ site.city }}</td>
@@ -41,6 +40,6 @@
 					</tbody>
 				</table>
 
-				<a href="{{ path('site_new') }}">Create new</a>
+				<a href="{{ path('admin_chantier_ajouter') }}">Create new</a>
 	</main>
 {% endblock %}
