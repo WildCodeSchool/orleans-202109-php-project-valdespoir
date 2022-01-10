@@ -5,31 +5,33 @@
 {% block body %}
 <main class="container-fluid">
     <h1 class="text-center text-dark mt-5 mb-5">Actualité</h1>
-    <div class="table-responsive">
-        <table class="table align-middle text-dark table-bordered border table-borderless table-hover">
-            <tbody>
-                <tr>
-                    <th class="table-dark text-light">Titre</th>
-                    <td>{{ actuality.title }}</td>
-                </tr>
-                <tr>
-                    <th class="table-dark text-light">Petite description</th>
-                    <td>{{ actuality.shortDescription }}</td>
-                </tr>
-                <tr>
-                    <th class="table-dark text-light">Description</th>
-                    <td>{{ actuality.description }}</td>
-                </tr>
-                <tr>
-                    <th class="table-dark text-light">Image</th>
-                    <td>{{ actuality.picture }}</td>
-                </tr>
-                <tr>
-                    <th class="table-dark text-light">Date</th>
-                    <td>{{ actuality.date ? actuality.date|date('Y-m-d') : '' }}</td>
-                </tr>
-            </tbody>
-        </table>
+    <div class="row">
+        <div class="table-responsive">
+            <table class="table align-middle text-dark table-bordered border table-borderless table-hover">
+                <tbody>
+                    <tr>
+                        <th class="table-dark text-light col-1">Titre</th>
+                        <td>{{ actuality.title }}</td>
+                    </tr>
+                    <tr>
+                        <th class="table-dark text-light col-1">Petite description</th>
+                        <td>{{ actuality.shortDescription }}</td>
+                    </tr>
+                    <tr>
+                        <th class="table-dark text-light col-1">Description</th>
+                        <td>{{ actuality.description }}</td>
+                    </tr>
+                    <tr>
+                        <th class="table-dark text-light col-1">Image</th>
+                        <td>{{ actuality.picture }}</td>
+                    </tr>
+                    <tr>
+                        <th class="table-dark text-light col-1">Date</th>
+                        <td>{{ actuality.date ? actuality.date|date('Y-m-d') : '' }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
     <div class="btn-group mt-5">
         {{ include('adminActuality/_delete_form.html.twig') }}
