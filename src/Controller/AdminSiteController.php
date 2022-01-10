@@ -11,13 +11,17 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/site')]
+/**
+ * @Route("/admin/chantier", name="admin_chantier_")
+ */
 class AdminSiteController extends AbstractController
 {
-    #[Route('/', name: 'site_index', methods: ['GET'])]
+/**
+ * @Route("/", name="index")
+ */
     public function index(SiteRepository $siteRepository): Response
     {
-        return $this->render('site/index.html.twig', [
+        return $this->render('adminSite/index.html.twig', [
             'sites' => $siteRepository->findAll(),
         ]);
     }
@@ -42,15 +46,19 @@ class AdminSiteController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'site_show', methods: ['GET'])]
+    /**
+     * @Route("/afficher/{id<^[0-9]+$>}", name="afficher")
+     * @return Response
+     */
     public function show(Site $site): Response
     {
-        return $this->render('site/show.html.twig', [
+        return $this->render('adminSite/show.html.twig', [
             'site' => $site,
         ]);
     }
-
-    #[Route('/{id}/edit', name: 'site_edit', methods: ['GET', 'POST'])]
+    /**
+     * @Route("/{id}/editer", name="editer", methods={"GET", "POST"})
+     */
     public function edit(Request $request, Site $site, EntityManagerInterface $entityManager): Response
     {
         $form = $this->createForm(SiteType::class, $site);
@@ -68,7 +76,9 @@ class AdminSiteController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'site_delete', methods: ['POST'])]
+    /**
+     * @Route("/{id}/supprimer", name="supprimer", methods={"GET", "POST"})
+     */
     public function delete(Request $request, Site $site, EntityManagerInterface $entityManager): Response
     {
         if ($this->isCsrfTokenValid('delete'.$site->getId(), $request->request->get('_token'))) {
