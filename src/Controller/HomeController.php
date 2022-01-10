@@ -14,11 +14,17 @@ class HomeController extends AbstractController
     /**
      * @Route("/", name="home")
      */
-    public function index(SiteRepository $siteRepository, ActualityRepository $actualityRepository, JobOfferRepository $jobOfferRepository): Response
-    {
+    public function index(
+        SiteRepository $siteRepository,
+        ActualityRepository $actualityRepository,
+        JobOfferRepository $jobOfferRepository
+    ): Response {
         $sites = $siteRepository->findAll();
         $actualities = $actualityRepository->findAll();
         $jobOffers = $jobOfferRepository->findAll();
-        return $this->render('home/index.html.twig', ['sites' => $sites, 'actualities' => $actualities, 'jobOffers' => $jobOffers]);
+        return $this->render('home/index.html.twig', [
+            'sites' => $sites, 'actualities' => $actualities,
+            'jobOffers' => $jobOffers
+        ]);
     }
 }
