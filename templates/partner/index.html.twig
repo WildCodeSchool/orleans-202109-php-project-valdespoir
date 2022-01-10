@@ -7,20 +7,17 @@
 			<h2>Les partenaires institutionnels</h2>
 		</div>
 		<div class="mb-5">
-			<p>- Pole Emploi</p>
-			<p>- Maison Du Département</p>
-			<p>- Mission Locale</p>
-			<p>- Relais Emploi</p>
-			<p>- Centre de Formation</p>
+			{% for partenaire in partenaires %}
+				<p>{{ 'partenaire.institutionalPartner' }}</p>
+			{% endfor %}
 		</div>
 		<div class="text-center my-5 row-2">
 			<h2>Les partenaires sociaux</h2>
 		</div>
 		<div class="mb-5">
-			<p>- Centre Communal d'Action Sociale (CCAS)</p>
-			<p>- Maison de l'Habitat</p>
-			<p>- Structures d'hébergements</p>
-			<p>- Structures liées à la santé (ANPAA, APLEAT, CPAM...)</p>
+			{% for partenaire in partenaires %}
+				<p>{{ 'partenaire.socialPartner' }}</p>
+			{% endfor %}
 		</div>
 		<div class="text-center my-5 row-3">
 			<h2>Les partenaires financiers</h2>
@@ -28,7 +25,7 @@
 		<div class="partnerLogo">
 			<div class="container">
 				{% for partenaire in partenaires %}
-					<img class="col-1 mx-3" src="{{ partenaire.picture }}" alt="{{ partenaire.name }}">
+					<img class="col my-3 mx-3" src="{{ partenaire.picture }}" alt="{{ partenaire.name }}">
 				{% endfor %}
 			</div>
 		</div>
