@@ -25,7 +25,7 @@ class Partenaire
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private string $picture;
+    private ?string $picture = null;
 
     /**
      * @ORM\Column(type="string", length=255)
