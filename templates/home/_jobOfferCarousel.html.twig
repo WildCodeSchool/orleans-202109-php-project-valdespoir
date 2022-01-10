@@ -1,0 +1,31 @@
+<main class="container mb-5">
+	<div class="row g-0">
+		<div class="col-md-5">
+			<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+				<div class="carousel-inner">
+					{% for job_offer in jobOffers %}
+						<div class="carousel-item {{ loop.first ? 'active' : '' }}">
+							<img class="img-fluid d-block w-100 " src={% if job_offer.afterImage is defined %} {% else %} "{{ asset('build/images/placeholder.png') }}" {% endif %} alt="job-offer-image">
+							<div class="card-header text-light text-center">{{ job_offer.title }}</div>
+						</div>
+					{% endfor %}
+				</div>
+				<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Previous</span>
+				</button>
+				<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Next</span>
+				</button>
+			</div>
+		</div>
+		<div class="offset-1 col-md-6">
+			<div class="card-body">
+				<h2 class="card-title text-dark text-center mb-3">Nos offres d'emplois</h2>
+				<p class="card-text text-dark">Val Espoir recrute, découvrez les offres d'emplois en cours sur notre page dédiée.</p>
+				<button type="button" class="btn btn-dark mt-2">+ d'offres</button>
+			</div>
+		</div>
+	</div>
+</main>
