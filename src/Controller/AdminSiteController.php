@@ -62,7 +62,7 @@ class AdminSiteController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/modifier", name="modifier", methods={"GET", "POST"})
+     * @Route("/{id}/editer", name="editer", methods={"GET", "POST"})
      */
     public function edit(Request $request, Site $site, EntityManagerInterface $entityManager): Response
     {

@@ -1,10 +1,10 @@
-<main class="container container-form">
+<main class="container-fluid text-dark">
 	{{ form_start(form) }}
-	<div class="row">
+	<div class="row fs-5">
 		{{ form_widget(form) }}
 	</div>
 	<div class="d-flex justify-content-center mt-5 mb-5">
-		<button class="btn btn-dark opacity-85 rounded">{{ button_label|default('Ajouter') }}</button>
+		<button class="btn btn-outline-dark rounded px-3 fs-5">{{ button_label|default('Ajouter') }}</button>
 	</div>
 	{{ form_end(form) }}
 </main>

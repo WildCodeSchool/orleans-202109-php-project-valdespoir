@@ -4,13 +4,13 @@
 {% endblock %}
 
 {% block body %}
-	<h1 class="d-flex justify-content-center mt-5 mb-5">Chantier</h1>
 	<main class="container-fluid">
-		<div class="ms-5 me-5">
+		<h1 class="d-flex justify-content-center mt-5 mb-5 text-dark">Chantier</h1>
+		<div>
 			<table class="table">
-				<tbody>
+				<tbody class="text-dark fs-5">
 					<tr>
-						<th>Title</th>
+						<th>Titre</th>
 						<td>{{ site.title }}</td>
 					</tr>
 					<tr>
@@ -18,26 +18,26 @@
 						<td>{{ site.description }}</td>
 					</tr>
 					<tr>
-						<th>City</th>
+						<th>Ville</th>
 						<td>{{ site.city }}</td>
 					</tr>
 					<tr>
-						<th>BeforePicture</th>
+						<th>Image 1</th>
 						<td>{{ site.beforePicture }}</td>
 					</tr>
 					<tr>
-						<th>AfterPicture</th>
+						<th>Image 2</th>
 						<td>{{ site.afterPicture }}</td>
 					</tr>
 				</tbody>
 			</table>
 		</div>
+		<div class="btn-group mt-5">
+			{{ include('adminSite/_delete_form.html.twig') }}
+			<a class="text-decoration-none btn btn-outline-dark px-3 rounded fs-5 ms-5" href="{{ path('admin_chantier_editer', {'id': site.id}) }}">Éditer</a>
+		</div>
+		<div class="mt-5">
+			<a class="text-decoration-none" href="{{ path('admin_chantier_index') }}">< retour</a>
+		</div>
 	</main>
-    <div class="btn-group mt-5">
-	{{ include('adminSite/_delete_form.html.twig') }}
-	<a class="text-decoration-none ms-5 btn btn-outline-dark rounded fs-5" href="{{ path('admin_chantier_modifier', {'id': site.id}) }}">Éditer</a>
-    </div>
-	<div class="mt-5">
-		<a class="text-decoration-none ms-5" href="{{ path('admin_chantier_index') }}">< retour</a>
-    </div>
-		{% endblock %}
+{% endblock %}
