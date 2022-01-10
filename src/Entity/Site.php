@@ -4,9 +4,11 @@ namespace App\Entity;
 
 use App\Repository\SiteRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * @ORM\Entity(repositoryClass=SiteRepository::class)
+ * @UniqueEntity("title")
  */
 class Site
 {

@@ -1,4 +1,22 @@
 @import 'variables.scss';
+
 .btn {
-    width: 100px;
+    width: 120px;
+    font-size: 18px;
+    font-family: $text-font;
+}
+
+.btn-add {
+    margin-right: 68px;
+    font-size: 18px;
+}
+
+.entete {
+    font-family: $text-font;
+    font-size: 24px;
+}
+
+.text {
+    font-size: 18px;
+    font-family: $text-font;
 }

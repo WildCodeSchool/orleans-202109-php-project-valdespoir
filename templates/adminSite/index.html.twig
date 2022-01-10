@@ -3,15 +3,17 @@
 {% block title %}Site index
 {% endblock %}
 
+{% block stylesheets %}{{ encore_entry_link_tags('adminSite') }}{% endblock %}
+
 {% block body %}
-	<h1 class="d-flex justify-content-center mt-5 mb-5">Tous les chantiers</h1>
+	<h1 class="d-flex justify-content-center mt-5 mb-4">Tous les chantiers</h1>
 	<main class="container-fluid">
-		<div class="d-flex justify-content-end me-5 btn">
-			<a class="text-decoration-none btn btn-outline-dark rounded mb-3 fs-5" href="{{ path('admin_chantier_ajouter') }}">Ajouter</a>
+		<div class="d-flex justify-content-end">
+			<a class="text-decoration-none btn btn-outline-dark btn-add rounded mb-3" href="{{ path('admin_chantier_ajouter') }}">Ajouter</a>
 		</div>
 		<div class="ms-5 me-5">
 			<table class="table">
-					<tr class="fs-5">
+					<tr class="entete">
 						<th scope="col">Titre</th>
 						<th scope="col">Description</th>
 						<th scope="col">Ville</th>
@@ -22,15 +24,15 @@
 				</thead>
 				<tbody>
 					{% for site in sites %}
-						<tr class="fs-5">
+						<tr class="text">
 							<td>{{ site.title }}</td>
 							<td>{{ site.description }}</td>
 							<td>{{ site.city }}</td>
 							<td>{{ site.beforePicture }}</td>
 							<td>{{ site.afterPicture }}</td>
-							<td>
-								<a class="text-decoration-none ms-5 btn btn-outline-dark rounded mb-3 mt-3 fs-5" href="{{ path('admin_chantier_afficher', {'id': site.id}) }}">Afficher</a>
-								<a class="text-decoration-none ms-5 btn btn-outline-dark rounded fs-5" href="{{ path('admin_chantier_modifier', {'id': site.id}) }}">Éditer</a>
+							<td class="button">
+								<a class="text-decoration-none ms-5 btn btn-outline-dark rounded mb-3 mt-3" href="{{ path('admin_chantier_afficher', {'id': site.id}) }}">Afficher</a>
+								<a class="text-decoration-none ms-5 btn btn-outline-dark rounded" href="{{ path('admin_chantier_modifier', {'id': site.id}) }}">Éditer</a>
 							</td>
 						</tr>
 					{% else %}
