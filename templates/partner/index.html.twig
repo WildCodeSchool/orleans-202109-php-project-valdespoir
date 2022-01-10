@@ -8,7 +8,12 @@
 		</div>
 		<div class="mb-5">
 			{% for partenaire in partenaires %}
-				<p>{{ 'partenaire.institutionalPartner' }}</p>
+				<p>
+					{% if partner.picture is defined %}
+						{% else %}
+							{{ partenaire.name }}
+					{% endif %}
+					</p>
 			{% endfor %}
 		</div>
 		<div class="text-center my-5 row-2">
@@ -16,7 +21,12 @@
 		</div>
 		<div class="mb-5">
 			{% for partenaire in partenaires %}
-				<p>{{ 'partenaire.socialPartner' }}</p>
+				<p>
+					{% if partenaire.picture is defined %}
+						{% else %}
+							{{ partenaire.name }}
+					{% endif %}
+				</p>
 			{% endfor %}
 		</div>
 		<div class="text-center my-5 row-3">
@@ -25,7 +35,7 @@
 		<div class="partnerLogo">
 			<div class="container">
 				{% for partenaire in partenaires %}
-					<img class="col my-3 mx-3" src="{{ partenaire.picture }}" alt="{{ partenaire.name }}">
+					<img class="col my-3 mx-3" src={% if partenaire.picture is defined %} {% endif %}>
 				{% endfor %}
 			</div>
 		</div>

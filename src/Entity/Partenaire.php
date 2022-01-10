@@ -28,14 +28,9 @@ class Partenaire
     private string $picture;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=255)
      */
-    //private $institutionalPartner;
-
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-   // private $socialPartner;
+    private string $category;
 
     public function getId(): ?int
     {
@@ -66,27 +61,15 @@ class Partenaire
         return $this;
     }
 
-   /* public function getInstitutionalPartner(): ?string
+    public function getCategory(): ?string
     {
-        return $this->institutionalPartner;
+        return $this->category;
     }
 
-    public function setInstitutionalPartner(?string $institutionalPartner): self
+    public function setCategory(string $category): self
     {
-        $this->institutionalPartner = $institutionalPartner;
+        $this->category = $category;
 
         return $this;
     }
-
-    public function getSocialPartner(): ?string
-    {
-        return $this->socialPartner;
-    }
-
-    public function setSocialPartner(?string $socialPartner): self
-    {
-        $this->socialPartner = $socialPartner;
-
-        return $this;
-    }*/
 }
