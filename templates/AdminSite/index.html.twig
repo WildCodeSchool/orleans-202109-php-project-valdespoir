@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Site index{% endblock %}
+
+{% block body %}
+    <h1>Site index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>City</th>
+                <th>BeforePicture</th>
+                <th>AfterPicture</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for site in sites %}
+            <tr>
+                <td>{{ site.id }}</td>
+                <td>{{ site.title }}</td>
+                <td>{{ site.description }}</td>
+                <td>{{ site.city }}</td>
+                <td>{{ site.beforePicture }}</td>
+                <td>{{ site.afterPicture }}</td>
+                <td>
+                    <a href="{{ path('site_show', {'id': site.id}) }}">show</a>
+                    <a href="{{ path('site_edit', {'id': site.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('site_new') }}">Create new</a>
+{% endblock %}
