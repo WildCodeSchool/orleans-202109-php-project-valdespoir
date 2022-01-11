@@ -13,7 +13,7 @@
 						{% else %}
 							{{ partenaire.name }}
 					{% endif %}
-					</p>
+				</p>
 			{% endfor %}
 		</div>
 		<div class="text-center my-5 row-2">
@@ -22,7 +22,7 @@
 		<div class="mb-5">
 			{% for partenaire in partenaires %}
 				<p>
-					{% if partenaire.picture is defined %}
+					{% if partenaire.picture is empty %}
 						{% else %}
 							{{ partenaire.name }}
 					{% endif %}
@@ -35,7 +35,7 @@
 		<div class="partnerLogo">
 			<div class="container">
 				{% for partenaire in partenaires %}
-					<img class="col my-3 mx-3" src={% if partenaire.picture is defined %} {% endif %}>
+					<img class="col-1 my-3 mx-3" src={% if partenaire.picture is empty %} {% else %} {{ partenaire.picture }} {% endif %}>
 				{% endfor %}
 			</div>
 		</div>
