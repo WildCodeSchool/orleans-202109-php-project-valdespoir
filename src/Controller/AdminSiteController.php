@@ -39,10 +39,12 @@ class AdminSiteController extends AbstractController
             $entityManager->persist($site);
             $entityManager->flush();
 
-            return $this->redirectToRoute('site_index', [], Response::HTTP_SEE_OTHER);
+            $this->addFlash('succes', 'Le chantier a bien été ajouté');
+
+            return $this->redirectToRoute('admin_site_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('site/new.html.twig', [
+        return $this->renderForm('admin_site/new.html.twig', [
             'site' => $site,
             'form' => $form,
         ]);
