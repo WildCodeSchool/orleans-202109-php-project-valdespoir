@@ -27,6 +27,11 @@ class Partner
      */
     private ?string $picture = null;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private ?string $link = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -52,6 +57,18 @@ class Partner
     public function setPicture(string $picture): self
     {
         $this->picture = $picture;
+
+        return $this;
+    }
+
+    public function getLink(): ?string
+    {
+        return $this->link;
+    }
+
+    public function setLink(?string $link): self
+    {
+        $this->link = $link;
 
         return $this;
     }
