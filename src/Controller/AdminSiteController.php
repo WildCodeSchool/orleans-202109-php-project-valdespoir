@@ -59,6 +59,8 @@ class AdminSiteController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->flush();
 
+            $this->addFlash('success', 'Le chantier a bien été modifié');
+
             return $this->redirectToRoute('admin_site_index', [], Response::HTTP_SEE_OTHER);
         }
 
