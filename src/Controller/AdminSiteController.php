@@ -22,7 +22,7 @@ class AdminSiteController extends AbstractController
     public function index(SiteRepository $siteRepository): Response
     {
         return $this->render('adminSite/index.html.twig', [
-            'sites' => $siteRepository->findBy([], ['title'=> 'ASC']),
+            'sites' => $siteRepository->findBy([], ['title' => 'ASC']),
         ]);
     }
 
