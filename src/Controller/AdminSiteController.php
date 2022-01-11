@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/admin/chantier", name="admin_chantier_")
+ * @Route("/admin/chantier", name="admin_site_")
  */
 class AdminSiteController extends AbstractController
 {
@@ -27,7 +27,7 @@ class AdminSiteController extends AbstractController
     }
 
     /**
-     * @Route("/ajouter", name="ajouter")
+     * @Route("/ajouter", name="new")
      */
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
@@ -49,17 +49,7 @@ class AdminSiteController extends AbstractController
     }
 
     /**
-     * @Route("/afficher/{id<^[0-9]+$>}", name="afficher")
-     * @return Response
-     */
-    public function show(Site $site): Response
-    {
-        return $this->render('adminSite/show.html.twig', [
-            'site' => $site,
-        ]);
-    }
-    /**
-     * @Route("/{id}/editer", name="editer", methods={"GET", "POST"})
+     * @Route("/{id}/editer", name="edit", methods={"GET", "POST"})
      */
     public function edit(Request $request, Site $site, EntityManagerInterface $entityManager): Response
     {
@@ -79,7 +69,7 @@ class AdminSiteController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/supprimer", name="supprimer", methods={"GET", "POST"})
+     * @Route("/{id}/supprimer", name="delete", methods={"GET", "POST"})
      */
     public function delete(Request $request, Site $site, EntityManagerInterface $entityManager): Response
     {
