@@ -3,9 +3,9 @@
 {% block title %}New Site{% endblock %}
 
 {% block body %}
-    <h1>Create new Site</h1>
+    <h1 class="text-center text-dark mt-5 mb-5">Ajouter un chantier</h1>
 
-    {{ include('site/_form.html.twig') }}
+    {{ include('adminSite/_form.html.twig') }}
 
-    <a href="{{ path('site_index') }}">back to list</a>
+    <a class="text-decoration-none ms-2" href="{{ path('admin_site_index') }}">< Retour</a>
 {% endblock %}
