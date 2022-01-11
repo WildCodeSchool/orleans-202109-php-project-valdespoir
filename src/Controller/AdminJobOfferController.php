@@ -73,7 +73,7 @@ class AdminJobOfferController extends AbstractController
      */
     public function delete(Request $request, JobOffer $jobOffer, EntityManagerInterface $entityManager): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$jobOffer->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $jobOffer->getId(), (string) $request->request->get('_token'))) {
             $entityManager->remove($jobOffer);
             $entityManager->flush();
         }
