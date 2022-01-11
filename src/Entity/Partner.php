@@ -2,13 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\PartenaireRepository;
+use App\Repository\PartnerRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=PartenaireRepository::class)
+ * @ORM\Entity(repositoryClass=PartnerRepository::class)
  */
-class Partenaire
+class Partner
 {
     /**
      * @ORM\Id
@@ -26,11 +26,6 @@ class Partenaire
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private ?string $picture = null;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private string $category;
 
     public function getId(): ?int
     {
@@ -57,18 +52,6 @@ class Partenaire
     public function setPicture(string $picture): self
     {
         $this->picture = $picture;
-
-        return $this;
-    }
-
-    public function getCategory(): ?string
-    {
-        return $this->category;
-    }
-
-    public function setCategory(string $category): self
-    {
-        $this->category = $category;
 
         return $this;
     }

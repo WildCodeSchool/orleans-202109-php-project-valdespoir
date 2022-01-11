@@ -3,40 +3,19 @@
 {% block body %}
 	{% include 'partner/_banner.html.twig' %}
 	<main class="container">
-		<div class="text-center my-5 row-4 rounded-2">
-			<h2>Les partenaires institutionnels</h2>
-		</div>
-		<div class="mb-5">
-			{% for partenaire in partenaires %}
-				<p>
-					{% if partner.picture is defined %}
-						{% else %}
-							{{ partenaire.name }}
-					{% endif %}
-				</p>
-			{% endfor %}
-		</div>
-		<div class="text-center my-5 row-2">
-			<h2>Les partenaires sociaux</h2>
-		</div>
-		<div class="mb-5">
-			{% for partenaire in partenaires %}
-				<p>
-					{% if partenaire.picture is empty %}
-						{% else %}
-							{{ partenaire.name }}
-					{% endif %}
-				</p>
-			{% endfor %}
-		</div>
-		<div class="text-center my-5 row-3">
-			<h2>Les partenaires financiers</h2>
-		</div>
-		<div class="partnerLogo">
-			<div class="container">
-				{% for partenaire in partenaires %}
-					<img class="col-1 my-3 mx-3" src={% if partenaire.picture is empty %} {% else %} {{ partenaire.picture }} {% endif %}>
-				{% endfor %}
+		<div class="row">
+			<div class="text-center my-5 row-4 rounded-2">
+				<h2>Les partenaires</h2>
+			</div>
+			<div class="partnerLogo">
+				<div class="container">
+					{% for partner in partners %}
+						<img class="col-1 my-3 mx-3" src={% if partner.picture is empty %} {% else %} {{ partner.picture }} {% endif %}>
+					<p>
+					{% if partner.picture is empty %}{% else %} {{ partner.name }} {% endif %} <a href=""></a>
+					</p>
+					{% endfor %}
+				</div>
 			</div>
 		</div>
 	</main>
