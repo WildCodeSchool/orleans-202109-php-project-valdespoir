@@ -10,10 +10,7 @@
 			<div class="partnerLogo">
 				<div class="container">
 					{% for partner in partners %}
-						<img class="col-1 my-3 mx-3" src={% if partner.picture is empty %} {% else %} {{ partner.picture }} {% endif %}>
-					<p>
-					{% if partner.picture is empty %}{% else %} {{ partner.name }} {% endif %} <a href=""></a>
-					</p>
+						<img class="col-1 my-3 mx-3" src={% if partner.picture is empty %} {{ partner.name }} {% else %} {{ partner.picture }} {% endif %}>
 					{% endfor %}
 				</div>
 			</div>
