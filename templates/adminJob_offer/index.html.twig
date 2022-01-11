@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}JobOffer index
+{% endblock %}
+
+{% block body %}
+	<main class="container-fluid">
+		<h1 class="text-center text-dark mt-5 mb-5">Liste des offres d'emplois</h1>
+		<div>
+			<a class="btn btn-outline-primary px-2 rounded mb-3 fs-5" href="{{ path('adminJob_offer_new') }}">Ajouter</a>
+		</div>
+		<div class="row">
+			<div class="table-responsive">
+				<table class="table align-middle text-dark table-bordered border table-borderless table-hover">
+					<thead class="table-dark text-light">
+						<tr class="text-center fs-4">
+							<th>Date</th>
+							<th>Titre</th>
+							<th>Actions</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for job_offer in job_offers %}
+							<tr>
+								<td>{{ job_offer.date ? job_offer.date|date('Y-m-d H:i:s') : '' }}</td>
+								<td>{{ job_offer.title }}</td>
+								<td>
+									<a class="btn btn-outline-dark px-2 rounded mb-3 fs-5" href="{{ path('adminJob_offer_edit', {'id': job_offer.id}) }}">Éditer</a>
+								</td>
+							</tr>
+						{% else %}
+							<tr>
+								<td colspan="5">no records found</td>
+							</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</main>
+
+{% endblock %}

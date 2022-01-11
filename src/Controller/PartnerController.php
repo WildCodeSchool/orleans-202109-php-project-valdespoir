@@ -8,8 +8,8 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
-     * @Route("/partner", name="partner")
-     */
+* @Route("/partner", name="partner")
+*/
 class PartnerController extends AbstractController
 {
     /**
