@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Éditer une actualité{% endblock %}
+
+{% block body %}
+<main class="container-fluid">
+    <h1 class="text-dark text-center mb-5 mt-5">Éditer une actualité</h1>
+
+    {{ include('adminActuality/_form.html.twig', {'button_label': 'Éditer'}) }}
+    <div class="ms-2">
+        {{ include('adminActuality/_delete_form.html.twig') }}
+    </div>
+    <div class="mt-5">
+        <a class="text-decoration-none ms-2" href="{{ path('admin_actuality_index') }}">
+            < Retour</a>
+    </div>
+</main>
+{% endblock %}
