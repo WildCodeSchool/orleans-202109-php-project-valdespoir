@@ -39,10 +39,12 @@ class AdminJobOfferController extends AbstractController
             $entityManager->persist($jobOffer);
             $entityManager->flush();
 
-            return $this->redirectToRoute('job_offer_index', [], Response::HTTP_SEE_OTHER);
+            $this->addFlash('success', 'L\'offre d\'emploi a bien été ajoutée !');
+
+            return $this->redirectToRoute('adminJob_offer_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('job_offer/new.html.twig', [
+        return $this->renderForm('adminJob_offer/new.html.twig', [
             'job_offer' => $jobOffer,
             'form' => $form,
         ]);
@@ -62,7 +64,7 @@ class AdminJobOfferController extends AbstractController
             return $this->redirectToRoute('job_offer_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('job_offer/edit.html.twig', [
+        return $this->renderForm('adminJob_offer/edit.html.twig', [
             'job_offer' => $jobOffer,
             'form' => $form,
         ]);
