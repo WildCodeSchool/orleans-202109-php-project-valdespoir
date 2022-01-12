@@ -39,7 +39,8 @@ class AdminActualityController extends AbstractController
             $entityManager->persist($actuality);
             $entityManager->flush();
 
-            return $this->redirectToRoute('adminActuality_index', [], Response::HTTP_SEE_OTHER);
+            $this->addFlash('success', 'L\'actualité a bien été ajoutée');
+            return $this->redirectToRoute('admin_actuality_index', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('adminActuality/new.html.twig', [
@@ -59,7 +60,7 @@ class AdminActualityController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->flush();
 
-            return $this->redirectToRoute('adminActuality_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('admin_actuality_index', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('adminActuality/edit.html.twig', [
@@ -78,6 +79,6 @@ class AdminActualityController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('adminActuality_index', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('admin_actuality_index', [], Response::HTTP_SEE_OTHER);
     }
 }
