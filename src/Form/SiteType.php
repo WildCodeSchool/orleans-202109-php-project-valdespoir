@@ -8,7 +8,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\UrlType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 
 class SiteType extends AbstractType
 {
@@ -18,11 +18,11 @@ class SiteType extends AbstractType
             ->add('title', TextType::class, ['label' => 'Titre',])
             ->add('description', TextareaType::class, ['label' => 'Description',])
             ->add('city', TextType::class, ['label' => 'Ville',])
-            ->add('beforePicture', UrlType::class, [
-                'label' => 'Image 1',
+            ->add('beforePicture', FileType::class, [
+                'label' => 'Image avant',
             ])
-            ->add('afterPicture', UrlType::class, [
-                'label' => 'Image 2',
+            ->add('afterPicture', FileType::class, [
+                'label' => 'Image après',
             ]);
     }
 
