@@ -1,5 +1,6 @@
 .card-site {
     transition: transform 0.2s;
+    height: 460px;
 
     &:hover {
         filter: brightness(120%);
@@ -7,9 +8,7 @@
         overflow: hidden;
         transform: scale(1.05);
     }
-    img {
-        object-fit: cover;
-        height: 460px;
-        width: 100%;
-    }
+}
+.card-picture {
+    height: 800px;
 }
