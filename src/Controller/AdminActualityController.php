@@ -60,6 +60,8 @@ class AdminActualityController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->flush();
 
+            $this->addFlash('success', 'L\'actualité a bien été modifiée');
+
             return $this->redirectToRoute('admin_actuality_index', [], Response::HTTP_SEE_OTHER);
         }
 
