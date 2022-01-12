@@ -3,32 +3,17 @@
 {% block body %}
 	{% include 'partner/_banner.html.twig' %}
 	<main class="container">
-		<h1 class="text-center text-success">Nos partenaires</h1>
-		<div class="text-center">
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci voluptate quia modi ad sapiente voluptatem necessitatibus dolores accusamus. Eius vitae ea ad eligendi doloremque sed quis molestias ex expedita necessitatibus? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit, quas ut optio, culpa repellendus dicta illo repudiandae ab impedit officia sed, in perspiciatis odit similique. Odit eum dicta quasi ex.</p>
-		</div>
-		<div class="text-center my-5 row-4 rounded-2">
-			<h2>Les partenaires institutionnels</h2>
-		</div>
-		<div class="mb-5">
-			<p>- Pole Emploi</p>
-			<p>- Maison Du Département</p>
-			<p>- Mission Locale</p>
-			<p>- Relais Emploi</p>
-			<p>- Centre de Formation</p>
-		</div>
-		<div class="text-center my-5 row-2">
-
-			<h2>Les partenaires sociaux</h2>
-		</div>
-		<div class="mb-5">
-			<p>- Centre Communal d'Action Sociale (CCAS)</p>
-			<p>- Maison de l'Habitat</p>
-			<p>- Structures d'hébergements</p>
-			<p>- Structures liées à la santé (ANPAA, APLEAT, CPAM...)</p>
-		</div>
-		<div class="text-center my-5 row-3">
-			<h2>Les partenaires financiers</h2>
+		<div class="row">
+			<div class="text-center my-5 row-4 rounded-2">
+				<h2>Les partenaires</h2>
+			</div>
+			<div class="partnerLogo">
+				<div class="container">
+					{% for partner in partners %}
+						<p><img class="col-1 my-3 mx-3" src={% if partner.picture is empty %} {{ partner.name }} {% else %} {{ partner.picture }} {% endif %}>{{ partner.name }}</p>
+					{% endfor %}
+				</div>
+			</div>
 		</div>
 	</main>
 {% endblock %}
