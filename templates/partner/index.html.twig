@@ -1,7 +1,19 @@
 {% extends 'base.html.twig' %}
 
-{% block banner %}
+{% block body %}
 	{% include 'partner/_banner.html.twig' %}
+	<main class="container">
+		<div class="row">
+			<div class="text-center my-5 row-4 rounded-2">
+				<h2 class="text-center text-success">Les partenaires</h2>
+			</div>
+			<div class="partnerLogo">
+				<div class="container">
+					{% for partner in partners %}
+						<a href="{{ partner.link }}"><p><img class="col-1 my-3 mx-3" src={% if partner.picture is empty %} {{ partner.name }} {% else %} {{ partner.picture }} {% endif %}>{{ partner.name }}</p></a>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</main>
 {% endblock %}
-
-{% block body %}{% endblock %}
