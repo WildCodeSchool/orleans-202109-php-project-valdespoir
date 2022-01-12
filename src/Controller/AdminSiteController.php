@@ -82,6 +82,6 @@ class AdminSiteController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('site_index', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('admin_site_index', [], Response::HTTP_SEE_OTHER);
     }
 }
