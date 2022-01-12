@@ -3,11 +3,11 @@
 {% block title %}Edit JobOffer{% endblock %}
 
 {% block body %}
-    <h1>Edit JobOffer</h1>
+    <h1 class="text-center text-dark mt-5 mb-5">Editer une offre d'emploi</h1>
 
-    {{ include('job_offer/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('adminJob_offer/_form.html.twig', {'button_label': 'Éditer'}) }}
 
-    <a href="{{ path('job_offer_index') }}">back to list</a>
+    <a class="text-decoration-none ms-2"href="{{ path('adminJob_offer_index') }}">< Retour></a>
 
-    {{ include('job_offer/_delete_form.html.twig') }}
+    {{ include('adminJob_offer/_delete_form.html.twig') }}
 {% endblock %}
