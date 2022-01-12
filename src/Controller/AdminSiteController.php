@@ -81,7 +81,8 @@ class AdminSiteController extends AbstractController
             $entityManager->remove($site);
             $entityManager->flush();
         }
+        $this->addFlash('danger', 'Le chantier a bien été supprimé');
 
-        return $this->redirectToRoute('site_index', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('admin_site_index', [], Response::HTTP_SEE_OTHER);
     }
 }
