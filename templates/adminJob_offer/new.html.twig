@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New JobOffer{% endblock %}
+
+{% block body %}
+	<h1 class="text-center text-dark mt-5 mb-5">Ajouter une offre d'emploi</h1>
+	{{ include('adminJob_offer/_form.html.twig') }}
+
+	<a class="text-decoration-none ms-2"href="{{ path('adminJob_offer_index') }}">< Retour</a>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Actuality{% endblock %}
+
+{% block body %}
+<main class="container-fluid">
+    <h1 class="text-dark text-center mb-5 mt-5">Ajouter une nouvelle actualité</h1>
+
+    {{ include('adminActuality/_form.html.twig') }}
+    <a class="text-decoration-none ms-5 fs-5" href="{{ path('admin_actuality_index') }}"> < Retour</a>
+</main>
+{% endblock %}
