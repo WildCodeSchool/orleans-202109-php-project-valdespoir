@@ -16,22 +16,22 @@ class Member
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
-    private $id;
+    private int $id;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $name;
+    private string $name;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $role;
+    private string $role;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $description;
+    private string $description;
 
     public function getId(): ?int
     {

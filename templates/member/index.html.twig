@@ -4,49 +4,34 @@
 
 {% block body %}
 {% include 'include/_banner.html.twig' %}
-<p class="text-center">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat animi possimus eaque quod perspiciatis impedit ab. Vero, sint omnis, laboriosam ab optio fugit nostrum aspernatur, distinctio suscipit expedita molestias impedit!</p>
 
+<h2 class="text-center text-success">ValEspoir est une association</h2>
+{% for member in members %}
 <main class ="container">
 <div>
-    <h3 class="text-center bg-secondary  fw-bold">Les membres du Conseil d'administration</h3>
-    <p class="text-center  fw-bold">{{ Member.role }} :   <span class="text-left fs-4 fw-normal">{{ Member.name }}</span></p>
-    <p class="text-center  fw-bold">{{ Member.role }} :   <span class="text-center fs-4 fw-normal">{{ Member.name }}</span></p>
-    <p class="text-center  fw-bold">{{ Member.role }} :    <span class="text-left fs-4 fw-normal">{{ Member.name }}</span></p>
-    <p class="text-center text-secondary ">Ce sont des bénévoles qui gèrent et portent la responsabilité juridique de l'Member</p>
+<<div class="card m-3">
+    <div class="card-body">
+      <h3 class="card-title text-center">{{ member.name }}</h3>
+      <h5 class="card-title text-center">{{ member.role }}</h5>
+      <p class="card-text text-center">{{ member.description }}</p>
+    </div>
+  </div>
 </div>
-<div>
-    <h3 class="text-center bg-secondary  fw-bold">La Direction</h3>
-    <p class="text-center p-3  fw-bold">{{ Member.name }}</p>
-    <p class="text-center text-secondary ">Elle travaille en lien avec le président de Val Espoir, elle gère aussi le fonctionnement administratif de Val Espoir.</p>
-</div>
-<div>
-    <h3 class="text-center bg-secondary  fw-bold">La Direction Adjoint</h3>
-    <p class="text-center p-3  fw-bold">{{ Member.name }}</p>
-    <p class="text-center text-secondary ">Il gère les encadrants techniques et la planification des chantiers. Il établit les devis et le suivi de la clientèle.</p>
-</div>
-<div>
-    <h3 class="text-center bg-secondary  fw-bold">La Conseillère en Insertion Professionelle </h3>
-    <p class="text-center p-3  fw-bold">{{ Member.name }}</p>
-    <p class="text-center text-secondary ">La conseillère vous aide à résoudre des problèmes à finalité professionnelle. Elle conseille et propose des actions d'accompagnement professionnel afin de favoriser l'emploi et l'insertion.</p>
-</div>
-<div>
-    <h3 class="text-center bg-secondary  fw-bold">Les Encadrants Techniques</h3>
-    <p class="text-center p-3  fw-bold">{{ Member.name }}</p>
-    <p class="text-center p-3  fw-bold">{{ Member.name }}</p>
-</div>
+{% endfor %}
 <div>
     <h3 class="text-center bg-secondary  fw-bold">Les Deux Structures</h3>
-    <p class="text-center p-2  fw-bold"></p>
-    <p class="text-center p-2  fw-bold"></p>
+    <p class="text-center p-2  fw-bold">Jargeau</p>
+    <p class="text-center p-2  fw-bold">Olivet</p>
 </div>
 <div>
     <h3 class="text-center bg-secondary  fw-bold">Public Visé</h3>
-    <p class="text-start p-2  fw-bold"></p>
-    <p class="text-start p-2  fw-bold"></p>
-    <p class="text-start p-2  fw-bold"></p>
+    <p class="text-center p-2  fw-bold">Jeunes</p>
+    <p class="text-center p-2  fw-bold">vieux</p>
+    <p class="text-center p-2  fw-bold">con</p>
 </div>
 <div>
     <h3 class="text-center bg-secondary  fw-bold">Comment l'Association Aide</h3>
-    <p class="text-center "></p>
+    <p class="text-center p-2 fw-bold">Bonjour</p>
 </div>
+
 {% endblock %}

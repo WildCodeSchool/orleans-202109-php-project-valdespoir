@@ -9,7 +9,7 @@ use Faker\Factory;
 
 class MemberFixtures extends Fixture
 {
-    public const MEMBER_NUMBER = 6;
+    public const MEMBER_NUMBER = 13;
 
     public function load(ObjectManager $manager): void
     {
