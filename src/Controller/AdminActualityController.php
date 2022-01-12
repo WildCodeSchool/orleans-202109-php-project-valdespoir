@@ -80,6 +80,7 @@ class AdminActualityController extends AbstractController
             $entityManager->remove($actuality);
             $entityManager->flush();
         }
+        $this->addFlash('danger', 'L\'actualité a bien été supprimée');
 
         return $this->redirectToRoute('admin_actuality_index', [], Response::HTTP_SEE_OTHER);
     }
