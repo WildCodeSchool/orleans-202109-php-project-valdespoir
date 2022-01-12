@@ -3,11 +3,16 @@
 namespace App\Entity;
 
 use App\Repository\SiteRepository;
+use DateTimeImmutable;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\HttpFoundation\File\File;
+use DateTimeInterface;
 
 /**
  * @ORM\Entity(repositoryClass=SiteRepository::class)
+ * @Vich\Uploadable
  */
 class Site
 {
@@ -39,16 +44,79 @@ class Site
     private string $city;
 
     /**
-     * @ORM\Column(type="string", length=255)
-     * @Assert\Url
+     * @Vich\UploadableField(mapping="images", fileNameProperty="beforePicture")
+     * @Assert\File(
+     * maxSize = "1M",
+     * mimeTypes = {"image/jpeg", "image/png", "image/jpg"},
+     * )
+     * @var File|null
      */
-    private string $beforePicture;
+    private $beforePictureFile;
 
     /**
-     * @ORM\Column(type="string", length=255)
-     * @Assert\Url
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private string $afterPicture;
+    private string $beforePicture = '';
+
+    /**
+     * @Vich\UploadableField(mapping="images", fileNameProperty="afterPicture")
+     * @Assert\File(
+     * maxSize = "1M",
+     * mimeTypes = {"image/jpeg", "image/png", "image/jpg"},
+     * )
+     * @var File|null
+     */
+    private $afterPictureFile;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private string $afterPicture = '';
+
+    /**
+     * @ORM\Column(type="datetime")
+     * @var \DateTimeInterface|null
+     */
+    private ?DateTimeInterface $updatedAt;
+
+    /**
+     * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile|null $beforePictureFile
+     */
+    public function setBeforePictureFile(?File $beforePictureFile = null): void
+    {
+        $this->beforePictureFile = $beforePictureFile;
+
+        if (null !== $beforePictureFile) {
+            $this->updatedAt = new DateTimeImmutable();
+        }
+    }
+
+    public function getBeforePictureFile(): ?File
+    {
+        return $this->beforePictureFile;
+    }
+
+    /**
+     * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile|null $afterPictureFile
+     */
+    public function setAfterPictureFile(?File $afterPictureFile = null): void
+    {
+        $this->afterPictureFile = $afterPictureFile;
+
+        if (null !== $afterPictureFile) {
+            $this->updatedAt = new DateTimeImmutable();
+        }
+    }
+
+    public function getAfterPictureFile(): ?File
+    {
+        return $this->afterPictureFile;
+    }
+
+    public function getUpdatedAt(): ?DateTimeInterface
+    {
+        return $this->updatedAt;
+    }
 
     public function getId(): ?int
     {

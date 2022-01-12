@@ -7,4 +7,9 @@
         overflow: hidden;
         transform: scale(1.05);
     }
+    img {
+        object-fit: cover;
+        height: 460px;
+        width: 100%;
+    }
 }
