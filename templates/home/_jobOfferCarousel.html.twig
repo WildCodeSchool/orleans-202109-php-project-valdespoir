@@ -1,12 +1,12 @@
-<main class="container mb-5">
+<main class="container mb-5 mt-5">
 	<div class="row g-0">
-		<div class="col-md-5">
+		<div class="col-md-5 mb-5 mt-5">
 			<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
 				<div class="carousel-inner">
 					{% for job_offer in jobOffers %}
 						<div class="carousel-item {{ loop.first ? 'active' : '' }}">
 							<img class="img-fluid d-block w-100 " src={% if job_offer.afterImage is defined %} {% else %} "{{ asset('build/images/placeholder.png') }}" {% endif %} alt="job-offer-image">
-							<div class="card-header text-light text-center">{{ job_offer.title }}</div>
+							<div class="card-header text-light bg-dark opacity-75 text-center">{{ job_offer.title }}</div>
 						</div>
 					{% endfor %}
 				</div>
@@ -20,11 +20,11 @@
 				</button>
 			</div>
 		</div>
-		<div class="offset-1 col-md-6">
-			<div class="card-body">
+		<div class="offset-1 col-md-6 mb-5 mt-5">
+			<div class="card-body bg-light">
 				<h2 class="card-title text-dark text-center mb-3">Nos offres d'emplois</h2>
 				<p class="card-text text-dark">Val Espoir recrute, découvrez les offres d'emplois en cours sur notre page dédiée.</p>
-				<button type="button" class="btn btn-dark mt-2">+ d'offres</button>
+				<button type="button" class="btn btn-primary opacity-75 text-light mt-2">+ d'offres</button>
 			</div>
 		</div>
 	</div>
