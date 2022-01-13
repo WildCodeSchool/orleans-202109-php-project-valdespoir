@@ -24,7 +24,8 @@
 						{% for partner in partners %}
 							<class="table-lighttext-dark">
 								<td>{{ partner.id }}</td>
-								<td>{{ partner.name }}<img class="col-1" src="{{ partner.picture }}" alt=""></td>
+								<td>{{ partner.name }}</td>
+                                <td><img class="col-3" src="{{ partner.picture }}" alt=""></td>
 								<td>{{ partner.link }}</td>
 								<td>
 									<a class="btn btn-outline-dark px-2 rounded fs-5 m-2" href="{{ path('admin_partner_edit', {'id': partner.id}) }}">Editer</a>
