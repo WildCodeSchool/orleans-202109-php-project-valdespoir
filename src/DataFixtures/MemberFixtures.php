@@ -18,7 +18,7 @@ class MemberFixtures extends Fixture
             $member = new Member();
             $member->setName($faker->fullname());
             $member->setRole($faker->jobTitle());
-            $member->setDescription($faker->realText($maxNbChars = 200, $indexSize = 2));
+            $member->setDescription($faker->text(500));
             $manager->persist($member);
         }
 
