@@ -19,9 +19,9 @@ class SiteFixtures extends Fixture
             $site->setTitle($faker->city);
             $site->setCity($faker->city);
             $site->setDescription($faker->text(500));
-            $site->setAfterPicture($faker->imageUrl(640, 480, 'animals', true));
-            $site->setBeforePicture($faker->imageUrl(640, 480, 'animals', true));
-            copy(__DIR__ . '/haie2.JPG', '../../public/uploads/images/haie2.JPG');
+            $site->setAfterPicture('haie2.jpg');
+            $site->setBeforePicture('haie2.jpg');
+            copy(__DIR__ . '/haie2.jpg', __DIR__ . '/../../public/uploads/images/haie2.jpg');
             $manager->persist($site);
         }
         $manager->flush();

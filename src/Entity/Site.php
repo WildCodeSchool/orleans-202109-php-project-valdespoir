@@ -79,6 +79,11 @@ class Site
      */
     private ?DateTimeInterface $updatedAt;
 
+    public function __construct()
+    {
+        $this->updatedAt = new \DateTimeImmutable();
+    }
+
     /**
      * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile|null $beforePictureFile
      */
