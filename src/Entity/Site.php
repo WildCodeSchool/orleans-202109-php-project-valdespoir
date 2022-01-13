@@ -81,7 +81,7 @@ class Site
 
     public function __construct()
     {
-        $this->updatedAt = new \DateTimeImmutable();
+        $this->updatedAt = new DateTimeImmutable();
     }
 
     /**
