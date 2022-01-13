@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\SiteRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=SiteRepository::class)
@@ -19,26 +20,33 @@ class Site
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank
+     * @Assert\Length(max="255")
      */
     private string $title;
 
     /**
      * @ORM\Column(type="text")
+     * @Assert\NotBlank
      */
     private string $description;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank
+     * @Assert\Length(max="255")
      */
     private string $city;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Url
      */
     private string $beforePicture;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Url
      */
     private string $afterPicture;
 

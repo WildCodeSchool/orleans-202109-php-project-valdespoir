@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Actuality index{% endblock %}
+
+{% block body %}
+<main class="container-fluid">
+    <h1 class="text-center text-dark mt-5 mb-5">Actualités</h1>
+    <div>
+        <a class="btn btn-outline-primary px-2 rounded mb-3 fs-5" href="{{ path('admin_actuality_new') }}">Ajouter</a>
+    </div>
+    <div class="row">
+        <div class="table-responsive">
+            <table class="table align-middle text-dark table-bordered border table-borderless table-hover">
+                <thead class="table-dark text-light">
+                    <tr class="text-center fs-4">
+                        <th class="col-1">Date</th>
+                        <th class="col-1">Titre</th>
+                        <th class="col-7">Petite description</th>
+                        <th class="col-2">Image</th>
+                        <th class="col-1">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for actuality in actualities %}
+                    <tr class="table-light text-dark">
+                        <td>{{ actuality.date ? actuality.date|date('Y-m-d') : '' }}</td>
+                        <td>{{ actuality.title }}</td>
+                        <td>{{ actuality.shortDescription }}</td>
+                        <td>{{ actuality.picture }}</td>
+                        <td class="d-flex justify-content-center align-items-center">
+                            <a class="btn btn-outline-dark px-2 rounded fs-5 m-2"
+                                href="{{ path('admin_actuality_edit', {'id': actuality.id}) }}">Editer</a>
+                            <div class="ms-2">
+                                {{ include('adminActuality/_delete_form.html.twig') }}
+                            </div>
+                        </td>
+                    </tr>
+                    {% else %}
+                    <tr>
+                        <td>Aucun enregistrement trouvé</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</main>
+{% endblock %}
