@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/admin/partner", name="admin_partner_")
+ * @Route("/admin/partenaire", name="admin_partner_")
  */
 class AdminPartnerController extends AbstractController
 {
@@ -48,17 +48,6 @@ class AdminPartnerController extends AbstractController
             'form' => $form,
         ]);
     }
-
-    /**
-     * @Route("/{id}", name="show", methods={"GET"})
-     */
-    public function show(Partner $partner): Response
-    {
-        return $this->render('admin_partner/show.html.twig', [
-            'partner' => $partner,
-        ]);
-    }
-
     /**
      * @Route("/{id}/editer", name="edit", methods={"GET", "POST"})
      */
