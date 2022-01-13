@@ -1,12 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Actuality{% endblock %}
+{% block title %}New Actuality
+{% endblock %}
 
 {% block body %}
-<main class="container-fluid">
-    <h1 class="text-dark text-center mb-5 mt-5">Ajouter une nouvelle actualité</h1>
-
-    {{ include('adminActuality/_form.html.twig') }}
-    <a class="text-decoration-none ms-5 fs-5" href="{{ path('admin_actuality_index') }}"> < Retour</a>
-</main>
+	<main class="container">
+		<h1 class="text-dark text-center mb-5 mt-5">Ajouter une nouvelle actualité</h1>
+		{{ include('adminActuality/_form.html.twig') }}
+		<a class="text-decoration-none" href="{{ path('admin_actuality_index') }}">
+			<span class="iconify mb-1" data-icon="bx:bx-chevron-left" style="color: #149e1d;" data-width="34" data-height="34"></span>Retour</a>
+	</main>
 {% endblock %}
