@@ -63,6 +63,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
+    /**
+     * @return string the hashed password for this user
+     */
     public function getPassword(): ?string
     {
         return $this->password;
