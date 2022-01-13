@@ -8,7 +8,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Vich\UploaderBundle\Form\Type\VichFileType;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class SiteType extends AbstractType
 {
@@ -18,11 +18,15 @@ class SiteType extends AbstractType
             ->add('title', TextType::class, ['label' => 'Titre',])
             ->add('description', TextareaType::class, ['label' => 'Description',])
             ->add('city', TextType::class, ['label' => 'Ville',])
-            ->add('beforePictureFile', VichFileType::class, [
+            ->add('beforePictureFile', VichImageType::class, [
                 'label' => 'Image avant',
+                'download_label' => '',
+                'delete_label' => 'Supprimer l\'image',
             ])
-            ->add('afterPictureFile', VichFileType::class, [
+            ->add('afterPictureFile', VichImageType::class, [
                 'label' => 'Image après',
+                'download_label' => '',
+                'delete_label' => 'Supprimer l\'image',
             ]);
     }
 

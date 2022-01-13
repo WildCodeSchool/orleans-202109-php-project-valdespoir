@@ -56,7 +56,7 @@ class Site
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private string $beforePicture = '';
+    private ?string $beforePicture = null;
 
     /**
      * @Vich\UploadableField(mapping="images", fileNameProperty="afterPicture")
@@ -71,7 +71,7 @@ class Site
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private string $afterPicture = '';
+    private ?string $afterPicture = null;
 
     /**
      * @ORM\Column(type="datetime")
@@ -164,7 +164,7 @@ class Site
         return $this->beforePicture;
     }
 
-    public function setBeforePicture(string $beforePicture): self
+    public function setBeforePicture(?string $beforePicture): self
     {
         $this->beforePicture = $beforePicture;
 
@@ -176,7 +176,7 @@ class Site
         return $this->afterPicture;
     }
 
-    public function setAfterPicture(string $afterPicture): self
+    public function setAfterPicture(?string $afterPicture): self
     {
         $this->afterPicture = $afterPicture;
 
