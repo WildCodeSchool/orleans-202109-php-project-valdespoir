@@ -14,7 +14,6 @@
 				<table class="table align-middle text-dark table-bordered border table-borderless table-hover">
 					<thead class="table-dark text-light">
 						<tr class="text-center fs-4">
-							<th class="col-1">Id</th>
 							<th class="col-1">Nom</th>
 							<th class="col-7">Photo</th>
 							<th class="col-2">Lien du site partenaire</th>
@@ -25,8 +24,7 @@
 						{% for partner in partners %}
 							<class="table-lighttext-dark">
 								<td>{{ partner.id }}</td>
-								<td>{{ partner.name }}</td>
-								<td>{{ partner.picture }}</td>
+								<td>{{ partner.name }}<img class="col-1" src="{{ partner.picture }}" alt=""></td>
 								<td>{{ partner.link }}</td>
 								<td>
 									<a class="btn btn-outline-dark px-2 rounded fs-5 m-2" href="{{ path('admin_partner_edit', {'id': partner.id}) }}">Editer</a>
