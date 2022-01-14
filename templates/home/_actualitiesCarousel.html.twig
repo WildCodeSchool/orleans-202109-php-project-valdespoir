@@ -9,11 +9,11 @@
 					cum praesertim illa perdiscere ludus esset. Quam ob rem dissentientium inter se reprehensiones non
 					sunt vituperandae. cum praesertim illa inter se reprehensiones non perdiscere ludus esset cum
 					praesertim illa .</p>
-				<button type="button" class="btn btn-primary opacity-75 text-light mt-2">+ d'actualités</button>
+				<a button type="button" class="btn btn-primary opacity-75 text-light mt-2" href="{{ path('actuality_index') }}">Voir plus d'actualités</a>
 			</div>
 		</div>
 		<div class="offset-1 col-md-5 mb-4 mt-5">
-			<div id="carouselExampleControls" class="carousel slide " data-bs-ride="carousel">
+			<div id="carouselActualityControls" class="carousel slide " data-bs-ride="carousel">
 				<div class="carousel-inner">
 					{% for actuality in actualities %}
 					<div class="carousel-item {{ loop.first ? 'active' : '' }}">
@@ -22,12 +22,12 @@
 					</div>
 					{% endfor %}
 				</div>
-				<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+				<button class="carousel-control-prev" type="button" data-bs-target="#carouselActualityControls"
 					data-bs-slide="prev">
 					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
 					<span class="visually-hidden">Previous</span>
 				</button>
-				<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+				<button class="carousel-control-next" type="button" data-bs-target="#carouselActualityControls"
 					data-bs-slide="next">
 					<span class="carousel-control-next-icon" aria-hidden="true"></span>
 					<span class="visually-hidden">Next</span>
