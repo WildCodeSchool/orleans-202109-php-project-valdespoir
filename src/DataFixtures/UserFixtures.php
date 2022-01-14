@@ -11,7 +11,7 @@ class UserFixtures extends Fixture
 {
     private UserPasswordHasherInterface $passwordHasher;
 
-    public function __construct(UserPasswordHasherInterface $passwordHasher) 
+    public function __construct(UserPasswordHasherInterface $passwordHasher)
     {
         $this->passwordHasher = $passwordHasher;
     }
@@ -27,7 +27,9 @@ class UserFixtures extends Fixture
         );
         $admin->setPassword($hashedPassword);
         $manager->persist($admin);
-        
+
+        $this->addReference('user_1', $admin);
+
         $manager->flush();
     }
 }

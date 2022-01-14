@@ -24,6 +24,12 @@ security:
             form_login:
                 login_path: login
                 check_path: login
+                default_target_path: admin_site_index
+            logout:
+                path: app_logout
+
+        secured_area:
+            form_login:
                 enable_csrf: true
                 
             # activate different ways to authenticate
