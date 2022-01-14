@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/site", name="site_")
+ * @Route("/realisations", name="site_")
  */
 class SiteController extends AbstractController
 {
