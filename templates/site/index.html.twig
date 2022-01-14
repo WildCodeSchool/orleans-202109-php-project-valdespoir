@@ -5,15 +5,15 @@
 {% endblock %}
 
 {% block body %}
-	<main class="container">
+	<main class="container content-row">
 		<h1 class="text-center text-success">Nos réalisations</h1>
-		<div class="row">
+		<div class="row g-4">
 			{% for site in sites %}
 				<div class="col-sm-6 col-xxl-3">
-					<a class="card-site" href="{{ path('site_show', {id: site.id}) }}">
-						<div class="card bg-light mb-4">
-							<img class="card-img" src={% if site.afterImage is defined %} {% else %} "{{ asset('build/images/placeholder-site.jpg') }}" {% endif %} alt="site-image">
-							<div class="card-img-overlay m-0 p-0 d-flex flex-column justify-content-end">
+					<a class="card-site h-100" href="{{ path('site_show', {id: site.id}) }}">
+						<div class="card bg-light mb-4 h-100">
+							<img class="card-img h-100" src={% if site.afterPicture is defined %}"{{ vich_uploader_asset(site, 'afterPictureFile') }}"{% else %} "{{ asset('build/images/placeholder-site.jpg') }}" {% endif %} alt="site-image">
+							<div class="card-img-overlay h-100 m-0 p-0 d-flex flex-column justify-content-end">
 								<div class="card-footer bg-dark text-center text-light opacity-75">
 									<p class="m-0">
 										{{ site.title }}
