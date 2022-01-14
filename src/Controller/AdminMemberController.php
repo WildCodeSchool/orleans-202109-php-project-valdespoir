@@ -69,7 +69,7 @@ class AdminMemberController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="delete", methods={"POST"})
+     * @Route("/{id}/supprimer", name="delete", methods={"POST"})
      */
     public function delete(Request $request, Member $member, EntityManagerInterface $entityManager): Response
     {
