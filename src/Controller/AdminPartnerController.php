@@ -59,9 +59,9 @@ class AdminPartnerController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->flush();
 
-            $this->addFlash('succes', 'Le partenaire a bien été modifié');
             return $this->redirectToRoute('admin_partner_index', [], Response::HTTP_SEE_OTHER);
         }
+
         return $this->renderForm('admin_partner/edit.html.twig', [
             'partner' => $partner,
             'form' => $form,
@@ -77,6 +77,7 @@ class AdminPartnerController extends AbstractController
             $entityManager->remove($partner);
             $entityManager->flush();
         }
+        $this->addFlash('danger', 'Le partenaire a bien été supprimé');
         return $this->redirectToRoute('admin_partner_index', [], Response::HTTP_SEE_OTHER);
     }
 }
