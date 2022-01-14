@@ -1,7 +1,7 @@
-<main class="container mb-5">
+<main class="container mb-4 mt-5">
 	<div class="row g-0">
-		<div class="col-md-6">
-			<div class="card-body ">
+		<div class="col-md-6 mb-4 mt-5">
+			<div class="card-body bg-light opacity-75">
 				<h2 class="card-title text-dark text-center mb-3">Nos dernières Actualités</h2>
 				<p class="card-text text-dark">Fieri, inquam, Triari, nullo pacto potest, ut non dicas, quid non probes
 					eius, a quo dissentias:
@@ -9,16 +9,16 @@
 					cum praesertim illa perdiscere ludus esset. Quam ob rem dissentientium inter se reprehensiones non
 					sunt vituperandae. cum praesertim illa inter se reprehensiones non perdiscere ludus esset cum
 					praesertim illa .</p>
-				<button type="button" class="btn btn-dark mt-2">+ d'actualités</button>
+				<button type="button" class="btn btn-primary opacity-75 text-light mt-2">+ d'actualités</button>
 			</div>
 		</div>
-		<div class="offset-1 col-md-5">
+		<div class="offset-1 col-md-5 mb-4 mt-5">
 			<div id="carouselExampleControls" class="carousel slide " data-bs-ride="carousel">
 				<div class="carousel-inner">
 					{% for actuality in actualities %}
 					<div class="carousel-item {{ loop.first ? 'active' : '' }}">
 						<img class="img-fluid d-block w-100 " src={% if actuality.Image is defined %} {% else %} "{{ asset('build/images/placeholder-site.jpg') }}" {% endif %} alt="actuality-image">
-						<div class="card-header text-light text-center">{{ actuality.title }}</div>
+						<div class="card-header text-light bg-dark opacity-75 text-center">{{ actuality.title }}</div>
 					</div>
 					{% endfor %}
 				</div>

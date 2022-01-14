@@ -2,28 +2,28 @@
 
 namespace App\Form;
 
-use App\Entity\JobOffer;
+use App\Entity\Partner;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
+use Symfony\Component\Form\Extension\Core\Type\UrlType;
 
-class JobOfferType extends AbstractType
+class PartnerType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('title', TextType::class, ['label' => 'Titre',])
-            ->add('description', TextareaType::class, ['label' => 'Description',])
-            ->add('date', DateTimeType::class, ['date_label' => 'Date',]);
+            ->add('name', TextType::class, ['label' => 'Nom',])
+            ->add('picture', UrlType::class, ['label' => 'Image 1',])
+            ->add('link', TextType::class, ['label' => 'Lien',])
+        ;
     }
 
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class' => JobOffer::class,
+            'data_class' => Partner::class,
         ]);
     }
 }

@@ -5,6 +5,7 @@ namespace App\Entity;
 use DateTime;
 use DateTimeInterface;
 use App\Repository\ActualityRepository;
+use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -21,21 +22,27 @@ class Actuality
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank
+     * @Assert\Length(max="255")
      */
     private string $title;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank
+     * @Assert\Length(max="255")
      */
     private string $shortDescription;
 
     /**
      * @ORM\Column(type="text")
+     * @Assert\NotBlank
      */
     private string $description;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Url
      */
     private string $picture;
 

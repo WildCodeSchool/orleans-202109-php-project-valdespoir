@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/admin/chantier", name="admin_site_")
+ * @Route("/admin/realisations", name="admin_site_")
  */
 class AdminSiteController extends AbstractController
 {
@@ -81,7 +81,8 @@ class AdminSiteController extends AbstractController
             $entityManager->remove($site);
             $entityManager->flush();
         }
+        $this->addFlash('danger', 'Le chantier a bien été supprimé');
 
-        return $this->redirectToRoute('site_index', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('admin_site_index', [], Response::HTTP_SEE_OTHER);
     }
 }

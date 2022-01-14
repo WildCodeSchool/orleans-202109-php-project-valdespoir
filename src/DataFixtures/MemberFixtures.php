@@ -16,9 +16,9 @@ class MemberFixtures extends Fixture
         $faker = Factory::create('fr_FR');
         for ($i = 0; $i < self::MEMBER_NUMBER; $i++) {
             $member = new Member();
-            $member->setName($faker->fullname());
+            $member->setName($faker->name());
             $member->setRole($faker->jobTitle());
-            $member->setDescription($faker->text(500));
+            $member->setDescription($faker->text(200));
             $manager->persist($member);
         }
 

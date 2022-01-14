@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouveau partenaire
+{% endblock %}
+
+{% block body %}
+	<main class="container-fluid">
+		<h1 class="text-dark text-center mb-5 mt-5">Ajouter un nouveau partenaire</h1>
+		{{ include('admin_partner/_form.html.twig') }}
+		<a class="text-decoration-none ms-5 fs-5" href="{{ path('admin_partner_index') }}">Retour</a>
+	</main>
+{% endblock %}

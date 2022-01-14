@@ -25,7 +25,10 @@
 								<td>{{ site.title }}</td>
 								<td>{{ site.city }}</td>
 								<td class="d-flex justify-content-center">
-									<a class="btn btn-outline-dark px-2 rounded mb-3 fs-5" href="{{ path('admin_site_edit', {'id': site.id}) }}">Éditer</a>
+									<a class="btn btn-outline-dark px-2 rounded fs-5" href="{{ path('admin_site_edit', {'id': site.id}) }}">Éditer</a>
+									<div class="ms-5">
+									{{ include('adminSite/_delete_form.html.twig') }}
+									</div>
 								</td>
 							</tr>
 						{% else %}
