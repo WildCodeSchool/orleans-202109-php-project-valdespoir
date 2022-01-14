@@ -22,6 +22,7 @@ class SiteFixtures extends Fixture
             $site->setAfterPicture('haie2.jpg');
             $site->setBeforePicture('haie2.jpg');
             copy(__DIR__ . '/haie2.jpg', __DIR__ . '/../../public/uploads/images/haie2.jpg');
+
             $manager->persist($site);
         }
         $manager->flush();
