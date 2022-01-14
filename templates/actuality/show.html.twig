@@ -12,7 +12,7 @@
         <p class="card-date"><small class="text-muted">Date de la publication : {{ actuality.date|date('d/m/Y') }} </small></p>
         <div class="col-sm-12 col-xxl-12">
             <div class="card bg-light mb-4">
-                <img class="card-img" src={% if actuality.image is defined %}{% else %} "{{ asset('build/images/placeholder-site.jpg') }}" {% endif %} alt="actuality-image">
+                <img class="card-img" src={% if actuality.picture is defined %} "{{ vich_uploader_asset(actuality, 'pictureFile') }}" {% else %} "{{ asset('build/images/placeholder-site.jpg') }}" {% endif %} alt="actuality-image">
             </div>
         </div>
         <div class="text-center">
