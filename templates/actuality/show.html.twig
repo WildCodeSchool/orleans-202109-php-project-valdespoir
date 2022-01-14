@@ -6,20 +6,19 @@
 
 {% include 'include/_banner.html.twig' %}
 
-<main class="container">
-    <h1 class="text-center text-success"> {{ actuality.title }} </h1>
-    <div class="row">
-        <p class="card-date"><small class="text-muted">Date de la publication : {{ actuality.date|date('d/m/Y') }} </small></p>
-        <div class="col-sm-12 col-xxl-12">
-            <div class="card bg-light mb-4">
-                <img class="card-img" src={% if actuality.picture is defined %} "{{ vich_uploader_asset(actuality, 'pictureFile') }}" {% else %} "{{ asset('build/images/placeholder-site.jpg') }}" {% endif %} alt="actuality-image">
+<main class="container mb-4 mt-5">
+    <h2 class="text-center text-light opacity-75"> {{ actuality.title }} </h2>
+    <div class="row justify-content-center">
+        <div class="col-sm-8 col-xxl-8">
+            <div class="opacity-75 mb-1 mt-5 rounded-3">
+                src={% if actuality.picture is defined %} "{{ vich_uploader_asset(actuality, 'pictureFile') }}" {% else %} "{{ asset('build/images/placeholder-site.jpg') }}" {% endif %} alt="actuality-image">
             </div>
         </div>
         <div class="text-center">
-            <p class="bg-secondary text-dark rounded-3 p-4 mb-4">{{ actuality.description }}</p>
+            <p class="bg-light opacity-75 text-dark rounded-3 p-4 mb-5 mt-5">{{ actuality.description }}</p>
         </div>
         <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4">
-            <a class="btn btn-primary text-light px-3 opacity-75 rounded" href="{{ path('actuality_index') }}"
+            <a class="btn btn-primary opacity-50 text-light mt-2 rounded" href="{{ path('actuality_index') }}"
                 type="button">Retour</a>
         </div>
 </main>
