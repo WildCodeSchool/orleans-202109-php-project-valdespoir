@@ -73,7 +73,7 @@ class AdminMemberController extends AbstractController
      */
     public function delete(Request $request, Member $member, EntityManagerInterface $entityManager): Response
     {
-        if ($this->isCsrfTokenValid('delete' . $member->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $member->getId(), (string) $request->request->get('_token'))) {
             $entityManager->remove($member);
             $entityManager->flush();
         }
