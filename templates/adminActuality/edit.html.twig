@@ -3,16 +3,14 @@
 {% block title %}Éditer une actualité{% endblock %}
 
 {% block body %}
-<main class="container-fluid">
+<main class="container">
     <h1 class="text-dark text-center mb-5 mt-5">Éditer une actualité</h1>
-
     {{ include('adminActuality/_form.html.twig', {'button_label': 'Éditer'}) }}
-    <div class="ms-2">
-        {{ include('adminActuality/_delete_form.html.twig') }}
-    </div>
     <div class="mt-5">
-        <a class="text-decoration-none ms-2" href="{{ path('admin_actuality_index') }}">
-            < Retour</a>
+        <a class="text-decoration-none ms-2" href="{{ path('admin_actuality_index') }}"><svg xmlns="http://www.w3.org/2000/svg" style="color: #149E1D
+                                    ;" width="16" height="16" fill="currentColor" class="bi bi-chevron-left mb-1" viewbox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                </svg>Retour</a>
     </div>
 </main>
 {% endblock %}

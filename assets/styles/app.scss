@@ -6,6 +6,7 @@
 @import 'banner.scss';
 @import 'site.scss';
 @import 'actualities.scss';
+@import 'partner.scss';
 
 body {
     background-color: $light;
@@ -13,7 +14,7 @@ body {
 
 :root {
     body {
-        background-color: $light;
+        background-color: $dark;
     }
 
     h1,

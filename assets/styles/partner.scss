@@ -1,4 +1,4 @@
-.card-actuality {
+.card-partner {
     flex-wrap: wrap-reverse;
     transition: transform 0.2s;
 
@@ -8,12 +8,4 @@
         overflow: hidden;
         transform: scale(1.05);
     }
-}
-
-.img-card {
-    height: 100%;
-}
-
-.card-body {
-    height: 280px;
 }

@@ -1,32 +1,32 @@
-<main class="container mb-5">
+<main class="container mb-4 mt-5">
 	<div class="row g-0">
-		<div class="col-md-5">
-			<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+		<div class="col-md-5 mb-4 mt-5 ">
+			<div id="carouselSiteControls" class="carousel slide" data-bs-ride="carousel">
 				<div class="carousel-inner">
 					{% for site in sites %}
 						<div class="carousel-item {{ loop.first ? 'active' : '' }}">
 							<img class="img-fluid d-block w-100 " src={% if site.afterImage is defined %} {% else %} "{{ asset('build/images/placeholder-site.jpg') }}" {% endif %} alt="site-image">
-							<div class="card-header text-light text-center">{{ site.title }}</div>
+							<div class="card-header text-light bg-dark opacity-75 text-center">{{ site.title }}</div>
 						</div>
 					{% endfor %}
 				</div>
-				<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+				<button class="carousel-control-prev" type="button" data-bs-target="#carouselSiteControls" data-bs-slide="prev">
 					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
 					<span class="visually-hidden">Previous</span>
 				</button>
-				<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+				<button class="carousel-control-next" type="button" data-bs-target="#carouselSiteControls" data-bs-slide="next">
 					<span class="carousel-control-next-icon" aria-hidden="true"></span>
 					<span class="visually-hidden">Next</span>
 				</button>
 			</div>
 		</div>
-		<div class="offset-1 col-md-6">
-			<div class="card-body">
+		<div class="offset-1 col-md-6 col-sm-12 col-xs-12 mb-4 mt-5 ">
+			<div class="card-body bg-light opacity-75">
 				<h2 class="card-title text-dark text-center mb-3">Nos dernières réalisations</h2>
 				<p class="card-text text-dark">Nous proposons différents services d'entretien et d'aménagement des espaces verts:
 			</br>
 			Tonte des pelouses, taille des haies, désherbage manuel, installation de mobilier extérieur, création de marches en bois et garde-corps, bûcheronnage et débroussaillage, arrachage de plantes invasives dans les rivières, fabrication et pose de clôtures.</p>
-				<button type="button" class="btn btn-dark mt-2">+ de réalisations</button>
+				<button type="button" class="btn btn-primary opacity-75 text-light mt-2" href="{{ path('site_index') }}">Voir plus de réalisations</button>
 			</div>
 		</div>
 	</div>
