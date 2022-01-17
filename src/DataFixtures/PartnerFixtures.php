@@ -31,9 +31,10 @@ class PartnerFixtures extends Fixture
         foreach (self::PARTNERS as $partners) {
             $partner = new Partner();
             $partner->setName($partners['name']);
-            $partner->setPictureFile($partners['picture']);
             $partner->setLink($partners['link']);
-            $manager->persist($partner);
+            $partner->setPictureFile($partners['picture']);
+            $partner->setDate($partners['date']);
+            $partner->$manager->persist($partner);
         }
         $manager->flush();
     }
