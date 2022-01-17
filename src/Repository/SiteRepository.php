@@ -19,22 +19,22 @@ class SiteRepository extends ServiceEntityRepository
         parent::__construct($registry, Site::class);
     }
 
-    /**
-    * @return Site[] Returns an array of Site objects
-    */
-    public function findBySelection(Site $site)
-    {
-        $afterPictureFile = $site->getAfterPictureFile();
+    // /**
+    // * @return Site[] Returns an array of Site objects
+    // */
+    // public function findBySelection(Site $site)
+    // {
+    // //     $afterPictureFile = $site->getAfterPictureFile();
 
-        return $this->createQueryBuilder('s')
-            ->where('s.afterPicture IN(:sites)')
-            ->setParameter('sites', $afterPictureFile)
-            ->orderBy('s.createdAt', 'DESC')
-            ->setMaxResults(3)
-            ->getQuery()
-            ->getResult()
-        ;
-    }
+    // //     // return $this->createQueryBuilder('s')
+    // //     //     ->where('s.afterPicture IN(:sites)')
+    // //     //     ->setParameter('sites', $afterPictureFile)
+    // //     //     ->orderBy('s.createdAt', 'DESC')
+    // //     //     ->setMaxResults(3)
+    // //     //     ->getQuery()
+    // //     //     ->getResult()
+    // //     // ;
+    // }
 
     /*
     public function findOneBySomeField($value): ?Site
