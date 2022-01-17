@@ -8,16 +8,7 @@
 @import 'actualities.scss';
 @import 'partner.scss';
 
-body {
-    background-color: $light;
-}
-
 :root {
-    body {
-        background-color: $dark;
-        min-height: 100vh;
-    }
-
     h1,
     h2,
     h3,
