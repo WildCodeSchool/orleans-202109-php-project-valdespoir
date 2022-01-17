@@ -57,11 +57,6 @@ class Partner
 
     /**
      * @ORM\Column(type="datetime")
-     */
-    private DateTimeInterface $date;
-
-    /**
-     * @ORM\Column(type="datetime")
      * @var \DatetimeInterface|null
      */
     private ?DateTimeInterface $updatedAt;
@@ -129,17 +124,6 @@ class Partner
     public function setName(?string $name): self
     {
         $this->name = $name;
-
-        return $this;
-    }
-    public function getDate(): ?DateTimeInterface
-    {
-        return $this->date;
-    }
-
-    public function setDate(DateTimeInterface $date): self
-    {
-        $this->date = $date;
 
         return $this;
     }
