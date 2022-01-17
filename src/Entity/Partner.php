@@ -33,14 +33,14 @@ class Partner
     private ?string $name;
 
     /**
-     * @Vich\UploadableField(mapping="images", fileNameProperty="picture")
+     * @Vich\UploadableField(mapping="images", fileNameProperty="pictureFile")
      * @Assert\File(
      * maxSize = "1M",
      * mimeTypes = {"image/jpeg", "image/png", "image/jpg"},
      * )
      * @var File|null
      */
-    private $pictureFile;
+    private $pictureFile = null;
 
 
     /**
