@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\PartnerRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=PartnerRepository::class)
@@ -19,16 +20,22 @@ class Partner
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * Assert\NotBlank
+     * Assert\Length(max="255")
      */
     private string $name;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * Assert\NotBlank
      */
     private ?string $picture = null;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * Assert\NotBlank
+     * Assert\Length(max="255")
+     * @Assert\Url
      */
     private ?string $link = null;
 
