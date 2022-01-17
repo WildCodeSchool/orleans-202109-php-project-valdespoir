@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Member index
+{% block title %}Association index
 {% endblock %}
 
 {% block body %}
@@ -15,7 +15,7 @@
 				<table class="table align-middle text-dark table-bordered border table-borderless table-hover">
 					<thead class="table-dark text-light">
 						<tr class="text-center fs-4">
-							<th class="col-2">Name</th>
+							<th class="col-2">Nom</th>
 							<th class="col-2">Role</th>
 							<th class="col-5">Description</th>
 							<th class="col-3">Actions</th>
@@ -36,7 +36,7 @@
 							</tr>
 						{% else %}
 							<tr>
-								<td colspan="5">no records found</td>
+								<td colspan="5">Aucun enregistrement trouvé</td>
 							</tr>
 						{% endfor %}
 					</tbody>
