@@ -11,13 +11,13 @@
     <div class="row justify-content-center">
         <div class="col-sm-8 col-xxl-8">
             <div class="opacity-75 mb-1 mt-5 rounded-3">
-                src={% if actuality.picture is defined %} "{{ vich_uploader_asset(actuality, 'pictureFile') }}" {% else %} "{{ asset('build/images/placeholder-site.jpg') }}" {% endif %} alt="actuality-image">
+                <img class="card-img rounded-3" src={% if actuality.image is defined %}{% else %} "{{ asset('build/images/placeholder-site.jpg') }}" {% endif %} alt="actuality-image">
             </div>
         </div>
         <div class="text-center">
             <p class="bg-light opacity-75 text-dark rounded-3 p-4 mb-5 mt-5">{{ actuality.description }}</p>
         </div>
-        <div class="d-grid gap-2 d-flex justify-content-md-start mb-4">
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4">
             <a class="btn btn-primary opacity-50 text-light mt-2 rounded" href="{{ path('actuality_index') }}"
                 type="button">Retour</a>
         </div>
