@@ -1,4 +1,6 @@
-{% extends 'base.html.twig' %}
+{% extends 'adminBase.html.twig' %}
+
+{% block stylesheets %}{{ encore_entry_link_tags('admin') }}{% endblock %}
 
 {% block title %}Connexion
 {% endblock %}
