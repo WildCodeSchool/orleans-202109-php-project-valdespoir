@@ -1,4 +1,4 @@
-<form method="post" action="{{ path('adminJob_offer_delete', {'id': job_offer.id}) }}" onsubmit="return confirm('Voulez-vous supprimer cette offre d\'emploi ?');">
+<form method="post" action="{{ path('adminJob_offer_delete', {'id': job_offer.id}) }}" onsubmit="return confirm('Êtes-vous sûr de bien vouloir supprimer cet élément?');">
     <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ job_offer.id) }}">
-    <button class="btn btn-outline-dark rounded fs-5">Supprimer</button>
+    <button class="btn btn-outline-dark rounded fs-5 me-2 mt-2 mb-2">Supprimer</button>
 </form>
