@@ -9,7 +9,7 @@ use Faker\Factory;
 
 class SiteFixtures extends Fixture
 {
-    public const SITE_NUMBER = 16;
+    public const SITE_NUMBER = 15;
 
     public function load(ObjectManager $manager): void
     {
