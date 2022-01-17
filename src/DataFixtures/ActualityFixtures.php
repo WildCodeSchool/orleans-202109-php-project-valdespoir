@@ -17,10 +17,12 @@ class ActualityFixtures extends Fixture
         for ($i = 0; $i < self::ACTUALITY_NUMBER; $i++) {
             $actuality = new Actuality();
             $actuality->setTitle($faker->city);
-            $actuality->setShortDescription($faker->text(150));
+            $actuality->setShortDescription($faker->text(100));
             $actuality->setDescription($faker->text(500));
             $actuality->setDate($faker->dateTime());
-            $actuality->setPicture($faker->imageUrl(640, 480, 'animals', true));
+            $actuality->setPicture('haie2.jpg');
+            copy(__DIR__ . '/haie2.jpg', __DIR__ . '/../../public/uploads/images/haie2.jpg');
+
             $manager->persist($actuality);
         }
         $manager->flush();

@@ -9,6 +9,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Vich\UploaderBundle\Form\Type\VichImageType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 class SiteType extends AbstractType
 {
@@ -27,6 +28,13 @@ class SiteType extends AbstractType
                 'label' => 'Image après',
                 'download_label' => '',
                 'delete_label' => 'Supprimer l\'image',
+            ])
+            ->add('afterPicture', EntityType::class, [
+                'class' => Site::class,
+                'choice_label' => 'selector',
+                'multiple' => true,
+                'expanded' => true,
+                'by_reference' => false,
             ]);
     }
 
