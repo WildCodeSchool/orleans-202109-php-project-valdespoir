@@ -40,8 +40,12 @@ class Partner
      * )
      * @var File|null
      */
-    private $pictureFile = null;
+    private $pictureFile;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private ?string $picture = null;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -93,6 +97,18 @@ class Partner
     public function getPictureFile(): ?File
     {
         return $this->pictureFile;
+    }
+
+    public function getPicture(): ?string
+    {
+        return $this->picture;
+    }
+
+    public function setPicture(?string $picture): self
+    {
+        $this->picture = $picture;
+
+        return $this;
     }
 
     public function getUpdatedAt(): ?DateTimeInterface
