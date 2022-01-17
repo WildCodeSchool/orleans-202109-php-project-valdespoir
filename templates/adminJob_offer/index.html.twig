@@ -1,11 +1,13 @@
-{% extends 'base.html.twig' %}
+{% extends 'adminBase.html.twig' %}
 
 {% block title %}JobOffer index
 {% endblock %}
 
+{% block stylesheets %}{{ encore_entry_link_tags('admin') }}{% endblock %}
+
 {% block body %}
-	<main class="container">
-		<h1 class="text-center text-dark mt-5 mb-5">Les offres d'emplois</h1>
+	<main class="container mb-5">
+		<h1 class="text-center text-dark mt-5 mb-2">Les offres d'emplois</h1>
 		<div>
 			<a class="btn btn-outline-primary px-2 rounded mb-3 fs-5" href="{{ path('adminJob_offer_new') }}">Ajouter</a>
 		</div>
@@ -15,14 +17,14 @@
 					<thead class="table-dark text-light">
 						<tr class="text-center fs-4">
 							<th class="col-3">Date</th>
-							<th class="col-6">Titre</th>
-							<th class="col-3">Actions</th>
+							<th class="col-7">Titre</th>
+							<th class="col-2">Actions</th>
 						</tr>
 					</thead>
 					<tbody>
 						{% for job_offer in job_offers %}
-							<tr>
-								<td>{{ job_offer.date ? job_offer.date|date('Y-m-d H:i:s') : '' }}</td>
+							<tr class="table-light text-dark fs-5">
+								<td>{{ job_offer.date ? job_offer.date|date('Y-m-d') : '' }}</td>
 								<td>{{ job_offer.title }}</td>
 								<td class="d-flex justify-content-center align-items-center">
 									<a class="btn btn-outline-dark px-2 rounded fs-5 m-2" href="{{ path('adminJob_offer_edit', {'id': job_offer.id}) }}">Éditer</a>

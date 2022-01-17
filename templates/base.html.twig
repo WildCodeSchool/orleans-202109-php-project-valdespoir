@@ -16,7 +16,9 @@
 	</head>
 	<body>
 		<header>
-			{% include "include/_navbar.html.twig" %}
+			{% block navbar %}
+				{% include "include/_navbar.html.twig" %}
+			{% endblock %}
 		</header>
 		{% block banner %}{% endblock %}
 		{% block flash %}
@@ -32,7 +34,9 @@
 		{% endblock %}
 		{% block body %}{% endblock %}
 		<footer>
+		{% block footer %}
 			{% include "include/_footer.html.twig" %}
+		{% endblock %}
 		</footer>
 	</body>
 </html>

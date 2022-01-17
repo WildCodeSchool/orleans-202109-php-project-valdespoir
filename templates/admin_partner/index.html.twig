@@ -1,11 +1,13 @@
-{% extends 'base.html.twig' %}
+{% extends 'adminBase.html.twig' %}
 
 {% block title %}Partenaire index
 {% endblock %}
 
+{% block stylesheets %}{{ encore_entry_link_tags('admin') }}{% endblock %}
+
 {% block body %}
-	<main class="container">
-		<h1 class="text-center text-dark mt-5 mb-5">Nos partenaires</h1>
+	<main class="container mb-5">
+		<h1 class="text-center text-dark mt-5 mb-3">Nos partenaires</h1>
 		<div>
 			<a class="btn btn-outline-primary px-2 rounded mb-3 fs-5" href="{{ path('admin_partner_new') }}">Ajouter</a>
 		</div>
@@ -15,14 +17,14 @@
 					<thead class="table-dark text-light">
 						<tr class="text-center fs-4">
 							<th class="col-2">Nom</th>
-							<th class="col-3">Photo</th>
-							<th class="col-3">Lien du site partenaire</th>
-							<th class="col-3">Actions</th>
+							<th class="col-3">Logo</th>
+							<th class="col-5">Lien du site partenaire</th>
+							<th class="col-2">Actions</th>
 						</tr>
 					</thead>
 					<tbody>
 						{% for partner in partners %}
-							<tr class="table-light text-dark">
+							<tr class="table-light text-dark fs-5">
 								<td>{{ partner.name }}</td>
 								<td>{{ partner.picture }}</td>
 								<td>{{ partner.link }}</td>

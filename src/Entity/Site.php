@@ -79,6 +79,11 @@ class Site
      */
     private ?DateTimeInterface $updatedAt;
 
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private DateTimeInterface $date;
+
     public function __construct()
     {
         $this->updatedAt = new DateTimeImmutable();
@@ -184,6 +189,18 @@ class Site
     public function setAfterPicture(?string $afterPicture): self
     {
         $this->afterPicture = $afterPicture;
+
+        return $this;
+    }
+
+    public function getDate(): ?DateTimeInterface
+    {
+        return $this->date;
+    }
+
+    public function setDate(DateTimeInterface $date): self
+    {
+        $this->date = $date;
 
         return $this;
     }
