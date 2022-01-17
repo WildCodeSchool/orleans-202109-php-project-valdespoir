@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Association index
+{% endblock %}
+
+{% block body %}
+	<main class="container">
+
+		<h1 class="text-center text-dark mt-5 mb-5">Les membres de l'association</h1>
+		<div>
+			<a class="btn btn-outline-primary px-2 rounded mb-3 fs-5" href="{{ path('admin_member_new') }}>">Ajouter</a>
+		</div>
+		<div class="row">
+			<div class="table-responsive">
+				<table class="table align-middle text-dark table-bordered border table-borderless table-hover">
+					<thead class="table-dark text-light">
+						<tr class="text-center fs-4">
+							<th class="col-2">Nom</th>
+							<th class="col-2">Role</th>
+							<th class="col-5">Description</th>
+							<th class="col-3">Actions</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for member in members %}
+							<tr class="table-light text-dark">
+								<td>{{ member.name }}</td>
+								<td>{{ member.role }}</td>
+								<td>{{ member.description|nl2br }}</td>
+								<td class="d-flex justify-content-center align-items-center">
+									<a class="btn btn-outline-dark px-2 rounded fs-5 m-2" href="{{ path('admin_member_edit', {'id': member.id}) }}">Éditer</a>
+									<div class="ms-2">
+										{{ include('adminMember/_delete_form.html.twig') }}
+									</div>
+								</td>
+							</tr>
+						{% else %}
+							<tr>
+								<td colspan="5">Aucun enregistrement trouvé</td>
+							</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</main>
+
+{% endblock %}

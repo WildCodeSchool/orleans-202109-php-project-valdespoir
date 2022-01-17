@@ -8,14 +8,14 @@
 }
 
 .title {
-    background-color: $primary;
+    background-color: $light;
     text-align: center;
-    color: $light;
-    opacity: 0.8;
+    color: $primary;
+    opacity: 0.75;
 
-    background-color: transparentize($primary, 0.2);
+    background-color: $light;
     text-align: center;
-    color: $light;
+    color: $primary;
 
     width: $width-banner-title;
     max-width: 1300px;
@@ -35,5 +35,5 @@
 }
 
 .logo {
-    filter: grayscale(100%) brightness(300%);
+    filter: grayscale(10%) brightness(100%);
 }
