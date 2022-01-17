@@ -10,8 +10,8 @@
     <h2 class="text-center text-light opacity-75"> {{ actuality.title }} </h2>
     <div class="row justify-content-center">
         <div class="col-sm-8 col-xxl-8">
-            <div class="opacity-75 mb-1 mt-5 rounded-3">
-                <img class="card-img rounded-3" src={% if actuality.image is defined %}{% else %} "{{ asset('build/images/placeholder-site.jpg') }}" {% endif %} alt="actuality-image">
+            <div class="card opacity-75 mb-1 mt-5 rounded-3">
+                <img class="card-img rounded-3" src={% if actuality.picture is defined %} "{{ vich_uploader_asset(actuality, 'pictureFile') }}" {% else %} "{{ asset('build/images/placeholder-site.jpg') }}" {% endif %} alt="actuality-image">
             </div>
         </div>
         <div class="text-center">
