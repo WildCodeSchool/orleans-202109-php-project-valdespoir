@@ -43,7 +43,7 @@ class PartnerFixtures extends Fixture
             $partner->setName($partners['name']);
             $partner->setLink($partners['link']);
             $partner->setPictureFile($partners['picture']);
-            $partner->setDate($partners['date']);
+            //$partner->setDate($partners['date']);
             $partner->$manager->persist($partner);
         }
         $manager->flush();
