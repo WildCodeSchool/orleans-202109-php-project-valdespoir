@@ -16,6 +16,7 @@ class SiteFixtures extends Fixture
         $faker = Factory::create("fr_FR");
         for ($i = 0; $i < self::SITE_NUMBER; $i++) {
             $site = new Site();
+            $site->setSelected($faker->boolean());
             $site->setDate($faker->dateTime());
             $site->setTitle($faker->city);
             $site->setCity($faker->city);

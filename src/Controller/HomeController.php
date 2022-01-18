@@ -19,8 +19,8 @@ class HomeController extends AbstractController
         ActualityRepository $actualityRepository,
         JobOfferRepository $jobOfferRepository
     ): Response {
-        $sites = $siteRepository->findAll();
-        $actualities = $actualityRepository->findAll();
+        $sites = $siteRepository->findBySelected(true);
+        $actualities = $actualityRepository->findBySelected(true);
         $jobOffers = $jobOfferRepository->findAll();
         return $this->render('home/index.html.twig', [
             'sites' => $sites, 'actualities' => $actualities,
