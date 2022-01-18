@@ -5,7 +5,7 @@
 				<div class="carousel-inner">
 					{% for job_offer in jobOffers %}
 						<div class="carousel-item {{ loop.first ? 'active' : '' }}">
-							<img class="img-fluid d-block w-100 " src={% if job_offer.afterImage is defined %} {% else %} "{{ asset('build/images/placeholder.png') }}" {% endif %} alt="job-offer-image">
+							<img class="img-fluid d-block w-100 " src="{{ asset('build/images/VErecrute.png') }}" alt="job-offer-image">
 							<div class="card-header text-light text-center">{{ job_offer.title }}</div>
 						</div>
 					{% endfor %}
