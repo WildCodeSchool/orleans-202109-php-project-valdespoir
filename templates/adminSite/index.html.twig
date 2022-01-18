@@ -32,7 +32,7 @@
 								<td>{{ site.title }}</td>
 								<td>{{ site.city }}</td>
 								<td>
-									<form method="POST" action="{{ path('admin_site_select', {'id': site.id }) }}">
+									<form method="POST" action="{{ path('admin_site_select', {'id': site.id}) }}">
 										{% if site.selected == true %}
 											<button class="btn btn-success px-2 rounded fs-5 m-2">
 												Enlever
