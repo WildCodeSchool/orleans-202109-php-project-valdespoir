@@ -28,13 +28,6 @@ class SiteType extends AbstractType
                 'label' => 'Image après',
                 'download_label' => '',
                 'delete_label' => 'Supprimer l\'image',
-            ])
-            ->add('afterPicture', EntityType::class, [
-                'class' => Site::class,
-                'choice_label' => 'selector',
-                'multiple' => true,
-                'expanded' => true,
-                'by_reference' => false,
             ]);
     }
 

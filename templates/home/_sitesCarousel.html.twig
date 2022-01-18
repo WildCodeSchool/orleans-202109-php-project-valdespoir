@@ -5,7 +5,7 @@
 				<div class="carousel-inner">
 					{% for site in sites %}
 						<div class="carousel-item {{ loop.first ? 'active' : '' }}">
-							<img class="img-fluid d-block w-100 " src={% if site.afterImage is defined %}"{{ vich_uploader_asset(site, 'afterPictureFile') }}"{% else %} "{{ asset('build/images/placeholder-site.jpg') }}" {% endif %} alt="site-image">
+							<img class="img-fluid d-block w-100 " src={% if site.afterPicture is defined %}"{{ vich_uploader_asset(site, 'afterPictureFile') }}"{% else %} "{{ asset('build/images/placeholder-site.jpg') }}" {% endif %} alt="site-image">
 							<div class="card-header text-light bg-dark opacity-75 text-center">{{ site.title }}</div>
 						</div>
 					{% endfor %}
