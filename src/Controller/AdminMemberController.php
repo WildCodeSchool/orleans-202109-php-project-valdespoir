@@ -82,6 +82,8 @@ class AdminMemberController extends AbstractController
             $entityManager->flush();
         }
 
+        $this->addFlash('danger', 'Le partenaire a bien été supprimé');
+
         return $this->redirectToRoute('admin_member_index', [], Response::HTTP_SEE_OTHER);
     }
 }
