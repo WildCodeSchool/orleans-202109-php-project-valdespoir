@@ -61,6 +61,8 @@ class AdminMemberController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->flush();
 
+            $this->addFlash('success', 'Le membre a bien été modifié');
+
             return $this->redirectToRoute('admin_member_index', [], Response::HTTP_SEE_OTHER);
         }
 
