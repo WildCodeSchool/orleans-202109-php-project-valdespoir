@@ -50,6 +50,21 @@ class AdminActualityController extends AbstractController
     }
 
     /**
+     * @Route("/select/{id<^[0-9]+$>}", name="select", methods={"POST"})
+     * @return Response
+     */
+    public function select(Actuality $actuality, EntityManagerInterface $entityManager): Response
+    {
+        $actuality->setSelected(!$actuality->getSelected());
+
+        $entityManager->flush();
+
+        $this->addFlash('success', 'La modification a bien été effectuée');
+
+        return $this->redirectToRoute('admin_actuality_index');
+    }
+
+    /**
      * @Route("/{id}/editer", name="edit", methods={"GET", "POST"})
      */
     public function edit(Request $request, Actuality $actuality, EntityManagerInterface $entityManager): Response
