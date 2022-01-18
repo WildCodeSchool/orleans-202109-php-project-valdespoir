@@ -10,7 +10,7 @@
     <div class="card card-actuality mb-5 mt-5 bg-light opacity-75">
         <div class="row g-0">
             <div class="col-md-4">
-                <img class="img-fluid img-card rounded-start opacity-100" src={% if actuality.Picture is defined %} "{{ vich_uploader_asset(actuality, 'pictureFile') }}" {% else %} "{{ asset('build/images/placeholder-site.jpg') }}" {% endif %} alt="actuality-image"
+                <img class="card-img img-fluid rounded-start opacity-100" src={% if actuality.Picture is defined %} "{{ vich_uploader_asset(actuality, 'pictureFile') }}" {% else %} "{{ asset('build/images/placeholder-site.jpg') }}" {% endif %} alt="actuality-image">
             </div>
             <div class="col-md-8">
                 <div class="card-body text-dark d-flex m-2">
