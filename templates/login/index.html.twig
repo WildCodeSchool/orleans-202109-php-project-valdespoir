@@ -1,13 +1,16 @@
 {% extends 'adminBase.html.twig' %}
 
-{% block stylesheets %}{{ encore_entry_link_tags('admin') }}{% endblock %}
+{% block stylesheets %}
+{{ encore_entry_link_tags('login') }}
+{{ encore_entry_link_tags('admin') }}
+{% endblock %}
 
 {% block title %}Connexion
 {% endblock %}
 
 {% block body %}
 	<main class="container">
-		<div class="row text-center mb-5 mt-5">
+		<div class="row connexion text-center mb-5 mt-5">
 			<h1 class="text-dark">Connexion à l'administration de Val Espoir</h1>
 		</div>
 		<div class="row">
