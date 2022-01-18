@@ -1,6 +1,7 @@
 .card-actuality {
     flex-wrap: wrap-reverse;
     transition: transform 0.2s;
+
     &:hover {
         filter: brightness(120%);
         box-shadow: 0px 0px 30px -15px $dark;
@@ -8,9 +9,11 @@
         transform: scale(1.05);
     }
 }
+
 .img-card {
     height: 100%;
 }
+
 .card-body {
     height: 280px;
 }
