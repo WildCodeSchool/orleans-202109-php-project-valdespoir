@@ -20,6 +20,12 @@
     background-color: $footer;
 }
 
+.map {
+    height: 350px;
+    width: 350px;
+    border-radius: $border-radius;
+}
+
 a {
     color: $dark;
 }
