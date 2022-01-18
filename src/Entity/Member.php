@@ -29,7 +29,7 @@ class Member
     /**
      * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank
-     * @Assert\Length(max="255") 
+     * @Assert\Length(max="255")
      */
     private string $role;
 
