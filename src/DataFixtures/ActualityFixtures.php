@@ -16,6 +16,7 @@ class ActualityFixtures extends Fixture
         $faker = Factory::create("fr_FR");
         for ($i = 0; $i < self::ACTUALITY_NUMBER; $i++) {
             $actuality = new Actuality();
+            $actuality->setSelected($faker->boolean());
             $actuality->setTitle($faker->city);
             $actuality->setShortDescription($faker->text(100));
             $actuality->setDescription($faker->text(500));

@@ -51,7 +51,7 @@ class AdminSiteController extends AbstractController
     }
 
     /**
-     * @Route("/select/{id<^[0-9]+$>}", name="select")
+     * @Route("/select/{id<^[0-9]+$>}", name="select", methods={"POST"})
      * @return Response
      */
     public function select(Site $site, EntityManagerInterface $entityManager): Response
