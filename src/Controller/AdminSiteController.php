@@ -16,9 +16,9 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class AdminSiteController extends AbstractController
 {
-/**
- * @Route("/", name="index")
- */
+    /**
+     * @Route("/", name="index")
+     */
     public function index(SiteRepository $siteRepository): Response
     {
         return $this->render('adminSite/index.html.twig', [
@@ -48,6 +48,21 @@ class AdminSiteController extends AbstractController
             'site' => $site,
             'form' => $form,
         ]);
+    }
+
+    /**
+     * @Route("/select/{id<^[0-9]+$>}", name="select")
+     * @return Response
+     */
+    public function select(Site $site, EntityManagerInterface $entityManager): Response
+    {
+        $site->setSelected(!$site->getSelected());
+
+        $entityManager->flush();
+
+        $this->addFlash('success', 'La modification a bien été effectuée');
+
+        return $this->redirectToRoute('admin_site_index');
     }
 
     /**
