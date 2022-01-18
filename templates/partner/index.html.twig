@@ -7,12 +7,24 @@
 			<div class="text-center my-5 row-4 rounded-2">
 				<h2 class="text-center text-success">Les partenaires</h2>
 			</div>
-			<div class="partnerLogo">
-				<div class="container">
-					{% for partner in partners %}
-						<a href="{{ partner.link }}"><p><img class="col-1 my-3 mx-3" src={% if partner.picture is empty %} {{ partner.name }} {% else %} {{ partner.picture }} {% endif %}>{{ partner.name }}</p></a>
-					{% endfor %}
-				</div>
+			<div class="row col-5">
+				{% for partner in partners %}
+					<div class="card card-partner mb-4">
+						<div class="row d-flex justify-content-evenly g-0">
+							<div class="col-sm-3 d-flex align-items-center col-xxl-4">
+								<img class="col-8 d-flex justify-content-center rounded-start" src={% if partner.picture is empty %} {{ partner.name }} {% else %} {{ partner.picture }} {% endif %}>
+							</div>
+							<div class="col-sm-6 col-xxl-8">
+								<div class="card-body m-2">
+									<h3 class="card-title">{{ partner.name }}</h3>
+									<div class="d-flex justify-content-end">
+										<a class="btn btn-primary text-light px-3 opacity-75 rounded" target="_blank" href="{{ partner.link }}">Site web du partenaire</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				{% endfor %}
 			</div>
 		</div>
 	</main>
