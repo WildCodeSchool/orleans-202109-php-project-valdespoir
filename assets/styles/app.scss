@@ -6,16 +6,9 @@
 @import 'banner.scss';
 @import 'site.scss';
 @import 'actualities.scss';
-
-body {
-    background-color: $light;
-}
+@import 'partner.scss';
 
 :root {
-    body {
-        background-color: $light;
-    }
-
     h1,
     h2,
     h3,

@@ -1,7 +1,6 @@
 .card-body {
     height: 460px;
     border-radius: $border-radius;
-    background-color: transparentize($secondary, 0.7);
     padding: 40px;
 }
 
@@ -16,7 +15,6 @@
             position: absolute;
             bottom: 0;
             width: 100%;
-            background-color: transparentize($dark, 0.2);
         }
 
         img {
