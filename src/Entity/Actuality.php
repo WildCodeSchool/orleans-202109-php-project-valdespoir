@@ -70,6 +70,11 @@ class Actuality
      */
     private ?DateTimeInterface $updatedAt;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private bool $selected;
+
     public function __construct()
     {
         $this->updatedAt = new DateTimeImmutable();
@@ -158,6 +163,18 @@ class Actuality
     public function setDate(DateTimeInterface $date): self
     {
         $this->date = $date;
+
+        return $this;
+    }
+
+    public function getSelected(): ?bool
+    {
+        return $this->selected;
+    }
+
+    public function setSelected(bool $selected): self
+    {
+        $this->selected = $selected;
 
         return $this;
     }
