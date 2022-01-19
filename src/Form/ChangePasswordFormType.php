@@ -36,7 +36,7 @@ class ChangePasswordFormType extends AbstractType
                     'attr' => ['autocomplete' => 'nouveau mot de passe'],
                     'label' => 'Confirmer le mot de passe',
                 ],
-                'invalid_message' => 'Les adresses e-mail doivent être identiques',
+                'invalid_message' => 'Les mots de passe doivent être identiques',
                 // Instead of being set onto the object directly,
                 // this is read and encoded in the controller
                 'mapped' => false,
