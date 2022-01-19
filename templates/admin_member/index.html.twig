@@ -1,7 +1,9 @@
-{% extends 'base.html.twig' %}
+{% extends 'adminBase.html.twig' %}
 
 {% block title %}Association index
 {% endblock %}
+
+{% block stylesheets %}{{ encore_entry_link_tags('admin') }}{% endblock %}
 
 {% block body %}
 	<main class="container">
@@ -30,7 +32,7 @@
 								<td class="d-flex justify-content-center align-items-center">
 									<a class="btn btn-outline-dark px-2 rounded fs-5 m-2" href="{{ path('admin_member_edit', {'id': member.id}) }}">Éditer</a>
 									<div class="ms-2">
-										{{ include('adminMember/_delete_form.html.twig') }}
+										{{ include('admin_member/_delete_form.html.twig') }}
 									</div>
 								</td>
 							</tr>

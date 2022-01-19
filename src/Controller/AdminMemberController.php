@@ -39,6 +39,8 @@ class AdminMemberController extends AbstractController
             $entityManager->persist($member);
             $entityManager->flush();
 
+            $this->addFlash('success', 'Le membre a bien été ajouté');
+
             return $this->redirectToRoute('admin_member_index', [], Response::HTTP_SEE_OTHER);
         }
 
@@ -59,6 +61,8 @@ class AdminMemberController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->flush();
 
+            $this->addFlash('success', 'Le membre a bien été modifié');
+
             return $this->redirectToRoute('admin_member_index', [], Response::HTTP_SEE_OTHER);
         }
 
@@ -77,6 +81,8 @@ class AdminMemberController extends AbstractController
             $entityManager->remove($member);
             $entityManager->flush();
         }
+
+        $this->addFlash('danger', 'Le partenaire a bien été supprimé');
 
         return $this->redirectToRoute('admin_member_index', [], Response::HTTP_SEE_OTHER);
     }
