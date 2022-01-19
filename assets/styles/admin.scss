@@ -3,3 +3,24 @@
 body {
     background-color: $light;
 }
+
+.container-home {
+    width: 1000px;
+}
+
+.card-body {
+    height: 90px;
+    padding-left: 350px;
+    border: solid 2px $dark;
+    border-radius: 8px;
+    flex-wrap: wrap-reverse;
+    transition: transform 0.1s;
+
+    &:hover {
+        filter: brightness(120% $dark);
+        box-shadow: 0px 0px 30px -15px $dark;
+        overflow: hidden;
+        transform: scale(1.01);
+        color: $dark;
+    }
+}
