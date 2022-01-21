@@ -6,6 +6,7 @@ body {
 
 .container-home {
     width: 1000px;
+    padding-bottom: 50px;
 }
 
 .card-body {
@@ -23,4 +24,13 @@ body {
         transform: scale(1.01);
         color: $dark;
     }
+}
+
+.accueil {
+    padding-bottom: 40px;
+    padding-top: 40px;
+}
+
+.jobOffer {
+    padding-bottom: 160px;
 }
