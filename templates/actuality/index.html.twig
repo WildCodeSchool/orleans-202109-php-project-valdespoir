@@ -2,30 +2,33 @@
 
 {% block body %}
 
-{% include 'include/_banner.html.twig' %}
+	{% block banner %}
+		{% include 'actuality/_banner.html.twig' %}
+	{% endblock %}
 
-<main class="container mb-4 mt-5">
-    <h2 class="text-center text-light opacity-75">Nos actualités</h2>
-    {% for actuality in actualities %}
-    <div class="card card-actuality mb-5 mt-5 bg-light opacity-75">
-        <div class="row g-0">
-            <div class="col-md-4">
-                <img class="card-img img-fluid rounded-start opacity-100" src={% if actuality.Picture is defined %} "{{ vich_uploader_asset(actuality, 'pictureFile') }}" {% else %} "{{ asset('build/images/placeholder-site.jpg') }}" {% endif %} alt="actuality-image">
-            </div>
-            <div class="col-md-8">
-                <div class="card-body text-dark d-flex m-2">
-                    <div class="align-self-center">
-                        <h3 class="card-title mb-4">{{ actuality.title }}</h3>
-                        <p class="card-text">{{ actuality.shortDescription }}</p>
-                        <p class="card-date mb-0"><small class="text-muted"> {{ actuality.date|date('d/m/Y') }} </small>
-                        </p>
-                        <a class="btn btn-primary opacity-75 text-light mt-2 rounded"
-                            href="{{ path('actuality_show', {id: actuality.id}) }}" type="button">Détails</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    {% endfor %}
-</main>
+	<main class="container mb-4 mt-5">
+		{% for actuality in actualities %}
+			<div class="card card-actuality mb-5 mt-5 bg-light opacity-75">
+				<div class="row g-0">
+					<div class="col-md-4">
+						<img class="card-img img-fluid rounded-start opacity-100" src={% if actuality.Picture is defined %} "{{ vich_uploader_asset(actuality, 'pictureFile') }}" {% else %} "{{ asset('build/images/placeholder-site.jpg') }}" {% endif %} alt="actuality-image">
+					</div>
+					<div class="col-md-8">
+						<div class="card-body text-dark d-flex m-2">
+							<div class="align-self-center">
+								<h3 class="card-title mb-4">{{ actuality.title }}</h3>
+								<p class="card-text">{{ actuality.shortDescription }}</p>
+								<p class="card-date mb-0">
+									<small class="text-muted">
+										{{ actuality.date|date('d/m/Y') }}
+									</small>
+								</p>
+								<a class="btn btn-primary opacity-75 text-light mt-2 rounded" href="{{ path('actuality_show', {id: actuality.id}) }}" type="button">Détails</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		{% endfor %}
+	</main>
 {% endblock %}

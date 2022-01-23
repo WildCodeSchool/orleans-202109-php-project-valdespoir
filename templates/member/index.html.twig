@@ -3,16 +3,12 @@
 {% block title %}Association
 {% endblock %}
 
+{% block banner %}
+{% include 'member/_banner.html.twig' %}
+{% endblock %}
+
 {% block body %}
-	{% include 'member/_banner.html.twig' %}
 	<main class="container">
-		<h2 class="text-center text-success">Val Espoir</h2>
-		<div>
-			<h3 class="text-center bg-secondary  fw-bold">La création de l'association en quelques dates</h3>
-			<p class="text-start p2 fw-bold">- L'Association Val Espoir a été créée en 2011 à l'initiative de 4 communes fondatrices : Saint-Denis en Val, Saint-Cyr en val, Saint-Jean le Blanc et Sandillon, rejointes par 2 communes associées : Jargeau et Olivet.</p>
-			<p class="text-start p2 fw-bold">- En 2015, Val Espoir a créé une seconde antenne à Jargeau afin de proposer l'Insertion par l'Activité Economique à des personnes qui n'y avait pas accès sur ce territoire.</p>
-			<p class="text-start p2 fw-bold">- Enfin, l'Entreprise d'Insertion (EI) a été créée en novembre 2019 pour répondre à des besoins plus spécifiques de clients.</p>
-		</div>
 		{% for member in members %}
 
 
