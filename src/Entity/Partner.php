@@ -2,12 +2,18 @@
 
 namespace App\Entity;
 
+use DateTime;
+use DateTimeInterface;
+use DateTimeImmutable;
 use App\Repository\PartnerRepository;
-use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\HttpFoundation\File\File;
+use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass=PartnerRepository::class)
+ * @Vich\Uploadable
  */
 class Partner
 {
