@@ -51,6 +51,21 @@ class AdminJobOfferController extends AbstractController
     }
 
     /**
+     * @Route("/select/{id<^[0-9]+$>}", name="select", methods={"POST"})
+     * @return Response
+     */
+    public function select(JobOffer $jobOffer, EntityManagerInterface $entityManager): Response
+    {
+        $jobOffer->setSelected(!$jobOffer->getSelected());
+
+        $entityManager->flush();
+
+        $this->addFlash('success', 'La modification a bien été effectuée');
+
+        return $this->redirectToRoute('adminJob_offer_index');
+    }
+
+    /**
      * @Route("/{id}/editer", name="edit", methods={"GET", "POST"})
      */
     public function edit(Request $request, JobOffer $jobOffer, EntityManagerInterface $entityManager): Response
