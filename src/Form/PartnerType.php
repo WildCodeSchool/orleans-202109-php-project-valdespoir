@@ -11,7 +11,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Vich\UploaderBundle\Form\Type\VichImageType;
-use Vich\UploaderBundle\Form\Type\VichFileType;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Symfony\Component\Form\Extension\Core\Type\UrlType;
 
 class PartnerType extends AbstractType
