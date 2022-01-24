@@ -12,7 +12,7 @@
 					<div class="card card-partner mb-4">
 						<div class="row d-flex justify-content-evenly g-0">
 							<div class="col-sm-3 d-flex align-items-center col-xxl-4">
-								<img class="col-8 d-flex justify-content-center rounded-start" src={% if partner.picture is empty %} {{ partner.name }} {% else %} {{ partner.picture }} {% endif %}>
+								<img class="col-8 d-flex justify-content-center rounded-start" src={% if partner.picture is defined %} "{{ vich_uploader_asset(partner, 'pictureFile') }}" {% else %} {{ partner.name }} {% endif %} alt="partner-image">
 							</div>
 							<div class="col-sm-6 col-xxl-8">
 								<div class="card-body m-2">
