@@ -5,8 +5,8 @@
 				<div class="carousel-inner">
 					{% for job_offer in jobOffers %}
 						<div class="carousel-item {{ loop.first ? 'active' : '' }}">
-							<img class="img-fluid d-block w-100 " src="{{ asset('build/images/VErecrute.png') }}" alt="job-offer-image">
-							<div class="card-header text-light text-center">{{ job_offer.title }}</div>
+							<img class="img-fluid d-block w-100 " src="{{ asset('build/images/placeholder-job.jpg') }}" alt="job-offer-image">
+							<div class="card-header text-light bg-dark opacity-75 text-center">{{ job_offer.title }}</div>
 						</div>
 					{% endfor %}
 				</div>
