@@ -3,7 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\JobOfferRepository;
-use DateTime;
+use DateTimeImmutable;
 use DateTimeInterface;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
@@ -39,6 +39,11 @@ class JobOffer
      * @ORM\Column(type="datetime")
      */
     private DateTimeInterface $date;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $selected;
 
     public function getId(): ?int
     {
@@ -77,6 +82,18 @@ class JobOffer
     public function setDate(DateTimeInterface $date): self
     {
         $this->date = $date;
+
+        return $this;
+    }
+
+    public function getSelected(): ?bool
+    {
+        return $this->selected;
+    }
+
+    public function setSelected(?bool $selected): self
+    {
+        $this->selected = $selected;
 
         return $this;
     }
