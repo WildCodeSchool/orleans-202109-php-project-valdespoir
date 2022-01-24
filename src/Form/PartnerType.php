@@ -3,16 +3,14 @@
 namespace App\Form;
 
 use App\Entity\Partner;
-use DateTime;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
-use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Vich\UploaderBundle\Form\Type\VichImageType;
-use Vich\UploaderBundle\Mapping\Annotation as Vich;
-use Symfony\Component\Form\Extension\Core\Type\UrlType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 class PartnerType extends AbstractType
 {
@@ -20,11 +18,11 @@ class PartnerType extends AbstractType
     {
         $builder
             ->add('name', TextType::class, ['label' => 'Nom',])
-            ->add('picture', VichImageType::class, [
+            ->add('pictureFile', VichImageType::class, [
                 'label' => 'Image',
             ])
-            ->add('link', TextType::class, ['label' => 'Lien',]);
-        //->add('date', DateTimeType::class, ['label' => 'Date']);
+            ->add('link', TextType::class, ['label' => 'Lien',])
+            ->add('date', DateTimeType::class, ['label' => 'Date']);
     }
 
     public function configureOptions(OptionsResolver $resolver): void
