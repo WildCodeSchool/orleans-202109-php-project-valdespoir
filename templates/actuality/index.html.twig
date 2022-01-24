@@ -1,11 +1,10 @@
 {% extends 'base.html.twig' %}
 
+{% block banner %}
+	{% include 'actuality/_banner.html.twig' %}
+{% endblock %}
+
 {% block body %}
-
-	{% block banner %}
-		{% include 'actuality/_banner.html.twig' %}
-	{% endblock %}
-
 	<main class="container mb-4 mt-5">
 		{% for actuality in actualities %}
 			<div class="card card-actuality mb-5 mt-5 bg-light opacity-75">
