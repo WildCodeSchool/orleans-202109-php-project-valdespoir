@@ -22,7 +22,7 @@ class PartnerType extends AbstractType
                 'label' => 'Image',
             ])
             ->add('link', TextType::class, ['label' => 'Lien',])
-            ->add('date', DateTimeType::class, ['label' => 'Date']);
+            ->add('link', TextType::class, ['label' => 'Lien',]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void
