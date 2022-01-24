@@ -27,7 +27,7 @@ class AdminPartnerController extends AbstractController
     }
 
     /**
-     * @Route("/ajouter", name="new", methods={"GET", "POST"})
+     * @Route("/ajouter", name="new")
      */
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
