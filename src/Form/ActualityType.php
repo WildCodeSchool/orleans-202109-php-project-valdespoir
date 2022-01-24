@@ -9,7 +9,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\UrlType;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class ActualityType extends AbstractType
 {
@@ -19,8 +19,10 @@ class ActualityType extends AbstractType
             ->add('title', TextType::class, ['label' => 'Titre',])
             ->add('shortDescription', TextareaType::class, ['label' => 'Description',])
             ->add('description', TextareaType::class, ['label' => 'Description',])
-            ->add('picture', UrlType::class, [
-                'label' => 'Image 1',
+            ->add('pictureFile', VichImageType::class, [
+                'label' => 'Image',
+                'download_label' => '',
+                'delete_label' => 'Supprimer l\'image',
             ])
             ->add('date', DateTimeType::class, ['label' => 'Date']);
     }

@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/admin/actualite", name="admin_actuality_")
+ * @Route("/admin/actualites", name="admin_actuality_")
  */
 class AdminActualityController extends AbstractController
 {
@@ -47,6 +47,21 @@ class AdminActualityController extends AbstractController
             'actuality' => $actuality,
             'form' => $form,
         ]);
+    }
+
+    /**
+     * @Route("/select/{id<^[0-9]+$>}", name="select", methods={"POST"})
+     * @return Response
+     */
+    public function select(Actuality $actuality, EntityManagerInterface $entityManager): Response
+    {
+        $actuality->setSelected(!$actuality->getSelected());
+
+        $entityManager->flush();
+
+        $this->addFlash('success', 'La modification a bien été effectuée');
+
+        return $this->redirectToRoute('admin_actuality_index');
     }
 
     /**

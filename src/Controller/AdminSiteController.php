@@ -12,13 +12,13 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/admin/chantier", name="admin_site_")
+ * @Route("/admin/realisations", name="admin_site_")
  */
 class AdminSiteController extends AbstractController
 {
-/**
- * @Route("/", name="index")
- */
+    /**
+     * @Route("/", name="index")
+     */
     public function index(SiteRepository $siteRepository): Response
     {
         return $this->render('adminSite/index.html.twig', [
@@ -48,6 +48,21 @@ class AdminSiteController extends AbstractController
             'site' => $site,
             'form' => $form,
         ]);
+    }
+
+    /**
+     * @Route("/select/{id<^[0-9]+$>}", name="select", methods={"POST"})
+     * @return Response
+     */
+    public function select(Site $site, EntityManagerInterface $entityManager): Response
+    {
+        $site->setSelected(!$site->getSelected());
+
+        $entityManager->flush();
+
+        $this->addFlash('success', 'La modification a bien été effectuée');
+
+        return $this->redirectToRoute('admin_site_index');
     }
 
     /**

@@ -1,5 +1,11 @@
+body {
+    background-color: $dark;
+    min-height: 100vh;
+}
+
 .card-site {
     transition: transform 0.2s;
+    height: 460px;
 
     &:hover {
         filter: brightness(120%);

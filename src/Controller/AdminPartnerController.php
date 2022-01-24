@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/admin/partenaire", name="admin_partner_")
+ * @Route("/admin/partenaires", name="admin_partner_")
  */
 class AdminPartnerController extends AbstractController
 {
@@ -77,7 +77,7 @@ class AdminPartnerController extends AbstractController
             $entityManager->remove($partner);
             $entityManager->flush();
         }
-
+        $this->addFlash('danger', 'Le partenaire a bien été supprimé');
         return $this->redirectToRoute('admin_partner_index', [], Response::HTTP_SEE_OTHER);
     }
 }

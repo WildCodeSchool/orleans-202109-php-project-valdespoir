@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/actuality", name="actuality_")
+ * @Route("/actualites", name="actuality_")
  */
 class ActualityController extends AbstractController
 {
