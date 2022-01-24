@@ -41,9 +41,9 @@ class JobOffer
     private DateTimeInterface $date;
 
     /**
-     * @ORM\Column(type="boolean", nullable=true)
+     * @ORM\Column(type="boolean")
      */
-    private $selected;
+    private bool $selected;
 
     public function getId(): ?int
     {
@@ -91,7 +91,7 @@ class JobOffer
         return $this->selected;
     }
 
-    public function setSelected(?bool $selected): self
+    public function setSelected(bool $selected): self
     {
         $this->selected = $selected;
 
