@@ -1,12 +1,11 @@
 {% extends 'base.html.twig' %}
 
 {% block banner %}
-	{% include 'include/_banner.html.twig' %}
+	{% include 'site/_banner.html.twig' %}
 {% endblock %}
 
 {% block body %}
 	<main class="container content-row mb-4 mt-5">
-		<h2 class="text-center text-light opacity-75">Nos réalisations</h2>
 		<div class="row g-4 mb-5 mt-4 ">
 			{% for site in sites %}
 				<div class="col-sm-6 col-xxl-4">

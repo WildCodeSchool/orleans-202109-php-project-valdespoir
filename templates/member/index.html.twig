@@ -3,18 +3,18 @@
 {% block title %}Association
 {% endblock %}
 
-{% block body %}
+{% block banner %}
 {% include 'member/_banner.html.twig' %}
-<main class="container mb-4 mt-5">
-	<h2 class="text-center text-light opacity-75">L'association</h2>
-	{% for member in members %}
-	<div class="card card-member mb-5 mt-5 bg-light opacity-75">
-		<h3 class="card-header opacity-75 bg-dark text-light card-title text-center">{{ member.name }}</h3>
-		<div class="row g-0">
-			<div class="col-md-12 mt-5 mb-5 text-dark">
-				<h5 class="card-role text-center mb-4">{{ member.role }}</h5>
-				<p class="card-text text-center mb-0">{{ member.description }}</p>
-					</div>
+{% endblock %}
+
+{% block body %}
+	<main class="container">
+		{% for member in members %}
+			<div class="card m-3">
+				<div class="card-body">
+					<h3 class="card-title text-center">{{ member.name }}</h3>
+					<h5 class="card-title text-center">{{ member.role }}</h5>
+					<p class="card-text text-center">{{ member.description }}</p>
 				</div>
 			</div>
 	{% endfor %}

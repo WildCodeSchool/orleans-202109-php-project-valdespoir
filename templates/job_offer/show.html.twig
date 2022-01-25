@@ -4,15 +4,12 @@
 {% endblock %}
 
 {% block body %}
+	<main class="container mb-4 mt-5">
+		<h1 class="text-center text-light opacity-75">
+			{{ job_offer.title }}
+		</h1>
+		<div class="row justify-content-center">
 
-{% include 'include/_banner.html.twig' %}
-
-<main class="container mb-4 mt-5">
-	<h2 class="text-center text-light opacity-75">
-		{{ job_offer.title }}
-	</h2>
-	<div class="row justify-content-center mt-5 ">
-		<div class="col-sm-8 col-xxl-8">
 			<p class="card-date">
 				<small class="text-muted">Date de la publication :
 					{{ job_offer.date|date('d/m/Y') }}
