@@ -1,34 +1,35 @@
 {% extends 'base.html.twig' %}
 
 {% block banner %}
-	{% include 'job_offer/_banner.html.twig' %}
+{% include 'job_offer/_banner.html.twig' %}
 {% endblock %}
 
 {% block body %}
-	<main class="container mb-4 mt-5">
-		<h2 class="text-center text-light opacity-75">Nos offres d'emplois</h2>
-
-		{% for job_offer in jobOffers %}
-			<div class="card card-actuality mb-5 mt-5 bg-light opacity-75">
-				<div class="row g-0">
-					<div class="col-md-4">
-						<img class="card-img img-fluid rounded-start opacity-100" src="{{ asset('build/images/VErecrute.png') }}" alt="actuality-image">
-					</div>
-					<div class="col-md-8">
-						<div class="card-body text-dark d-flex m-2">
-							<div class="align-self-center">
-								<h3 class="card-title mb-4">{{ job_offer.title }}</h3>
-								<p class="card-date mb-0">
-									<small class="text-muted">Date de publication de l'offre :
-										{{ job_offer.date|date('d/m/Y') }}
-									</small>
-								</p>
-								<a class="btn btn-primary opacity-75 text-light mt-2 rounded" href="{{ path('job_offer_show', {id: job_offer.id}) }}" type="button">Détails</a>
-							</div>
-						</div>
+<main class="container mb-4 mt-5">
+	<h2 class="text-center text-light opacity-75">Nos offres d'emplois</h2>
+	{% for job_offer in jobOffers %}
+	<div class="card card-job mb-5 mt-5 bg-light opacity-75">
+		<div class="row g-0">
+			<div class="col-md-4">
+				<img class="card-img job-img img-fluid rounded-start opacity-100"
+					src="{{ asset('build/images/placeholder-job.jpg') }}" alt="job-offer-image">
+			</div>
+			<div class="col-md-8">
+				<div class="card-body job-body text-dark d-flex m-2">
+					<div class="align-self-center">
+						<h3 class="card-title mb-4">{{ job_offer.title }}</h3>
+						<p class="card-date mb-0">
+							<small class="text-muted">Date de publication de l'offre :
+								{{ job_offer.date|date('d/m/Y') }}
+							</small>
+						</p>
+						<a class="btn btn-primary opacity-75 text-light mt-2 rounded"
+							href="{{ path('job_offer_show', {id: job_offer.id}) }}" type="button">Détails</a>
 					</div>
 				</div>
 			</div>
-		{% endfor %}
-	</main>
+		</div>
+	</div>
+	{% endfor %}
+</main>
 {% endblock %}

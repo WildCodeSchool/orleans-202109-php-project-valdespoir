@@ -7,6 +7,7 @@
 @import 'site.scss';
 @import 'actualities.scss';
 @import 'partner.scss';
+@import 'job.scss';
 
 :root {
     h1,
@@ -34,4 +35,5 @@
         font-family: $text-font;
         font-size: $text-size;
     }
+
 }
