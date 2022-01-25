@@ -4,12 +4,12 @@
 {% endblock %}
 
 {% block body %}
-	<main class="container mb-4 mt-5">
-		<h1 class="text-center text-light opacity-75">
-			{{ job_offer.title }}
-		</h1>
-		<div class="row justify-content-center">
-
+<main class="container mb-4 mt-5">
+	<h1 class="text-center text-light opacity-75">
+		{{ job_offer.title }}
+	</h1>
+	<div class="row justify-content-center">
+		<div class="col-sm-8 col-xxl-8">
 			<p class="card-date">
 				<small class="text-muted">Date de la publication :
 					{{ job_offer.date|date('d/m/Y') }}
@@ -27,5 +27,6 @@
 			<a class="btn btn-primary opacity-50 mt-2 rounded text-light" href="{{ path('job_offer_index') }}"
 				type="button">Retour</a>
 		</div>
+	</div>
 </main>
 {% endblock %}
