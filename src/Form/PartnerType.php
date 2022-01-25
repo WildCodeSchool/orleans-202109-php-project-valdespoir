@@ -6,8 +6,11 @@ use App\Entity\Partner;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\UrlType;
+use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
+use Vich\UploaderBundle\Form\Type\VichImageType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 class PartnerType extends AbstractType
 {
@@ -15,9 +18,10 @@ class PartnerType extends AbstractType
     {
         $builder
             ->add('name', TextType::class, ['label' => 'Nom',])
-            ->add('picture', UrlType::class, ['label' => 'Image 1',])
-            ->add('link', TextType::class, ['label' => 'Lien',])
-        ;
+            ->add('pictureFile', VichImageType::class, [
+                'label' => 'Image',
+            ])
+            ->add('link', TextType::class, ['label' => 'Lien',]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void
