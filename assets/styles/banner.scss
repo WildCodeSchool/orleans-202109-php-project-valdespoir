@@ -13,7 +13,7 @@
 }
 
 .banner-member {
-    background-size: 70% 500px;
+    background-size: 100% 500px;
     background-image: url('../images/banner-member.jpg');
     background-position: center 20%;
 }
@@ -24,15 +24,18 @@
 }
 
 .banner-actuality {
-    background-size: 100% 600px;
-    background-image: url('../images/banner-actuality.png');
+    background-image: url('../images/banner-actuality.jpg');
     background-position: center 60%;
-    background-color: rgb(240, 238, 238);
 }
+
+// .banner-contact {
+//     background-image: url('../images/banner-contact.jpg');
+//     background-position: center 40%;
+// }
 
 .title {
     background-color: $light;
-    color: $primary;
+    color: $dark;
     opacity: 0.75;
     width: $width-banner-title;
     max-width: 1300px;
@@ -45,6 +48,7 @@
 .title h1 {
     margin: 28px;
     text-align: center;
+    color: $primary;
 }
 
 .title p {
