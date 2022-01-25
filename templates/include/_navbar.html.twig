@@ -1,15 +1,6 @@
 <nav class="sticky-top navbar navbar-expand-lg navbar-primary bg-light ">
 	<div class="container-fluid">
 		<a class="navbar-brand mx-5" href="{{ path('home') }}"><img src="{{ asset('build/images/logo2.png') }}"></a>
-		<div class="mt-4">
-			{% if app.user %}
-				<a class="text-decoration-none text-primary fs-5" href="{{ path('admin_home_index') }}">
-					<svg xmlns="http://www.w3.org/2000/svg" style="color: #149E1D
-						;" width="16" height="16" fill="currentColor" class="bi bi-chevron-left mb-1" viewbox="0 0 16 16">
-						<path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
-					</svg>Retour à mon espace</a>
-			{% endif %}
-		</div>
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
@@ -33,6 +24,15 @@
 				<li class="nav-item">
 					<a class="nav-link active mx-3" href="{{ path('contact') }}">Contact</a>
 				</li>
+				<li>
+			{% if app.user %}
+				<a class="text-decoration-none text-primary nav-link active mx-3" href="{{ path('admin_home_index') }}">
+					<svg xmlns="http://www.w3.org/2000/svg" style="color: #149E1D
+						;" width="16" height="16" fill="currentColor" class="bi bi-chevron-left mb-1" viewbox="0 0 16 16">
+						<path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+					</svg>Retour à mon espace</a>
+			{% endif %}
+		</li>
 			</ul>
 		</div>
 	</div>
