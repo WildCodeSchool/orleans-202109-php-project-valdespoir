@@ -17,6 +17,7 @@ class JobOfferFixtures extends Fixture
         $faker = Factory::create('fr_FR');
         for ($i = 0; $i < self::JOB_OFFER; $i++) {
             $jobOffer = new JobOffer();
+            $jobOffer->setSelected($faker->boolean());
             $jobOffer->setTitle($faker->jobTitle());
             $jobOffer->setDescription($faker->text(500));
             $jobOffer->setDate(new DateTime());

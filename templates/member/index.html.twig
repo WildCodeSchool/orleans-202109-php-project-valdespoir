@@ -17,21 +17,15 @@
 					<p class="card-text text-center">{{ member.description }}</p>
 				</div>
 			</div>
-
-		{% endfor %}
-		<div>
-			<h3 class="text-center bg-secondary  fw-bold">A qui s'adresse Val Espoir</h3>
-			<p class="text-center p-2  fw-bold">. Des jeunes sans qualification ou sans expérience professionelle,</p>
-			<p class="text-center p-2  fw-bold">. Des bénéficiaires des minima sociaux,</p>
-			<p class="text-center p-2  fw-bold">. Des demandeurs d'emploi de longue durée,</p>
-			<p class="text-center p-2  fw-bold">. Des personnes reconnues travailleurs handicapés,</p>
-
+	{% endfor %}
+	<div class="card card-member mb-5 mt-5 bg-light opacity-75">
+		<h3 class="card-header opacity-75 bg-dark text-light card-title text-center">A qui s'adresse Val Espoir</h3>
+		<div class="text-center text-dark mt-5 mb-5">
+			<p class="card-title mb-0">Des jeunes sans qualification ou sans expérience professionelle,</p>
+			<p class="card-title mb-0">Des bénéficiaires des minima sociaux,</p>
+			<p class="card-title mb-0">Des demandeurs d'emploi de longue durée,</p>
+			<p class="card-title mb-0">Des personnes reconnues travailleurs handicapés,</p>
 		</div>
-		<div>
-			<h3 class="text-center bg-secondary  fw-bold">Nos engagements</h3>
-			<p class="text-center p-2 fw-bold">Val Espoir a pour but de lever les freins à l'emploi de personnes en difficulté d'insertion et d'emmener les salariés en insertion à l'emploi ou la formation en mettant en oeuvre un accompagnement personnalisé et professionnel pour chacun de ses salariés.</p>
-			<p class="text-center p-2 fw-bold">Tout au long de son contrat de travail, le salarié bénéficie d'un accompagnement social et professionnel adapté à sa situation professionnelle, l'objectif étant de faciliter son retour à l'emploi durable et/ou à la formation professionelle.</p>
-		</div>
-	</main>
-
+	</div>
+</main>
 {% endblock %}
