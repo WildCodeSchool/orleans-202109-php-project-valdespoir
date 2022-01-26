@@ -7,26 +7,54 @@
     height: $height-banner;
 }
 
+.banner-job {
+    background-image: url('../images/banner-job.jpg');
+    background-position: center 70%;
+}
+
+.banner-member {
+    background-size: 50% 200px;
+    background-image: url('../images/banner-member.png');
+    background-position: center 20%;
+    background-color: rgb(233, 227, 227);
+}
+
+.banner-site {
+    background-image: url('../images/banner-site.jpg');
+    background-position: center 60%;
+}
+
+.banner-actuality {
+    background-image: url('../images/banner-actuality.jpg');
+    background-position: center 60%;
+}
+
+.banner-contact {
+    background-image: url('../images/banner-contact.jpg');
+    background-position: center 35%;
+}
+
+.banner-partner {
+    background-image: url('../images/banner-partner.jpg');
+    background-position: center 50%;
+}
+
 .title {
     background-color: $light;
-    text-align: center;
-    color: $primary;
+    color: $dark;
     opacity: 0.75;
-
-    background-color: $light;
-    text-align: center;
-    color: $primary;
-
     width: $width-banner-title;
     max-width: 1300px;
     margin: auto;
-    margin-top: -2.1 * $main-title-size + $spacing2;
+    margin-top: -2.2 * $main-title-size + $spacing2;
     border-radius: $border-radius;
     margin-bottom: 70px;
 }
 
 .title h1 {
     margin: 28px;
+    text-align: center;
+    color: $primary;
 }
 
 .title p {
