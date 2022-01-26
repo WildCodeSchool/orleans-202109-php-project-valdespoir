@@ -15,11 +15,9 @@
 		{% endblock %}
 	</head>
 	<body>
-		<header>
-			{% block navbar %}
-				{% include "include/_navbar.html.twig" %}
-			{% endblock %}
-		</header>
+		{% block navbar %}
+			{% include "include/_navbar.html.twig" %}
+		{% endblock %}	
 		{% block banner %}{% endblock %}
 		{% block flash %}
 			{% for category, messages in app.flashes %}
@@ -34,9 +32,9 @@
 		{% endblock %}
 		{% block body %}{% endblock %}
 		<footer>
-		{% block footer %}
-			{% include "include/_footer.html.twig" %}
-		{% endblock %}
+			{% block footer %}
+				{% include "include/_footer.html.twig" %}
+			{% endblock %}
 		</footer>
 	</body>
 </html>
