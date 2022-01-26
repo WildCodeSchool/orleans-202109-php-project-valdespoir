@@ -4,32 +4,28 @@
 {% endblock %}
 
 {% block body %}
-	{% include 'member/_banner.html.twig' %}
-	<main class="container mb-4 mt-5">
-		<h2 class="text-center text-light opacity-75">L'association</h2>
-
-		{% for member in members %}
-			<div class="card card-member mb-5 mt-5 bg-light opacity-75">
-				<h3 class="card-header opacity-75 bg-dark text-light card-title text-center">{{ member.name }}</h3>
-				<div class="row g-0">
-					<div class="col-md-12 mt-5 mb-5 text-dark">
-						<h5 class="card-role text-center mb-4">{{ member.role }}</h5>
-						<p class="card-text text-center mb-0">{{ member.description }}</p>
-					</div>
-				</div>
-			</div>
-		{% endfor %}
-		<div class="card card-member mb-5 mt-5 bg-light opacity-75">
-			<h3 class="card-header opacity-75 bg-dark text-light card-title text-center">A qui s'adresse Val Espoir</h3>
-			<div class="text-center text-dark mt-5 mb-5">
-				<p class="card-title mb-0">Des jeunes sans qualification ou sans expérience professionelle,</p>
-				<p class="card-title mb-0">Des bénéficiaires des minima sociaux,</p>
-				<p class="card-title mb-0">Des demandeurs d'emploi de longue durée,</p>
-				<p class="card-title mb-0">Des personnes reconnues travailleurs handicapés,</p>
+{% include 'member/_banner.html.twig' %}
+<main class="container mb-4 mt-5">
+	<h2 class="text-center text-light opacity-75">L'association</h2>
+	{% for member in members %}
+	<div class="card card-member mb-5 mt-5 bg-light opacity-75">
+		<h3 class="card-header opacity-75 bg-dark text-light card-title text-center">{{ member.name }}</h3>
+		<div class="row g-0">
+			<div class="col-md-12 mt-5 mb-5 text-dark">
+				<h5 class="card-role text-center mb-4">{{ member.role }}</h5>
+				<p class="card-text text-center mb-0">{{ member.description }}</p>
 			</div>
 		</div>
-
-	</main>
-
-
+	</div>
+	{% endfor %}
+	<div class="card card-member mb-5 mt-5 bg-light opacity-75">
+		<h3 class="card-header opacity-75 bg-dark text-light card-title text-center">A qui s'adresse Val Espoir</h3>
+		<div class="text-center text-dark mt-5 mb-5">
+			<p class="card-title mb-0">Des jeunes sans qualification ou sans expérience professionelle,</p>
+			<p class="card-title mb-0">Des bénéficiaires des minima sociaux,</p>
+			<p class="card-title mb-0">Des demandeurs d'emploi de longue durée,</p>
+			<p class="card-title mb-0">Des personnes reconnues travailleurs handicapés,</p>
+		</div>
+	</div>
+</main>
 {% endblock %}

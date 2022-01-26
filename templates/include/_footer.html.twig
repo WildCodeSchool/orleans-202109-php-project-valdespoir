@@ -1,5 +1,5 @@
-<div class="tondeuse d-flex flex-row-reverse bd-highlight opacity-75">
-	<img src="{{ asset('build/images/pelouse 2.98673199.png') }}" alt="">
+<div class="tondeuse d-flex flex-row-reverse bd-highlight">
+	<img src="{{ asset('build/images/pelouse.png') }}" alt="grass">
 </div>
 <footer class=" bg-light text-dark" id="footer">
 	<div class="container-fluid">
@@ -72,16 +72,15 @@
 			<div class="offset-lg-2 col-lg-3 text-center mt-4">
 				{% if app.user %}
 					{{ app.user.email }}
-					<a class="text-light fs-5 text-decoration-none ms-2" href="{{ path('app_logout') }}">Se
-						déconnecter</a>
-					{% else %}
+					<a class="text-light fs-5 text-decoration-none ms-2" href="{{ path('app_logout') }}">
+						Se déconnecter</a>
+				{% else %}
 					<a class="text-light bg-dark fs-5 text-decoration-none" href="{{ path('login') }}">Se connecter</a>
-					{% endif %}
-				</div>
-				<div class="text-center text-light mt-2">
-					<p class="mb-0">Mentions légales</p>
-				</div>
+				{% endif %}
+			</div>
+			<div class="text-center text-light mt-2">
+				<p class="mb-0">Mentions légales</p>
 			</div>
 		</div>
 	</div>
-</div></footer>
+</footer>
