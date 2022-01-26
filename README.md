@@ -124,7 +124,7 @@ Copier le dossier “.env”, puis coller le contenu dans un nouveau dossier app
 
 Dans le dossier “.env.local” remplir vos informations personnelles “db_name”, “db_user”, puis le “db_name” qui est “ValEspoir”.
 
-Dans le dossier “public”, créer le dossier “uploads” puis à l’intérieur de ce dernier créer un autre dossier nommé “images”. Vous allez ensuite dans le dossier des fixtures. Copier le fichier “haies2.jpg” puis venez le coller dans le dossier “public/uploads/images” que vous venez de créer 
+Dans le dossier “public”, créer le dossier “uploads” puis à l’intérieur de ce dernier créer un autre dossier nommé “images”.
 
 Créer la database:
 
