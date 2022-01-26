@@ -8,8 +8,8 @@
 {% include 'partner/_banner.html.twig' %}
 
 <main class="container mb-4 mt-5">
-  {% for partner_category in partnerCategories %}
-  <h2 class="text-center text-light opacity-75">{{ partner_category.name }}</h2>
+	{% for partner_category in partnerCategories %}
+	<h2 class="text-center text-light opacity-75">{{ partner_category.name }}</h2>
 	<div class="row mb-5 mt-4">
 		{% for partner in partner_category.partners %}
 		<div class="col-sm-12 col-md-12 col-lg-6">
@@ -32,6 +32,6 @@
 		</div>
 		{% endfor %}
 	</div>
-		{% endfor %}
+	{% endfor %}
 </main>
 {% endblock %}
