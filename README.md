@@ -113,3 +113,26 @@ SOFTWARE.
 
 ## Acknowledgments
 
+Cloner le repository avec la clé SSH 
+
+Lancer les commandes:
+composer install
+yarn install
+yarn encore dev
+
+Copier le dossier “.env”, puis coller le contenu dans un nouveau dossier appelé “.env.local”.
+
+Dans le dossier “.env.local” remplir vos informations personnelles “db_name”, “db_user”, puis le “db_name” qui est “ValEspoir”.
+
+Dans le dossier “public”, créer le dossier “uploads” puis à l’intérieur de ce dernier créer un autre dossier nommé “images”. Vous allez ensuite dans le dossier des fixtures. Copier le fichier “haies2.jpg” puis venez le coller dans le dossier “public/uploads/images” que vous venez de créer 
+
+Créer la database:
+
+symfony console d:d:c
+symfony console d:m:m
+symfony console d:f:l
+
+Lancer le localhost avec la commande “php -S localhost:8000 -t public”
+
+Vous avez désormais accès au nouveau site de ValEspoir. 
+
