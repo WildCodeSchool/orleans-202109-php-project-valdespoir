@@ -6,6 +6,7 @@ use DateTime;
 use DateTimeInterface;
 use DateTimeImmutable;
 use App\Repository\PartnerRepository;
+use phpDocumentor\Reflection\Types\Null_;
 use Symfony\Component\Validator\Constraints as Assert;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Symfony\Component\HttpFoundation\File\File;
@@ -59,6 +60,12 @@ class Partner
      * @Assert\Url
      */
     private ?string $link = null;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="partners")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private ?Category $category;
 
     public function __construct()
     {
@@ -124,6 +131,18 @@ class Partner
     public function setPicture(?string $picture): self
     {
         $this->picture = $picture;
+
+        return $this;
+    }
+
+    public function getCategory(): ?Category
+    {
+        return $this->category;
+    }
+
+    public function setCategory(?Category $category): self
+    {
+        $this->category = $category;
 
         return $this;
     }
