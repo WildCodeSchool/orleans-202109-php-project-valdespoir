@@ -3,7 +3,9 @@
 {% block title %}Partenaire index
 {% endblock %}
 
-{% block stylesheets %}{{ encore_entry_link_tags('admin') }}{% endblock %}
+{% block stylesheets %}
+	{{ encore_entry_link_tags('admin') }}
+{% endblock %}
 
 {% block body %}
 	<main class="container mb-5">
@@ -39,6 +41,9 @@
 							<tr>
 								<td colspan="5">Aucun enregistrement trouvé</td>
 							</tr>
+						{% endfor %}
+						{% for category in categories %}
+						<td>{{ category.name }}</td>
 						{% endfor %}
 					</tbody>
 				</table>

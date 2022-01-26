@@ -2,9 +2,11 @@
 
 namespace App\Controller;
 
+use App\Entity\Category;
 use App\Entity\Partner;
 use App\Form\PartnerType;
 use App\Repository\PartnerRepository;
+use App\Repository\CategoryRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -23,6 +25,12 @@ class AdminPartnerController extends AbstractController
     {
         return $this->render('admin_partner/index.html.twig', [
             'partners' => $partnerRepository->findAll(),
+        ]);
+    }
+    public function category(CategoryRepository $categoryRepository): Response
+    {
+        return $this->render('admin_partner/index.html.twig', [
+            'categories' => $categoryRepository->findAll(),
         ]);
     }
 

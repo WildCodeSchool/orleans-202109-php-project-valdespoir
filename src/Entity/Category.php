@@ -22,11 +22,6 @@ class Category
      */
     private ?string $name;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private ?string $partnerType;
-
     public function getId(): ?int
     {
         return $this->id;
@@ -40,18 +35,6 @@ class Category
     public function setName(string $name): self
     {
         $this->name = $name;
-
-        return $this;
-    }
-
-    public function getPartnerType(): ?string
-    {
-        return $this->partnerType;
-    }
-
-    public function setPartnerType(string $partnerType): self
-    {
-        $this->partnerType = $partnerType;
 
         return $this;
     }
