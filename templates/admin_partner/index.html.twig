@@ -28,7 +28,7 @@
 						{% for partner in partners %}
 							<tr class="table-light text-dark fs-5">
 								<td>{{ partner.name }}</td>
-								<td>{{ partner.picture }}</td>
+								<td><img class="w-50" src="/uploads/images/{{ partner.picture }}" alt="logo de {{ partner.name }}"></td>
 								<td>{{ partner.link }}</td>
 								<td class="d-flex justify-content-center align-items-center">
 									<a class="btn btn-outline-dark px-2 rounded fs-5 m-2" href="{{ path('admin_partner_edit', {'id': partner.id}) }}">Éditer</a>

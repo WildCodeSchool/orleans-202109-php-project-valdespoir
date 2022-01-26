@@ -1,35 +1,33 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-	{% include 'partner/_banner.html.twig' %}
-	<main class="container">
+
+{% include 'partner/_banner.html.twig' %}
+
+<main class="container mb-4 mt-5">
 		{% for partner_category in partnerCategories %}
-
-
-			<div class="row">
-				<div class="text-center my-5 row-4 rounded-2">
-					<h2 class="text-center text-success">{{ partner_category.name }}</h2>
-				</div>
-				<div class="row col-5">
-					{% for partner in partner_category.partners %}
-						<div class="card card-partner mb-4">
-							<div class="row d-flex justify-content-evenly g-0">
-								<div class="col-sm-3 d-flex align-items-center col-xxl-4">
-									<img class="col-8 d-flex justify-content-center rounded-start" src={% if partner.picture is empty %} {{ partner.name }} {% else %} {{ partner.picture }} {% endif %}>
-								</div>
-								<div class="col-sm-6 col-xxl-8">
-									<div class="card-body m-2">
-										<h3 class="card-title">{{ partner.name }}</h3>
-										<div class="d-flex justify-content-end">
-											<a class="btn btn-primary text-light px-3 opacity-75 rounded" target="_blank" href="{{ partner.link }}">Site web du partenaire</a>
-										</div>
-									</div>
-								</div>
+					<h2 class="text-center text-light opacity-75">{{ partner_category.name }}</h2>
+	<div class="row mb-5 mt-4">
+		{% for partner in partner_category.partners %}
+		<div class="col-sm-12 col-md-12 col-lg-6">
+			<div class="card card-partner mt-4 bg-light opacity-75">
+				<div class="row p-0">
+					<div class="col-md-5">
+						<img class="card-img partner-img img-fluid rounded-start opacity-100" src={% if partner.picture is defined %} "{{ vich_uploader_asset(partner, 'pictureFile') }}" {% else %} {{ partner.name }} {% endif %} alt="partner-image">
+					</div>
+					<div class="col-md-7">
+						<div class="card-body partner-body text-dark d-flex m-2">
+							<div class="align-self-center">
+								<h3 class="card-title mb-4">{{ partner.name }}</h3>
+								<a class="btn btn-primary opacity-75 text-light mt-2 rounded" target="_blank"
+									href="{{ partner.link }}">Site web</a>
 							</div>
 						</div>
-					{% endfor %}
+					</div>
 				</div>
 			</div>
+		</div>
 		{% endfor %}
-	</main>
+	</div>
+</main>
 {% endblock %}
