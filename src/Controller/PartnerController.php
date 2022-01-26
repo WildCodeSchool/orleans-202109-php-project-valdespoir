@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\Repository\PartnerRepository;
+use App\Repository\CategoryRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -15,9 +15,9 @@ class PartnerController extends AbstractController
     /**
      * @Route("/", name="_index")
      */
-    public function index(PartnerRepository $partnerRepository): Response
+    public function index(CategoryRepository $categoryRepository): Response
     {
-        $partners = $partnerRepository->findAll();
-        return $this->render('partner/index.html.twig', ['partners' => $partners]);
+        $partnerCategories = $categoryRepository->findAll();
+        return $this->render('partner/index.html.twig', ['partnerCategories' => $partnerCategories]);
     }
 }

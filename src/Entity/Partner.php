@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\PartnerRepository;
 use Doctrine\ORM\Mapping as ORM;
+use phpDocumentor\Reflection\Types\Null_;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -38,6 +39,12 @@ class Partner
      * @Assert\Url
      */
     private ?string $link = null;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="partners")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private ?Category $category;
 
     public function getId(): ?int
     {
@@ -76,6 +83,18 @@ class Partner
     public function setLink(?string $link): self
     {
         $this->link = $link;
+
+        return $this;
+    }
+
+    public function getCategory(): ?Category
+    {
+        return $this->category;
+    }
+
+    public function setCategory(?Category $category): self
+    {
+        $this->category = $category;
 
         return $this;
     }
