@@ -2,13 +2,19 @@
 
 namespace App\Entity;
 
+use DateTime;
+use DateTimeInterface;
+use DateTimeImmutable;
 use App\Repository\PartnerRepository;
-use Doctrine\ORM\Mapping as ORM;
 use phpDocumentor\Reflection\Types\Null_;
 use Symfony\Component\Validator\Constraints as Assert;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\HttpFoundation\File\File;
+use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass=PartnerRepository::class)
+ * @Vich\Uploadable
  */
 class Partner
 {
@@ -27,10 +33,25 @@ class Partner
     private string $name;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     * Assert\NotBlank
+     * @Vich\UploadableField(mapping="images", fileNameProperty="picture")
+     * @Assert\File(
+     * maxSize = "1M",
+     * mimeTypes = {"image/jpeg", "image/png", "image/jpg"},
+     * )
+     * @var File|null
      */
+    private $pictureFile;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     **/
     private ?string $picture = null;
+
+    /**
+     * @ORM\Column(type="datetime")
+     * @var \DateTimeInterface|null
+     */
+    private ?DateTimeInterface $updatedAt;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -45,6 +66,33 @@ class Partner
      * @ORM\JoinColumn(nullable=false)
      */
     private ?Category $category;
+  
+    public function __construct()
+    {
+        $this->updatedAt = new DateTimeImmutable();
+    }
+
+    /**
+     * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile|null $pictureFile
+     */
+    public function setPictureFile(?File $pictureFile = null): void
+    {
+        $this->pictureFile = $pictureFile;
+
+        if (null !== $pictureFile) {
+            $this->updatedAt = new DateTimeImmutable();
+        }
+    }
+
+    public function getPictureFile(): ?File
+    {
+        return $this->pictureFile;
+    }
+
+    public function getUpdatedAt(): ?DateTimeInterface
+    {
+        return $this->updatedAt;
+    }
 
     public function getId(): ?int
     {
@@ -63,18 +111,6 @@ class Partner
         return $this;
     }
 
-    public function getPicture(): ?string
-    {
-        return $this->picture;
-    }
-
-    public function setPicture(string $picture): self
-    {
-        $this->picture = $picture;
-
-        return $this;
-    }
-
     public function getLink(): ?string
     {
         return $this->link;
@@ -83,6 +119,18 @@ class Partner
     public function setLink(?string $link): self
     {
         $this->link = $link;
+
+        return $this;
+    }
+
+    public function getPicture(): ?string
+    {
+        return $this->picture;
+    }
+
+    public function setPicture(?string $picture): self
+    {
+        $this->picture = $picture;
 
         return $this;
     }

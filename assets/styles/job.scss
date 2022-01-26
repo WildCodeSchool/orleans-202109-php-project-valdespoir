@@ -1,4 +1,4 @@
-.card-partner {
+.card-job {
     flex-wrap: wrap-reverse;
     transition: transform 0.2s;
 
@@ -8,13 +8,12 @@
         overflow: hidden;
         transform: scale(1.05);
     }
+}
 
-    .partner-img {
-        min-height: 310px;
-        height: 100%;
-    }
+.job-img {
+    height: 100%;
+}
 
-    .partner-body {
-        max-height: 310px;
-    }
+.job-body {
+    height: 310px;
 }
