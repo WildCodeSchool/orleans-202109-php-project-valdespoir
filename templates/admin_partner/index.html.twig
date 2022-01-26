@@ -32,11 +32,13 @@
 								alt="logo de {{ partner.name }}"></td>
 						<td>{{ partner.link }}</td>
 						<td>{{ partner.category.name }}</td>
-						<td class="d-flex justify-content-center align-items-center">
-							<a class="btn btn-outline-dark px-2 rounded fs-5 m-2"
-								href="{{ path('admin_partner_edit', {'id': partner.id}) }}">Éditer</a>
-							<div class="ms-2">
-								{{ include('admin_partner/_delete_form.html.twig') }}
+						<td>
+							<div class="d-flex justify-content-center align-items-center">
+								<a class="btn btn-outline-dark px-2 rounded fs-5 m-2"
+									href="{{ path('admin_partner_edit', {'id': partner.id}) }}">Éditer</a>
+								<div class="ms-2">
+									{{ include('admin_partner/_delete_form.html.twig') }}
+								</div>
 							</div>
 						</td>
 					</tr>
