@@ -1,5 +1,5 @@
 <div class="tondeuse d-flex flex-row-reverse bd-highlight">
-	<img src="{{ asset('build/images/pelouse 2.98673199.png') }}" alt="">
+	<img src="{{ asset('build/images/pelouse.png') }}" alt="grass">
 </div>
 <footer class=" bg-light text-dark" id="footer">
 	<div class="container-fluid">
@@ -72,18 +72,15 @@
 			<div class="offset-lg-2 col-lg-3 text-center mt-4">
 				{% if app.user %}
 					{{ app.user.email }}
-					<a class="text-light fs-5 text-decoration-none ms-2" href="{{ path('app_logout') }}">Se
-																		déconnecter</a>
+					<a class="text-light fs-5 text-decoration-none ms-2" href="{{ path('app_logout') }}">
+						Se déconnecter</a>
 				{% else %}
-					<a class="text-light bg-dark fs-5 text-decoration-none" href="{{ path('login') }}">
-						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill color-light me-2 mb-1" viewbox="0 0 16 16">
-							<path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
-						</svg>Se connecter</a>
+					<a class="text-light bg-dark fs-5 text-decoration-none" href="{{ path('login') }}">Se connecter</a>
 				{% endif %}
 			</div>
 			<div class="text-center text-light mt-2">
-				<p class="mb-0">Mentions légales</p>
+				<a class="mb-0 text-light" href="{{ path('legal') }}">Mentions légales</a>
 			</div>
 		</div>
 	</div>
-</div></footer>
+</footer>

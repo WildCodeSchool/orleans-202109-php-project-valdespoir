@@ -2,12 +2,14 @@
 
 namespace App\Form;
 
+use App\Entity\Category;
 use App\Entity\Partner;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\UrlType;
+use Vich\UploaderBundle\Form\Type\VichImageType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 class PartnerType extends AbstractType
 {
@@ -15,9 +17,14 @@ class PartnerType extends AbstractType
     {
         $builder
             ->add('name', TextType::class, ['label' => 'Nom',])
-            ->add('picture', UrlType::class, ['label' => 'Image 1',])
+            ->add('pictureFile', VichImageType::class, [
+                'label' => 'Image',
+            ])
             ->add('link', TextType::class, ['label' => 'Lien',])
-        ;
+            ->add('category', EntityType::class, [
+                'class' => Category::class,
+                'choice_label' => 'name', 'label' => 'Catégorie'
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void

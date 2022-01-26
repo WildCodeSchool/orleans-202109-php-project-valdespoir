@@ -1,6 +1,6 @@
 {% extends 'adminBase.html.twig' %}
 
-{% block title %}Chantier index
+{% block title %}Réalisations Admin
 {% endblock %}
 
 {% block stylesheets %}
@@ -44,11 +44,13 @@
 										{% endif %}
 									</form>
 								</td>
-								<td class="d-flex justify-content-center">
+								<td>
+									<div class="d-flex justify-content-center align-items-center">
 									<a class="btn btn-outline-dark px-2 rounded fs-5 m-2 mt-2 mb-2" href="{{ path('admin_site_edit', {'id': site.id}) }}">Éditer</a>
 									<div class="ms-2">
 										{{ include('adminSite/_delete_form.html.twig') }}
 									</div>
+								</div>
 								</td>
 							</tr>
 						{% else %}

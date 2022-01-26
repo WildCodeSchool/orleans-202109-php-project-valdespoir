@@ -24,7 +24,7 @@ security:
             form_login:
                 login_path: login
                 check_path: login
-                default_target_path: admin_site_index
+                default_target_path: admin_home_index
             logout:
                 path: app_logout
 

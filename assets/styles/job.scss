@@ -1,0 +1,19 @@
+.card-job {
+    flex-wrap: wrap-reverse;
+    transition: transform 0.2s;
+
+    &:hover {
+        filter: brightness(120%);
+        box-shadow: 0px 0px 30px -15px $dark;
+        overflow: hidden;
+        transform: scale(1.05);
+    }
+}
+
+.job-img {
+    height: 100%;
+}
+
+.job-body {
+    height: 310px;
+}
