@@ -10,6 +10,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Vich\UploaderBundle\Form\Type\VichImageType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 
 class SiteType extends AbstractType
 {
@@ -28,7 +29,8 @@ class SiteType extends AbstractType
                 'label' => 'Image après',
                 'download_label' => '',
                 'delete_label' => 'Supprimer l\'image',
-            ]);
+            ])
+            ->add('date', DateType::class, ['label' => 'Date']);
     }
 
     public function configureOptions(OptionsResolver $resolver): void
