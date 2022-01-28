@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Offres d'emplois #{{ job_offer.id }}
+{% block title %}Offres d'emplois - {{ job_offer.title }}
 {% endblock %}
 
 {% block body %}
@@ -24,7 +24,7 @@
 			<p class="bg-light opacity-75 text-dark rounded-3 p-4 mb-5 mt-5">{{ job_offer.description }}</p>
 		</div>
 		<div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4">
-			<a class="btn btn-primary opacity-50 mt-2 rounded text-light" href="{{ path('job_offer_index') }}"
+			<a class="btn btn-primary opacity-75 text-light" href="{{ path('job_offer_index') }}"
 				type="button">Retour</a>
 		</div>
 	</div>

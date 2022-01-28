@@ -1,13 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Réalisation #{{ site.id }}
+{% block title %}Réalisation - {{ site.title }}
 {% endblock %}
 
 {% block body %}
 	<main class="container mb-4 mt-5">
-		<h2 class="text-center text-light opacity-75">
+		<h1 class="text-center text-light opacity-75">
 			{{ site.title }}
-		</h2>
+		</h1>
 		<div class="row g-5">
 			<div class="col-sm-12 col-lg-6 col-xxl-6">
 				<div class="card h-100 opacity-75 mb-1 mt-5 rounded-3">
