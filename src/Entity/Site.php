@@ -87,7 +87,7 @@ class Site
     /**
      * @ORM\Column(type="boolean", nullable=true)
      */
-    private bool $selected;
+    private ?bool $selected = null;
 
     public function __construct()
     {
