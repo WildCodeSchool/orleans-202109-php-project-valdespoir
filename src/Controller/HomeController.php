@@ -27,4 +27,12 @@ class HomeController extends AbstractController
             'jobOffers' => $jobOffers
         ]);
     }
+
+    /**
+     * @Route("/legal_notice", name="legal")
+     */
+    public function legalNotice(): Response
+    {
+        return $this->render('legal_notice/index.html.twig');
+    }
 }

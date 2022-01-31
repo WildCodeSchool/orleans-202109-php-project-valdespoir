@@ -4,60 +4,62 @@
 {% endblock %}
 
 {% block stylesheets %}
-	{{ encore_entry_link_tags('admin') }}
+{{ encore_entry_link_tags('admin') }}
 {% endblock %}
 
 {% block body %}
-	<main class="container jobOffer">
-		<h1 class="text-center text-dark mt-5 mb-2">Les offres d'emplois</h1>
-		<div>
-			<a class="btn btn-outline-primary px-2 rounded mb-3 fs-5" href="{{ path('adminJob_offer_new') }}">Ajouter</a>
+<main class="container jobOffer">
+	<h1 class="text-center text-dark mt-5 mb-2">Les offres d'emplois</h1>
+	<div>
+		<a class="btn btn-outline-primary px-2 rounded mb-3 fs-5" href="{{ path('adminJob_offer_new') }}">Ajouter</a>
+	</div>
+	<div class="row">
+		<div class="table-responsive">
+			<table class="table align-middle text-dark table-bordered border table-borderless table-hover">
+				<thead class="table-dark text-light">
+					<tr class="text-center fs-4">
+						<th class="col-3">Date</th>
+						<th class="col-6">Titre</th>
+						<th class="col-1">Caroussel</th>
+						<th class="col-2">Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for job_offer in job_offers %}
+					<tr class="table-light text-dark fs-5">
+						<td>{{ job_offer.date ? job_offer.date|date('Y-m-d') : '' }}</td>
+						<td>{{ job_offer.title }}</td>
+						<td>
+							<form method="POST" action="{{ path('adminJob_offer_select', {'id': job_offer.id}) }}">
+								{% if job_offer.selected == true %}
+								<button class="btn btn-success px-2 rounded fs-5 m-2">
+									Enlever
+								</button>
+								{% else %}
+								<button class="btn btn-outline-dark px-2 rounded fs-5 m-2">
+									Ajouter
+								</button>
+								{% endif %}
+							</form>
+						</td>
+						<td>
+							<div class="d-flex justify-content-center align-items-center">
+								<a class="btn btn-outline-dark px-2 rounded fs-5 m-2"
+									href="{{ path('adminJob_offer_edit', {'id': job_offer.id}) }}">Éditer</a>
+								<div class="ms-2">
+									{{ include('adminJob_offer/_delete_form.html.twig') }}
+								</div>
+							</div>
+						</td>
+					</tr>
+					{% else %}
+					<tr>
+						<td colspan="5">no records found</td>
+					</tr>
+					{% endfor %}
+				</tbody>
+			</table>
 		</div>
-		<div class="row">
-			<div class="table-responsive">
-				<table class="table align-middle text-dark table-bordered border table-borderless table-hover">
-					<thead class="table-dark text-light">
-						<tr class="text-center fs-4">
-							<th class="col-3">Date</th>
-							<th class="col-6">Titre</th>
-							<th class="col-1">Caroussel</th>
-							<th class="col-2">Actions</th>
-						</tr>
-					</thead>
-					<tbody>
-						{% for job_offer in job_offers %}
-							<tr class="table-light text-dark fs-5">
-								<td>{{ job_offer.date ? job_offer.date|date('Y-m-d') : '' }}</td>
-								<td>{{ job_offer.title }}</td>
-								<td>
-									<form method="POST" action="{{ path('adminJob_offer_select', {'id': job_offer.id}) }}">
-										{% if job_offer.selected == true %}
-											<button class="btn btn-success px-2 rounded fs-5 m-2">
-												Enlever
-											</button>
-										{% else %}
-											<button class="btn btn-outline-dark px-2 rounded fs-5 m-2">
-												Ajouter
-											</button>
-										{% endif %}
-									</form>
-								</td>
-								<td class="d-flex justify-content-center align-items-center">
-									<a class="btn btn-outline-dark px-2 rounded fs-5 m-2" href="{{ path('adminJob_offer_edit', {'id': job_offer.id}) }}">Éditer</a>
-									<div class="ms-2">
-										{{ include('adminJob_offer/_delete_form.html.twig') }}
-									</div>
-								</td>
-							</tr>
-						{% else %}
-							<tr>
-								<td colspan="5">no records found</td>
-							</tr>
-						{% endfor %}
-					</tbody>
-				</table>
-			</div>
-		</div>
-	</main>
-
+	</div>
+</main>
 {% endblock %}

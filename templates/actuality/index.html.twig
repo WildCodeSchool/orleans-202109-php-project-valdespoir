@@ -20,12 +20,12 @@
 							<div class="align-self-center">
 								<h3 class="card-title mb-4">{{ actuality.title }}</h3>
 								<p class="card-text">{{ actuality.shortDescription }}</p>
-								<p class="card-date mb-0">
+								<p class="card-date mb-2">
 									<small class="text-muted">
 										{{ actuality.date|date('d/m/Y') }}
 									</small>
 								</p>
-								<a class="btn btn-primary opacity-75 text-light mt-2 rounded" href="{{ path('actuality_show', {id: actuality.id}) }}" type="button">Détails</a>
+								<a class="btn btn-primary text-light" href="{{ path('actuality_show', {id: actuality.id}) }}" type="button">Détails</a>
 							</div>
 						</div>
 					</div>
