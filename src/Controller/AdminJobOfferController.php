@@ -76,6 +76,8 @@ class AdminJobOfferController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->flush();
 
+            $this->addFlash('success', 'L\'offre d\'emploi a bien été modifiée');
+
             return $this->redirectToRoute('job_offer_index', [], Response::HTTP_SEE_OTHER);
         }
 
@@ -94,6 +96,7 @@ class AdminJobOfferController extends AbstractController
             $entityManager->remove($jobOffer);
             $entityManager->flush();
         }
+        $this->addFlash('danger', 'L\'offre d\'emploi a bien été supprimée');
 
         return $this->redirectToRoute('job_offer_index', [], Response::HTTP_SEE_OTHER);
     }
