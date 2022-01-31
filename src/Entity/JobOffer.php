@@ -41,9 +41,9 @@ class JobOffer
     private DateTimeInterface $date;
 
     /**
-     * @ORM\Column(type="boolean")
+     * @ORM\Column(type="boolean", nullable=true)
      */
-    private bool $selected;
+    private ?bool $selected = null;
 
     public function getId(): ?int
     {
