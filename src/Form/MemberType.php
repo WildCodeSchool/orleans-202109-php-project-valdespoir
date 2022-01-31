@@ -16,7 +16,7 @@ class MemberType extends AbstractType
         $builder
             ->add('name', TextType::class, ['label' => 'Nom',])
             ->add('role', TextType::class, ['label' => 'Rôle',])
-            ->add('description');
+            ->add('description', TextareaType::class, ['label' => 'Description',]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void
