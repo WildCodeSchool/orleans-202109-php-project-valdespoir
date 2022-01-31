@@ -57,9 +57,13 @@
 
 .title p {
     margin: $spacing1;
-    padding-bottom: $spacing2;
 }
 
 .logo {
     filter: grayscale(10%) brightness(100%);
+}
+
+.columns {
+    column-count: 2;
+    padding-left: 100px;
 }
