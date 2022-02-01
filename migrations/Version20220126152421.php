@@ -30,6 +30,9 @@ final class Version20220126152421 extends AbstractMigration
         $this->addSql('CREATE TABLE user (id INT AUTO_INCREMENT NOT NULL, email VARCHAR(255) NOT NULL, roles JSON NOT NULL, password VARCHAR(255) NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('ALTER TABLE partner ADD CONSTRAINT FK_312B3E1612469DE2 FOREIGN KEY (category_id) REFERENCES category (id)');
         $this->addSql('ALTER TABLE reset_password_request ADD CONSTRAINT FK_7CE748AA76ED395 FOREIGN KEY (user_id) REFERENCES user (id)');
+        $this->addSql('ALTER TABLE actuality CHANGE selected selected TINYINT(1) DEFAULT NULL');
+        $this->addSql('ALTER TABLE site CHANGE selected selected TINYINT(1) DEFAULT NULL');
+        $this->addSql('ALTER TABLE job_offer CHANGE selected selected TINYINT(1) DEFAULT NULL');
     }
 
     public function down(Schema $schema): void
@@ -45,5 +48,8 @@ final class Version20220126152421 extends AbstractMigration
         $this->addSql('DROP TABLE reset_password_request');
         $this->addSql('DROP TABLE site');
         $this->addSql('DROP TABLE user');
+        $this->addSql('ALTER TABLE actuality CHANGE selected selected TINYINT(1) NOT NULL');
+        $this->addSql('ALTER TABLE site CHANGE selected selected TINYINT(1) NOT NULL');
+        $this->addSql('ALTER TABLE job_offer CHANGE selected selected TINYINT(1) NOT NULL');
     }
 }

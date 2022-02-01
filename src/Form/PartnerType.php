@@ -19,6 +19,9 @@ class PartnerType extends AbstractType
             ->add('name', TextType::class, ['label' => 'Nom',])
             ->add('pictureFile', VichImageType::class, [
                 'label' => 'Image',
+                'download_label' => '',
+                'delete_label' => 'Supprimer l\'image',
+                'required' => false,
             ])
             ->add('link', TextType::class, ['label' => 'Lien',])
             ->add('category', EntityType::class, [

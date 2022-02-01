@@ -39,7 +39,7 @@ class AdminSiteController extends AbstractController
             $entityManager->persist($site);
             $entityManager->flush();
 
-            $this->addFlash('success', 'Le chantier a bien été ajouté');
+            $this->addFlash('success', 'La réalisation a bien été ajoutée');
 
             return $this->redirectToRoute('admin_site_index', [], Response::HTTP_SEE_OTHER);
         }
@@ -76,7 +76,7 @@ class AdminSiteController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->flush();
 
-            $this->addFlash('success', 'Le chantier a bien été modifié');
+            $this->addFlash('success', 'La réalisation a bien été modifiée');
 
             return $this->redirectToRoute('admin_site_index', [], Response::HTTP_SEE_OTHER);
         }
@@ -96,7 +96,7 @@ class AdminSiteController extends AbstractController
             $entityManager->remove($site);
             $entityManager->flush();
         }
-        $this->addFlash('danger', 'Le chantier a bien été supprimé');
+        $this->addFlash('danger', 'La réalisation a bien été supprimée');
 
         return $this->redirectToRoute('admin_site_index', [], Response::HTTP_SEE_OTHER);
     }
