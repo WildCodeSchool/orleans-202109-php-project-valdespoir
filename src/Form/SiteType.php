@@ -24,11 +24,13 @@ class SiteType extends AbstractType
                 'label' => 'Image avant',
                 'download_label' => '',
                 'delete_label' => 'Supprimer l\'image',
+                'required' => false,
             ])
             ->add('afterPictureFile', VichImageType::class, [
                 'label' => 'Image après',
                 'download_label' => '',
                 'delete_label' => 'Supprimer l\'image',
+                'required' => false,
             ])
             ->add('date', DateType::class, ['label' => 'Date']);
     }

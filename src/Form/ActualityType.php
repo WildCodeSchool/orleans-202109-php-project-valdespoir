@@ -23,6 +23,7 @@ class ActualityType extends AbstractType
                 'label' => 'Image',
                 'download_label' => '',
                 'delete_label' => 'Supprimer l\'image',
+                'required' => false,
             ])
             ->add('date', DateTimeType::class, ['label' => 'Date']);
     }
