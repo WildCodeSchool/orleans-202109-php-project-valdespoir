@@ -17,8 +17,8 @@ class ActualityType extends AbstractType
     {
         $builder
             ->add('title', TextType::class, ['label' => 'Titre',])
-            ->add('shortDescription', TextareaType::class, ['label' => 'Description',])
-            ->add('description', TextareaType::class, ['label' => 'Description',])
+            ->add('shortDescription', TextareaType::class, ['label' => 'Résumé',])
+            ->add('description', TextareaType::class, ['label' => 'Contenu',])
             ->add('pictureFile', VichImageType::class, [
                 'label' => 'Image',
                 'download_label' => '',
