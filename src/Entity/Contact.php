@@ -27,7 +27,7 @@ class Contact
     /**
      * @Assert\NotBlank
      */
-    private string $subject;
+    private ?string $subject;
 
     /**
      * @Assert\NotBlank
@@ -75,7 +75,7 @@ class Contact
         return $this->subject;
     }
 
-    public function setSubject(string $subject): self
+    public function setSubject(?string $subject): self
     {
         $this->subject = $subject;
 
