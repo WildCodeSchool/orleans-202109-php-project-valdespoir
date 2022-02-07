@@ -21,7 +21,7 @@ class HomeController extends AbstractController
     ): Response {
         $sites = $siteRepository->findBySelected(true);
         $actualities = $actualityRepository->findBySelected(true);
-        $jobOffers = $jobOfferRepository->findAll();
+        $jobOffers = $jobOfferRepository->findBySelected(true);
         return $this->render('home/index.html.twig', [
             'sites' => $sites, 'actualities' => $actualities,
             'jobOffers' => $jobOffers
