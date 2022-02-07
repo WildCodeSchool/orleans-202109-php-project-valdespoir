@@ -50,7 +50,7 @@ class AdminActualityController extends AbstractController
     }
 
     /**
-     * @Route("/select/{id<^[0-9]+$>}", name="select", methods={"POST"})
+     * @Route("/selection/{id<^[0-9]+$>}", name="select", methods={"POST"})
      * @return Response
      */
     public function select(Actuality $actuality, EntityManagerInterface $entityManager): Response

@@ -29,7 +29,7 @@ class HomeController extends AbstractController
     }
 
     /**
-     * @Route("/legal_notice", name="legal")
+     * @Route("/mentions-legales", name="legal")
      */
     public function legalNotice(): Response
     {
