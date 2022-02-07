@@ -1,13 +1,13 @@
-@import 'variables.scss';
-@import '~bootstrap/scss/bootstrap';
-@import url('https://fonts.googleapis.com/css2?family=Exo:wght@300;400;500;600;700&family=Outfit:wght@200;600&family=Rubik:wght@300;400&display=swap');
-@import '_footer.scss';
-@import 'navbar.scss';
-@import 'banner.scss';
-@import 'site.scss';
-@import 'actualities.scss';
-@import 'partner.scss';
-@import 'job.scss';
+@import "variables.scss";
+@import "~bootstrap/scss/bootstrap";
+@import url("https://fonts.googleapis.com/css2?family=Exo:wght@300;400;500;600;700&family=Outfit:wght@200;600&family=Rubik:wght@300;400&display=swap");
+@import "_footer.scss";
+@import "navbar.scss";
+@import "banner.scss";
+@import "site.scss";
+@import "actualities.scss";
+@import "partner.scss";
+@import "job.scss";
 
 :root {
     h1,
@@ -34,5 +34,29 @@
     li {
         font-family: $text-font;
         font-size: $text-size;
+    }
+
+    @media (min-width: 340px) and (max-width: 580px) {
+        h1 {
+            font-size: 44px;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 30px;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 24px;
+            text-align: center;
+        }
+
+        p,
+        a,
+        li {
+            font-size: 16px;
+            text-align: center;
+        }
     }
 }
