@@ -8,7 +8,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 
 class JobOfferType extends AbstractType
 {
@@ -17,7 +17,7 @@ class JobOfferType extends AbstractType
         $builder
             ->add('title', TextType::class, ['label' => 'Titre',])
             ->add('description', TextareaType::class, ['label' => 'Description',])
-            ->add('date', DateTimeType::class, ['date_label' => 'Date',]);
+            ->add('date', DateType::class, ['label' => 'Date',]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void
