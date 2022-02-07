@@ -27,13 +27,13 @@ class JobOffer
      * @Assert\NotBlank
      * @Assert\Length(max="255")
      */
-    private string $title;
+    private ?string $title;
 
     /**
      * @ORM\Column(type="text")
      * @Assert\NotBlank
      */
-    private string $description;
+    private ?string $description;
 
     /**
      * @ORM\Column(type="datetime")
@@ -55,7 +55,7 @@ class JobOffer
         return $this->title;
     }
 
-    public function setTitle(string $title): self
+    public function setTitle(?string $title): self
     {
         $this->title = $title;
 
@@ -67,7 +67,7 @@ class JobOffer
         return $this->description;
     }
 
-    public function setDescription(string $description): self
+    public function setDescription(?string $description): self
     {
         $this->description = $description;
 
