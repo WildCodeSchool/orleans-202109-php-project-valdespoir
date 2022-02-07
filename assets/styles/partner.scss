@@ -12,6 +12,8 @@
     .partner-img {
         min-height: 310px;
         height: 100%;
+        aspect-ratio: 1;
+        object-fit: cover;
     }
 
     .partner-body {

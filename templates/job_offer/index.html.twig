@@ -4,7 +4,7 @@
 {% endblock %}
 
 {% block banner %}
-{% include 'job_offer/_banner.html.twig' %}
+	{% include 'job_offer/_banner.html.twig' %}
 {% endblock %}
 
 {% block body %}
@@ -25,11 +25,13 @@
 									</small>
 								</p>
 								<a class="btn btn-primary text-light" href="{{ path('job_offer_show', {id: job_offer.id}) }}" type="button">Détails</a>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-	</div>
-	{% endfor %}
-</main>
+		{% else %}
+			Aucun emploi
+		{% endfor %}
+	</main>
 {% endblock %}

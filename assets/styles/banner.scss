@@ -1,6 +1,6 @@
 .banner {
     background-repeat: no-repeat;
-    background-image: url('../images/banner.jpg');
+    background-image: url("../images/banner.jpg");
     background-size: cover;
     background-position: center 30%;
     width: $width-banner;
@@ -8,32 +8,32 @@
 }
 
 .banner-job {
-    background-image: url('../images/banner-job.jpg');
+    background-image: url("../images/banner-job.jpg");
     background-position: center 70%;
 }
 
 .banner-member {
-    background-image: url('../images/banner-member.jpg');
+    background-image: url("../images/banner-member.jpg");
     background-position: center 65%;
 }
 
 .banner-site {
-    background-image: url('../images/banner-site.jpg');
+    background-image: url("../images/banner-site.jpg");
     background-position: center 60%;
 }
 
 .banner-actuality {
-    background-image: url('../images/banner-actuality.jpg');
+    background-image: url("../images/banner-actuality.jpg");
     background-position: center 60%;
 }
 
 .banner-contact {
-    background-image: url('../images/banner-contact.jpg');
+    background-image: url("../images/banner-contact.jpg");
     background-position: center 35%;
 }
 
 .banner-partner {
-    background-image: url('../images/banner-partner.jpg');
+    background-image: url("../images/banner-partner.jpg");
     background-position: center 40%;
 }
 
@@ -44,7 +44,7 @@
     width: $width-banner-title;
     max-width: 1300px;
     margin: auto;
-    margin-top: -2.2 * $main-title-size + $spacing2;
+    margin-top: -2.3 * $main-title-size + $spacing2;
     border-radius: $border-radius;
     margin-bottom: 70px;
 }
@@ -61,9 +61,4 @@
 
 .logo {
     filter: grayscale(10%) brightness(100%);
-}
-
-.columns {
-    column-count: 2;
-    padding-left: 100px;
 }

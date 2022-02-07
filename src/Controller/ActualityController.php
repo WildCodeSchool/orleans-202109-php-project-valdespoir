@@ -24,7 +24,7 @@ class ActualityController extends AbstractController
     }
 
     /**
-     * @Route("/show/{id<^[0-9]+$>}", name="show")
+     * @Route("/details/{id<^[0-9]+$>}", name="show")
      * @return Response
      */
     public function show(Actuality $actuality): Response
