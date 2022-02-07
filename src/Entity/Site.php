@@ -28,20 +28,20 @@ class Site
      * @Assert\NotBlank
      * @Assert\Length(max="255")
      */
-    private string $title;
+    private ?string $title;
 
     /**
      * @ORM\Column(type="text")
      * @Assert\NotBlank
      */
-    private string $description;
+    private ?string $description;
 
     /**
      * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank
      * @Assert\Length(max="255")
      */
-    private string $city;
+    private ?string $city;
 
     /**
      * @Vich\UploadableField(mapping="images", fileNameProperty="beforePicture")
@@ -143,7 +143,7 @@ class Site
         return $this->title;
     }
 
-    public function setTitle(string $title): self
+    public function setTitle(?string $title): self
     {
         $this->title = $title;
 
@@ -155,7 +155,7 @@ class Site
         return $this->description;
     }
 
-    public function setDescription(string $description): self
+    public function setDescription(?string $description): self
     {
         $this->description = $description;
 
@@ -167,7 +167,7 @@ class Site
         return $this->city;
     }
 
-    public function setCity(string $city): self
+    public function setCity(?string $city): self
     {
         $this->city = $city;
 
