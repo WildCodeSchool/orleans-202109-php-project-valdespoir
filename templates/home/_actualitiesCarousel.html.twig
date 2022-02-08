@@ -12,8 +12,13 @@
 				<div class="carousel-inner">
 					{% for actuality in actualities %}
 					<div class="carousel-item {{ loop.first ? 'active' : '' }}">
-						<img class="img-fluid d-block w-100 " src={% if actuality.Image is defined %} {% else %} "{{ asset('build/images/placeholder-site.jpg') }}" {% endif %} alt="actuality-image">
+						<img class="img-fluid d-block w-100 " src="{% if actuality.picture is not empty %}{{ vich_uploader_asset(actuality, 'pictureFile') }}{% else %}{{ asset('build/images/placeholder-site.jpg') }}{% endif %}" alt="actuality-image">
 						<div class="card-header text-light bg-dark opacity-75 text-center">{{ actuality.title }}</div>
+					</div>
+					{% else %}
+					<div class="carousel-item {{ loop.first ? 'active' : '' }}">
+						<img class="img-fluid d-block w-100 " src="{{ asset('build/images/placeholder-site.jpg') }}" alt="actuality-image">
+						<div class="card-header text-light bg-dark opacity-75 text-center">Pas d'actualité récente</div>
 					</div>
 					{% endfor %}
 				</div>

@@ -30,7 +30,7 @@ class Partner
      * Assert\NotBlank
      * Assert\Length(max="255")
      */
-    private string $name;
+    private ?string $name;
 
     /**
      * @Vich\UploadableField(mapping="images", fileNameProperty="picture")
