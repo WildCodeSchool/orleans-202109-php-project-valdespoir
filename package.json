@@ -25,7 +25,8 @@
     "dev-server": "encore dev-server",
     "dev": "encore dev",
     "watch": "encore dev --watch",
-    "build": "encore production --progress"
+    "build": "encore production --progress babel src -d lib",
+      "test": "jest"
   },
   "dependencies": {
     "bootstrap-icons": "^1.7.2"
