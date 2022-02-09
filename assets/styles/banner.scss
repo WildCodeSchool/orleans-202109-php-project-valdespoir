@@ -8,8 +8,8 @@
 }
 
 .banner-job {
-    background-image: url("../images/banner-job.jpg");
-    background-position: center 70%;
+    background-image: url("../images/banner-job.jpeg");
+    background-position: center 40%;
 }
 
 .banner-member {
@@ -18,8 +18,8 @@
 }
 
 .banner-site {
-    background-image: url("../images/banner-site.jpg");
-    background-position: center 60%;
+    background-image: url("../images/banner-site.jpeg");
+    background-position: center 40%;
 }
 
 .banner-actuality {
@@ -61,4 +61,8 @@
 
 .logo {
     filter: grayscale(10%) brightness(100%);
+}
+
+.logo-site {
+    padding-right: 30px;
 }
